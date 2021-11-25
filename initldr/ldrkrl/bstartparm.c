@@ -62,6 +62,7 @@ void init_bstartparm()
     init_graph(mbsp);
     return;
 }
+//初始化machbstart_t结构体,设置标记位
 void machbstart_t_init(machbstart_t *initp)
 {
     memset(initp, 0, sizeof(machbstart_t));

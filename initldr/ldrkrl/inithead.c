@@ -12,6 +12,7 @@ void inithead_entry()
     return;
 }
 
+//写initldrsve.bin到特定的内存中
 void write_realintsvefile()
 {
 
