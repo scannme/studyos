@@ -35,23 +35,23 @@ _32bits_mode:
 
 
 realadr_call_entry:
-	pushad
+	pushad ;保存通用寄存器
 	push    ds
 	push    es
-	push    fs
+	push    fs ;保存4个段寄存器
 	push    gs
 	call save_eip_jmp
 	pop	gs
 	pop	fs
 	pop	es
-	pop	ds
+	pop	ds ;恢复通用寄存器
 	popad
 	ret
 save_eip_jmp:
-	pop esi
-	mov [PM32_EIP_OFF],esi
-	mov [PM32_ESP_OFF],esp
-	jmp dword far [cpmty_mode]
+	pop esi ;弹出call save_eip_jmp时保存的eip到esi寄存器中;
+	mov [PM32_EIP_OFF],esi ;把eip保存到特定内存空间中
+	mov [PM32_ESP_OFF],esp; 把esp保存到特定的内存空间中
+	jmp dword far [cpmty_mode] ;长跳转这里表示把cpmty_mode处的第一个4字节装入eip,把其后2字节装入cs
 cpmty_mode:
 	dd 0x1000
 	dw 0x18

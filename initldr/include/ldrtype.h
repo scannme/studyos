@@ -16,7 +16,7 @@
 #define MDC_ENDGIC 0xaaffaaffaaffaaff
 #define MDC_RVGIC 0xffaaffaaffaaffaa
 #define REALDRV_PHYADR 0x1000
-#define ILDRKRL_PHYADR 0x200000
+#define ILDRKRL_PHYADR 0x200000 //二级模块开始地址
 #define IMGSHEL_PHYADR 0x30000
 #define IKSTACK_PHYADR (0x90000-0x10)
 #define IKSTACK_SIZE 0x1000
@@ -76,27 +76,27 @@ typedef struct s_fhdsc
 
 typedef struct s_mlosrddsc
 {
-    u64_t mdc_mgic;
-    u64_t mdc_sfsum;
+    u64_t mdc_mgic; //映像文件标识
+    u64_t mdc_sfsum; 
     u64_t mdc_sfsoff;
     u64_t mdc_sfeoff;
     u64_t mdc_sfrlsz;
-    u64_t mdc_ldrbk_s;
-    u64_t mdc_ldrbk_e;
-    u64_t mdc_ldrbk_rsz;
-    u64_t mdc_ldrbk_sum;
-    u64_t mdc_fhdbk_s;
-    u64_t mdc_fhdbk_e;
-    u64_t mdc_fhdbk_rsz;
-    u64_t mdc_fhdbk_sum;
-    u64_t mdc_filbk_s;
-    u64_t mdc_filbk_e;
-    u64_t mdc_filbk_rsz;
-    u64_t mdc_filbk_sum;
-    u64_t mdc_ldrcodenr;
-    u64_t mdc_fhdnr;
-    u64_t mdc_filnr;
-    u64_t mdc_endgic;
+    u64_t mdc_ldrbk_s; //映像文件中二级引导的开始偏移
+    u64_t mdc_ldrbk_e; //end offset
+    u64_t mdc_ldrbk_rsz; //二级引导实际大小
+    u64_t mdc_ldrbk_sum;//校验和
+    u64_t mdc_fhdbk_s; // 映像文件中文件头描述的开始偏移
+    u64_t mdc_fhdbk_e; //映像文件中文件头描述的结束偏移
+    u64_t mdc_fhdbk_rsz; //描述实际大小j
+    u64_t mdc_fhdbk_sum;//描述校验和
+    u64_t mdc_filbk_s;//映像文件中文件数据的开始偏移
+    u64_t mdc_filbk_e;//结束偏移
+    u64_t mdc_filbk_rsz; //映像文件文件数据实际大小
+    u64_t mdc_filbk_sum;//文件数据校验和
+    u64_t mdc_ldrcodenr; //映像文件二级引导器的文件头描述符的索引值
+    u64_t mdc_fhdnr;//描述符的个数
+    u64_t mdc_filnr;//文件头有多少个
+    u64_t mdc_endgic;//映像文件结束标识j
     u64_t mdc_rv;
 }mlosrddsc_t;
 

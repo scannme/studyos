@@ -34,6 +34,7 @@
 
 #define INTSRC_MAX 32
 
+//16GB
 #define KRNL_MAP_VIRTADDRESS_SIZE 0x400000000
 #define KRNL_VIRTUAL_ADDRESS_START 0xffff800000000000
 #define KRNL_VIRTUAL_ADDRESS_END 0xffffffffffffffff
@@ -63,15 +64,16 @@ typedef struct s_MRSDP
 }__attribute__((packed)) mrsdp_t;
 
 
+//设备基础数据结构 
 typedef struct s_MACHBSTART
 {
     u64_t   mb_migc;          //LMOSMBSP//0
     u64_t   mb_chksum;//8
-    u64_t   mb_krlinitstack;//16
-    u64_t   mb_krlitstacksz;//24
-    u64_t   mb_imgpadr;
-    u64_t   mb_imgsz;
-    u64_t   mb_krlimgpadr;
+    u64_t   mb_krlinitstack;//16 内核栈地址j
+    u64_t   mb_krlitstacksz;//24 内核栈大小
+    u64_t   mb_imgpadr; //操作系统系统镜像
+    u64_t   mb_imgsz; //操作系统映像大小
+    u64_t   mb_krlimgpadr; 
     u64_t   mb_krlsz;
     u64_t   mb_krlvec;
     u64_t   mb_krlrunmode;
@@ -81,15 +83,15 @@ typedef struct s_MACHBSTART
     u64_t   mb_kservadrs;
     u64_t   mb_kservadre;
     u64_t   mb_nextwtpadr;
-    u64_t   mb_bfontpadr;
-    u64_t   mb_bfontsz;
-    u64_t   mb_fvrmphyadr;
-    u64_t   mb_fvrmsz;
-    u64_t   mb_cpumode;
-    u64_t   mb_memsz;
-    u64_t   mb_e820padr;
-    u64_t   mb_e820nr;
-    u64_t   mb_e820sz;
+    u64_t   mb_bfontpadr; //操作系统地址地址j
+    u64_t   mb_bfontsz; //操作系统字体大小
+    u64_t   mb_fvrmphyadr; //机器显存地址
+    u64_t   mb_fvrmsz; //机器显存大小
+    u64_t   mb_cpumode; //机器CPU工作模式
+    u64_t   mb_memsz;//机器内大小
+    u64_t   mb_e820padr; //机器e820数组地址
+    u64_t   mb_e820nr;//机器e820数组个数
+    u64_t   mb_e820sz; //机器e820数组大小
     u64_t   mb_e820expadr;
     u64_t   mb_e820exnr;
     u64_t   mb_e820exsz;
@@ -101,9 +103,9 @@ typedef struct s_MACHBSTART
     u64_t   mb_memmapnr;
     u64_t   mb_memmapsz;
     u64_t   mb_memmapchksum;
-    u64_t   mb_pml4padr;
-    u64_t   mb_subpageslen;
-    u64_t   mb_kpmapphymemsz;
+    u64_t   mb_pml4padr; //机器页表数据地址
+    u64_t   mb_subpageslen;//机器页表个数
+    u64_t   mb_kpmapphymemsz;//操作系统映像空间大小
     u64_t   mb_ebdaphyadr;
     mrsdp_t mb_mrsdp;
     graph_t mb_ghparm;
@@ -128,11 +130,11 @@ typedef struct s_MACHBSTART
 #define MDC_RVGIC 0xffaaffaaffaaffaa
 
 #define MLOSDSC_OFF (0x1000)
-#define RAM_USABLE 1
-#define RAM_RESERV 2
-#define RAM_ACPIREC 3
-#define RAM_ACPINVS 4
-#define RAM_AREACON 5
+#define RAM_USABLE 1 //可用内存
+#define RAM_RESERV 2 //保留不可用内存
+#define RAM_ACPIREC 3 //ACPI表相关的
+#define RAM_ACPINVS 4 //ACPI NVS空间
+#define RAM_AREACON 5 //保护坏内存
 typedef struct s_e820{
     u64_t saddr;    /* start of memory segment8 */
     u64_t lsize;    /* size of memory segment8 */
@@ -141,15 +143,15 @@ typedef struct s_e820{
 
 typedef struct s_fhdsc
 {
-    u64_t fhd_type;
-    u64_t fhd_subtype;
-    u64_t fhd_stuts;
-    u64_t fhd_id;
-    u64_t fhd_intsfsoff;
-    u64_t fhd_intsfend;
-    u64_t fhd_frealsz;
-    u64_t fhd_fsum;
-    char   fhd_name[FHDSC_NMAX];
+    u64_t fhd_type; //文件类型
+    u64_t fhd_subtype; //子文件类型
+    u64_t fhd_stuts; //文件状态j
+    u64_t fhd_id;//文件id
+    u64_t fhd_intsfsoff; //文件在映像文件位置开始的偏移
+    u64_t fhd_intsfend;//文件实际的结束偏移:
+    u64_t fhd_frealsz;//文件实际大小
+    u64_t fhd_fsum;//文件校验和
+    char   fhd_name[FHDSC_NMAX]; //文件名
 }fhdsc_t;
 
 typedef struct s_mlosrddsc

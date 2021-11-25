@@ -50,9 +50,9 @@ ok_l:
     return &fhdscstart[rethn];
 }
 
+//检查地址空间是否已经有内容了
 int move_krlimg(machbstart_t *mbsp, u64_t cpyadr, u64_t cpysz)
 {
-
     if (0xffffffff <= (cpyadr + cpysz) || 1 > cpysz)
     {
         return 0;
@@ -74,6 +74,7 @@ int move_krlimg(machbstart_t *mbsp, u64_t cpyadr, u64_t cpysz)
 
 void init_krlfile(machbstart_t *mbsp)
 {
+    //在映像中查找相应的文件,并复制到对应的地址,并返回文件的大小,
     u64_t sz = r_file_to_padr(mbsp, IMGKRNL_PHYADR, "Cosmos.bin");
     if (0 == sz)
     {
@@ -176,11 +177,13 @@ u64_t r_file_to_padr(machbstart_t *mbsp, u32_t f2adr, char_t *fnm)
         return 0;
     }
     u32_t fpadr = 0, sz = 0;
+    //获取文件在映像中的地址
     get_file_rpadrandsz(fnm, mbsp, &fpadr, &sz);
     if (0 == fpadr || 0 == sz)
     {
         return 0;
     }
+    //检查指定的内存是否被使用
     if (NULL == chk_memsize((e820map_t *)((u32_t)mbsp->mb_e820padr), (u32_t)(mbsp->mb_e820nr), f2adr, sz))
     {
         return 0;
@@ -189,6 +192,7 @@ u64_t r_file_to_padr(machbstart_t *mbsp, u32_t f2adr, char_t *fnm)
     {
         return 0;
     }
+    //copy 文件到固定的内存中
     m2mcopy((void *)fpadr, (void *)f2adr, (sint_t)sz);
     return sz;
 }
