@@ -92,7 +92,7 @@ typedef struct s_MACHBSTART
     u64_t   mb_e820padr; //机器e820数组地址
     u64_t   mb_e820nr;//机器e820数组个数
     u64_t   mb_e820sz; //机器e820数组大小
-    u64_t   mb_e820expadr;
+    u64_t   mb_e820expadr; //保存pyhymmareg结构
     u64_t   mb_e820exnr;
     u64_t   mb_e820exsz;
     u64_t   mb_memznpadr;
