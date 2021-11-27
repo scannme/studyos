@@ -50,6 +50,7 @@ void bmp_print(void* bmfile,machbstart_t* mbsp)
     return;
 }
 
+//显示logo
 void logo(machbstart_t* mbsp)
 {
     u32_t retadr=0,sz=0;
@@ -66,10 +67,12 @@ void logo(machbstart_t* mbsp)
 
 void init_graph(machbstart_t* mbsp)
 {
+    //初始化图形数据结构
     graph_t_init(&mbsp->mb_ghparm);
     init_bgadevice(mbsp);
     if(mbsp->mb_ghparm.gh_mode!=BGAMODE)
     {
+    //获取VBE模式,通过BIOS中断
         get_vbemode(mbsp);
         get_vbemodeinfo(mbsp);
         set_vbemodeinfo();

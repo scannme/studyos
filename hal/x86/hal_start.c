@@ -5,9 +5,11 @@
 **********************************************************/
 #include "cosmostypes.h"
 #include "cosmosmctrl.h"
+//#include "halinc/halinit.h"
 
 void hal_start()
 {
+    init_hal();
     for(;;);
     return;
 }

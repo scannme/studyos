@@ -5,6 +5,7 @@
 ****************************************************************/
 #ifndef _HALGLOBAL_T_H
 #define _HALGLOBAL_T_H
+//全局变量定义变量放在data段
 #define HAL_DEFGLOB_VARIABLE(vartype,varname) \
 EXTERN  __attribute__((section(".data"))) vartype varname
 

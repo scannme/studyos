@@ -175,7 +175,7 @@ void init_bstartpages(machbstart_t *mbsp)
         p[mi] = 0;
         pdpte[mi] = 0;
     }
-    //映射
+    //映射 外层目录16项
     for (uint_t pdei = 0; pdei < 16; pdei++)
     {
         pdpte[pdei] = (u64_t)((u32_t)pde | KPDPTE_RW | KPDPTE_P);
@@ -189,6 +189,7 @@ void init_bstartpages(machbstart_t *mbsp)
     //让顶级页目录中第0项和第()执行同一个页目录指针
     p[((KRNL_VIRTUAL_ADDRESS_START) >> KPML4_SHIFT) & 0x1ff] = (u64_t)((u32_t)pdpte | KPML4_RW | KPML4_P);
     p[0] = (u64_t)((u32_t)pdpte | KPML4_RW | KPML4_P);
+    //把页表首地址保存在机器信息结构中
     mbsp->mb_pml4padr = (u64_t)(KINITPAGE_PHYADR);
     mbsp->mb_subpageslen = (u64_t)(0x1000 * 16 + 0x2000);
     mbsp->mb_kpmapphymemsz = (u64_t)(0x400000000);

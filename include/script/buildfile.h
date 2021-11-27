@@ -3,7 +3,8 @@
 #include "config.h"
 #ifdef CFG_X86_PLATFORM
 
-#define BUILD_HALY_OBJS init_entry.o hal_start.o
+#define BUILD_HALY_OBJS init_entry.o hal_start.o halinit.o halglobal.o\
+    halplatform.o bdvideo.o halcpuctrl.o halprint.o
 #define BUILD_KRNL_OBJS
 #define BUILD_MEMY_OBJS
 #define BUILD_FSYS_OBJS

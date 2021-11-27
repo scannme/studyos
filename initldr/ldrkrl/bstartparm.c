@@ -48,17 +48,24 @@ void init_bstartparm()
 {
     machbstart_t *mbsp = MBSPADR;
     machbstart_t_init(mbsp);
+    //检查cpu
     init_chkcpu(mbsp);
+    //获取内存布局
     init_mem(mbsp);
     if (0 == get_wt_imgfilesz(mbsp))
     {
         kerror("imgfilesz 0");
     }
+    //初始化内核栈
     init_krlinitstack(mbsp);
+    //放置内核文件
     init_krlfile(mbsp);
+    //放置字库文件
     init_defutfont(mbsp);
     init_meme820(mbsp);
+    //建立MMU文件
     init_bstartpages(mbsp);
+    //设置图形模式
     init_graph(mbsp);
     return;
 }

@@ -3,7 +3,7 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ADDT_EMTP_FLG	include/halinc/halmm_t.h	37;"	d
 ADDT_FUEM_FLG	include/halinc/halmm_t.h	38;"	d
 ADDT_FULL_FLG	include/halinc/halmm_t.h	39;"	d
@@ -25,35 +25,35 @@ BAFH_STUS_DIVP	include/halinc/memarea_t.h	47;"	d
 BAFH_STUS_INIT	include/halinc/memarea_t.h	45;"	d
 BAFH_STUS_ONEM	include/halinc/memarea_t.h	46;"	d
 BASE_MEM_SZ	initldr/include/chkcpmm_t.h	11;"	d
-BFH_BUF_SZ	include/halinc/halplatform_t.h	119;"	d
+BFH_BUF_SZ	include/halinc/halplatform_t.h	121;"	d
 BFH_BUF_SZ	initldr/include/ldrtype.h	8;"	d
-BFH_ONERW_SZ	include/halinc/halplatform_t.h	120;"	d
+BFH_ONERW_SZ	include/halinc/halplatform_t.h	122;"	d
 BFH_ONERW_SZ	initldr/include/ldrtype.h	9;"	d
-BFH_RWALL_OK	include/halinc/halplatform_t.h	123;"	d
+BFH_RWALL_OK	include/halinc/halplatform_t.h	125;"	d
 BFH_RWALL_OK	initldr/include/ldrtype.h	12;"	d
-BFH_RWONE_ER	include/halinc/halplatform_t.h	122;"	d
+BFH_RWONE_ER	include/halinc/halplatform_t.h	124;"	d
 BFH_RWONE_ER	initldr/include/ldrtype.h	11;"	d
-BFH_RWONE_OK	include/halinc/halplatform_t.h	121;"	d
+BFH_RWONE_OK	include/halinc/halplatform_t.h	123;"	d
 BFH_RWONE_OK	initldr/include/ldrtype.h	10;"	d
-BFH_RW_R	include/halinc/halplatform_t.h	116;"	d
+BFH_RW_R	include/halinc/halplatform_t.h	118;"	d
 BFH_RW_R	initldr/include/ldrtype.h	5;"	d
-BFH_RW_W	include/halinc/halplatform_t.h	117;"	d
+BFH_RW_W	include/halinc/halplatform_t.h	119;"	d
 BFH_RW_W	initldr/include/ldrtype.h	6;"	d
-BGAMODE	include/halinc/bdvideo_t.h	89;"	d
+BGAMODE	include/halinc/bdvideo_t.h	90;"	d
 BGAMODE	initldr/include/ldrtype.h	250;"	d
-BGA_DEV_ID0	include/halinc/bdvideo_t.h	252;"	d
+BGA_DEV_ID0	include/halinc/bdvideo_t.h	259;"	d
 BGA_DEV_ID0	initldr/include/ldrtype.h	430;"	d
-BGA_DEV_ID1	include/halinc/bdvideo_t.h	253;"	d
+BGA_DEV_ID1	include/halinc/bdvideo_t.h	260;"	d
 BGA_DEV_ID1	initldr/include/ldrtype.h	431;"	d
-BGA_DEV_ID2	include/halinc/bdvideo_t.h	254;"	d
+BGA_DEV_ID2	include/halinc/bdvideo_t.h	261;"	d
 BGA_DEV_ID2	initldr/include/ldrtype.h	432;"	d
-BGA_DEV_ID3	include/halinc/bdvideo_t.h	255;"	d
+BGA_DEV_ID3	include/halinc/bdvideo_t.h	262;"	d
 BGA_DEV_ID3	initldr/include/ldrtype.h	433;"	d
-BGA_DEV_ID4	include/halinc/bdvideo_t.h	256;"	d
+BGA_DEV_ID4	include/halinc/bdvideo_t.h	263;"	d
 BGA_DEV_ID4	initldr/include/ldrtype.h	434;"	d
-BGA_DEV_ID5	include/halinc/bdvideo_t.h	257;"	d
+BGA_DEV_ID5	include/halinc/bdvideo_t.h	264;"	d
 BGA_DEV_ID5	initldr/include/ldrtype.h	435;"	d
-BGRA	include/halinc/bdvideo_t.h	84;"	d
+BGRA	include/halinc/bdvideo_t.h	85;"	d
 BGRA	initldr/include/ldrtype.h	246;"	d
 BLK128KB_BITL	include/halinc/halmm_t.h	48;"	d
 BLK128KB_MASK	include/halinc/halmm_t.h	55;"	d
@@ -75,13 +75,13 @@ BLK512KB_MASK	include/halinc/halmm_t.h	57;"	d
 BLK512KB_SIZE	include/halinc/halmm_t.h	43;"	d
 BLKSZ_HEAD_MAX	include/halinc/halmm_t.h	62;"	d
 BUILDFILE_H	include/script/buildfile.h	2;"	d
-BUILD_DRIV_OBJS	include/script/buildfile.h	10;"	d
-BUILD_FSYS_OBJS	include/script/buildfile.h	9;"	d
+BUILD_DRIV_OBJS	include/script/buildfile.h	11;"	d
+BUILD_FSYS_OBJS	include/script/buildfile.h	10;"	d
 BUILD_HALY_OBJS	include/script/buildfile.h	6;"	d
-BUILD_KRNL_OBJS	include/script/buildfile.h	7;"	d
-BUILD_LIBS_OBJS	include/script/buildfile.h	11;"	d
-BUILD_LINK_OBJS	include/script/buildfile.h	14;"	d
-BUILD_MEMY_OBJS	include/script/buildfile.h	8;"	d
+BUILD_KRNL_OBJS	include/script/buildfile.h	8;"	d
+BUILD_LIBS_OBJS	include/script/buildfile.h	12;"	d
+BUILD_LINK_OBJS	include/script/buildfile.h	15;"	d
+BUILD_MEMY_OBJS	include/script/buildfile.h	9;"	d
 BUILD_MK_BOOT_OBJS	build/krnlobjs.mk	/^BUILD_MK_BOOT_OBJS :=$/;"	m
 BUILD_MK_BOOT_OBJS	script/krnlobjs.S	/^BUILD_MK_BOOT_OBJS +=BUILD_BOOT_OBJS$/;"	l
 BUILD_MK_BOOT_OBJS	script/krnlobjs.S	/^BUILD_MK_BOOT_OBJS :=$/;"	d
@@ -112,7 +112,7 @@ BUILD_MK_TASK_OBJS	script/krnlobjs.S	/^BUILD_MK_TASK_OBJS :=$/;"	d
 BUILD_PATH	Makefile	/^BUILD_PATH = .\/build$/;"	m
 BUILD_PATH	Makefile.x86	/^BUILD_PATH = .\/build\/$/;"	d
 BUILD_PATH	initldr/Makefile	/^BUILD_PATH = .\/build$/;"	m
-BUILD_TASK_OBJS	include/script/buildfile.h	12;"	d
+BUILD_TASK_OBJS	include/script/buildfile.h	13;"	d
 BankSize	include/halinc/bdvideo_t.h	/^    u8_t  BankSize;$/;"	m	struct:s_VBEOMINFO
 BankSize	initldr/include/ldrtype.h	/^    u8_t  BankSize;$/;"	m	struct:s_VBEOMINFO
 BitsPerPixel	include/halinc/bdvideo_t.h	/^    u8_t  BitsPerPixel;$/;"	m	struct:s_VBEOMINFO
@@ -229,9 +229,9 @@ EXTERN	initldr/include/type.h	50;"	d
 FALSE	include/bastypeinc/bastype_t.h	48;"	d
 FALSE	initldr/include/type.h	54;"	d
 FAUTCALL	include/halinc/io.h	46;"	d
-FHDSC_NMAX	include/halinc/halplatform_t.h	125;"	d
+FHDSC_NMAX	include/halinc/halplatform_t.h	127;"	d
 FHDSC_NMAX	initldr/include/ldrtype.h	14;"	d
-FHDSC_SZMAX	include/halinc/halplatform_t.h	126;"	d
+FHDSC_SZMAX	include/halinc/halplatform_t.h	128;"	d
 FHDSC_SZMAX	initldr/include/ldrtype.h	15;"	d
 FONTFILE	Makefile	/^FONTFILE = font.fnt$/;"	m
 GDTBASE	initldr/ldrkrl/imginithead.asm	/^GDTBASE	dd GDT_START$/;"	d
@@ -245,16 +245,17 @@ GDT_PTR	initldr/ldrkrl/imginithead.asm	/^GDT_PTR:$/;"	l
 GDT_PTR	initldr/ldrkrl/ldrkrl32.asm	/^GDT_PTR:$/;"	l
 GDT_START	initldr/ldrkrl/imginithead.asm	/^GDT_START:$/;"	l
 GDT_START	initldr/ldrkrl/ldrkrl32.asm	/^GDT_START:$/;"	l
-GPUMODE	include/halinc/bdvideo_t.h	88;"	d
+GPUMODE	include/halinc/bdvideo_t.h	89;"	d
 GPUMODE	initldr/include/ldrtype.h	249;"	d
 GreenFieldPosition	include/halinc/bdvideo_t.h	/^    u8_t  GreenFieldPosition;$/;"	m	struct:s_VBEOMINFO
 GreenFieldPosition	initldr/include/ldrtype.h	/^    u8_t  GreenFieldPosition;$/;"	m	struct:s_VBEOMINFO
 GreenMaskSize	include/halinc/bdvideo_t.h	/^    u8_t  GreenMaskSize;$/;"	m	struct:s_VBEOMINFO
 GreenMaskSize	initldr/include/ldrtype.h	/^    u8_t  GreenMaskSize;$/;"	m	struct:s_VBEOMINFO
 GxH_strwrite	initldr/ldrkrl/vgastr.c	/^void GxH_strwrite(char_t *str, cursor_t *cursptr)$/;"	f
+HALGOBAL_HEAD	hal/x86/halglobal.c	4;"	d	file:
 HALT	include/halinc/io.h	65;"	d
 HALYMFLGS	Makefile.x86	/^HALYMFLGS = -C $(BUILD_PATH) -f hal.mk$/;"	d
-HAL_DEFGLOB_VARIABLE	include/halinc/halglobal_t.h	8;"	d
+HAL_DEFGLOB_VARIABLE	include/halinc/halglobal_t.h	9;"	d
 HEADFILE_PATH	build/drv.mk	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	m
 HEADFILE_PATH	build/hal.mk	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	m
 HEADFILE_PATH	build/krl.mk	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	m
@@ -345,10 +346,10 @@ KERNELCE_PATH	script/lib.S	/^KERNELCE_PATH	= ..\/lib\/$/;"	d
 KERNELCE_PATH	script/task.S	/^KERNELCE_PATH	= ..\/task\/$/;"	d
 KERNEL_PHYI_ADDR	include/halinc/halplatform_t.h	19;"	d
 KERNEL_VIRT_ADDR	include/halinc/halplatform_t.h	18;"	d
-KERNL_BINF_FILE	include/script/buildfile.h	21;"	d
-KERNL_ELFF_FILE	include/script/buildfile.h	20;"	d
+KERNL_BINF_FILE	include/script/buildfile.h	22;"	d
+KERNL_ELFF_FILE	include/script/buildfile.h	21;"	d
 KERNL_MK_BINF_FILE	build/krnlobjs.mk	/^KERNL_MK_BINF_FILE :=$/;"	m
-KERNL_MK_BINF_FILE	script/krnlobjs.S	/^KERNL_MK_BINF_FILE +=KERNL_BINF_FILE/;"	l
+KERNL_MK_BINF_FILE	script/krnlobjs.S	/^KERNL_MK_BINF_FILE +=KERNL_BINF_FILE$/;"	l
 KERNL_MK_BINF_FILE	script/krnlobjs.S	/^KERNL_MK_BINF_FILE :=$/;"	d
 KERNL_MK_ELFF_FILE	build/krnlobjs.mk	/^KERNL_MK_ELFF_FILE :=$/;"	m
 KERNL_MK_ELFF_FILE	script/krnlobjs.S	/^KERNL_MK_ELFF_FILE +=KERNL_ELFF_FILE$/;"	l
@@ -414,16 +415,16 @@ KPML4_US	initldr/include/ldrtype.h	35;"	d
 KRNLBOOT_PATH	initldr/build/initldr.mk	/^KRNLBOOT_PATH = ..\/ldrkrl\/$/;"	m
 KRNLEXCIMG	Makefile	/^KRNLEXCIMG = Cosmos.bin$/;"	m
 KRNLMFLGS	Makefile.x86	/^KRNLMFLGS = -C $(BUILD_PATH) -f krl.mk$/;"	d
-KRNL_ADDR_ERROR	include/halinc/halplatform_t.h	47;"	d
+KRNL_ADDR_ERROR	include/halinc/halplatform_t.h	48;"	d
 KRNL_INRAM_START	include/halinc/halplatform_t.h	15;"	d
-KRNL_MAP_PHYADDRESS_END	include/halinc/halplatform_t.h	43;"	d
-KRNL_MAP_PHYADDRESS_SIZE	include/halinc/halplatform_t.h	44;"	d
-KRNL_MAP_PHYADDRESS_START	include/halinc/halplatform_t.h	42;"	d
-KRNL_MAP_VIRTADDRESS_END	include/halinc/halplatform_t.h	46;"	d
-KRNL_MAP_VIRTADDRESS_SIZE	include/halinc/halplatform_t.h	37;"	d
-KRNL_MAP_VIRTADDRESS_START	include/halinc/halplatform_t.h	45;"	d
-KRNL_VIRTUAL_ADDRESS_END	include/halinc/halplatform_t.h	39;"	d
-KRNL_VIRTUAL_ADDRESS_START	include/halinc/halplatform_t.h	38;"	d
+KRNL_MAP_PHYADDRESS_END	include/halinc/halplatform_t.h	44;"	d
+KRNL_MAP_PHYADDRESS_SIZE	include/halinc/halplatform_t.h	45;"	d
+KRNL_MAP_PHYADDRESS_START	include/halinc/halplatform_t.h	43;"	d
+KRNL_MAP_VIRTADDRESS_END	include/halinc/halplatform_t.h	47;"	d
+KRNL_MAP_VIRTADDRESS_SIZE	include/halinc/halplatform_t.h	38;"	d
+KRNL_MAP_VIRTADDRESS_START	include/halinc/halplatform_t.h	46;"	d
+KRNL_VIRTUAL_ADDRESS_END	include/halinc/halplatform_t.h	40;"	d
+KRNL_VIRTUAL_ADDRESS_START	include/halinc/halplatform_t.h	39;"	d
 KRNL_VIRTUAL_ADDRESS_START	initldr/include/ldrtype.h	32;"	d
 KUC_DELFLG	include/halinc/kmsob_t.h	12;"	d
 KUC_DSYFLG	include/halinc/kmsob_t.h	13;"	d
@@ -440,8 +441,8 @@ LDRKRLENTRY_H	initldr/include/ldrkrlentry.h	2;"	d
 LIBSMFLGS	Makefile.x86	/^LIBSMFLGS = -C $(BUILD_PATH) -f lib.mk$/;"	d
 LINEAR_ADDRESS	script/cosmoslink.S	/^LINEAR_ADDRESS = 0x2000000;$/;"	d
 LINKMFLGS	Makefile.x86	/^LINKMFLGS = -C $(BUILD_PATH) -f link.mk$/;"	d
-LINKR_IPUT_FILE	include/script/buildfile.h	18;"	d
-LINKR_OPUT_FILE	include/script/buildfile.h	19;"	d
+LINKR_IPUT_FILE	include/script/buildfile.h	19;"	d
+LINKR_OPUT_FILE	include/script/buildfile.h	20;"	d
 LINK_LINE_ADDR	include/halinc/halplatform_t.h	17;"	d
 LINK_VIRT_ADDR	include/halinc/halplatform_t.h	16;"	d
 LKHEAD_D	include/bastypeinc/bastype_t.h	55;"	d
@@ -502,7 +503,7 @@ MAPF_SZ_4MB	include/halinc/halmm_t.h	23;"	d
 MAPF_SZ_BIT	include/halinc/halmm_t.h	19;"	d
 MAPONE_SIZE	include/halinc/halmm_t.h	34;"	d
 MAP_FLAGES_VAL	include/halinc/halmm_t.h	35;"	d
-MAX_CHARBITBY	include/halinc/bdvideo_t.h	181;"	d
+MAX_CHARBITBY	include/halinc/bdvideo_t.h	182;"	d
 MAX_CHARBITBY	initldr/include/ldrtype.h	342;"	d
 MA_HWAD_LEND	include/halinc/memarea_t.h	90;"	d
 MA_HWAD_LSTART	include/halinc/memarea_t.h	88;"	d
@@ -518,16 +519,16 @@ MA_TYPE_INIT	include/halinc/memarea_t.h	82;"	d
 MA_TYPE_KRNL	include/halinc/memarea_t.h	84;"	d
 MA_TYPE_PROC	include/halinc/memarea_t.h	85;"	d
 MA_TYPE_SHAR	include/halinc/memarea_t.h	86;"	d
-MBSPADR	include/halinc/halplatform_t.h	113;"	d
+MBSPADR	include/halinc/halplatform_t.h	115;"	d
 MBSPADR	initldr/include/ldrtype.h	417;"	d
-MBS_MIGC	include/halinc/halplatform_t.h	50;"	d
+MBS_MIGC	include/halinc/halplatform_t.h	51;"	d
 MBS_MIGC	initldr/include/ldrtype.h	357;"	d
 MBT2_MAGIC	initldr/ldrkrl/imginithead.asm	/^MBT2_MAGIC	EQU 0xe85250d6$/;"	d
 MBT_HDR_FLAGS	initldr/ldrkrl/imginithead.asm	/^MBT_HDR_FLAGS	EQU 0x00010003$/;"	d
 MBT_HDR_MAGIC	initldr/ldrkrl/imginithead.asm	/^MBT_HDR_MAGIC	EQU 0x1BADB002$/;"	d
-MDC_ENDGIC	include/halinc/halplatform_t.h	127;"	d
+MDC_ENDGIC	include/halinc/halplatform_t.h	129;"	d
 MDC_ENDGIC	initldr/include/ldrtype.h	16;"	d
-MDC_RVGIC	include/halinc/halplatform_t.h	128;"	d
+MDC_RVGIC	include/halinc/halplatform_t.h	130;"	d
 MDC_RVGIC	initldr/include/ldrtype.h	17;"	d
 MDIVMER_ARR_BMAX	include/halinc/memarea_t.h	66;"	d
 MDIVMER_ARR_LMAX	include/halinc/memarea_t.h	65;"	d
@@ -552,7 +553,7 @@ MF_UINDX_MAX	include/halinc/msadsc_t.h	23;"	d
 MKDIR	Makefile	/^MKDIR = mkdir$/;"	m
 MKDIR	Makefile.x86	/^MKDIR = mkdir$/;"	d
 MKDIR	initldr/Makefile	/^MKDIR = mkdir$/;"	m
-MLOSDSC_OFF	include/halinc/halplatform_t.h	130;"	d
+MLOSDSC_OFF	include/halinc/halplatform_t.h	132;"	d
 MLOSDSC_OFF	initldr/include/ldrtype.h	29;"	d
 MMSTUS_ERR	include/halinc/memarea_t.h	9;"	d
 MMSTUS_OK	include/halinc/memarea_t.h	10;"	d
@@ -674,19 +675,19 @@ PUBLIC	initldr/include/type.h	48;"	d
 PhysBasePtr	include/halinc/bdvideo_t.h	/^    u32_t PhysBasePtr;$/;"	m	struct:s_VBEOMINFO
 PhysBasePtr	initldr/include/ldrtype.h	/^    u32_t PhysBasePtr;$/;"	m	struct:s_VBEOMINFO
 RAM_ACPINVS	include/halinc/halmm_t.h	84;"	d
-RAM_ACPINVS	include/halinc/halplatform_t.h	134;"	d
+RAM_ACPINVS	include/halinc/halplatform_t.h	136;"	d
 RAM_ACPINVS	initldr/include/ldrtype.h	165;"	d
 RAM_ACPIREC	include/halinc/halmm_t.h	83;"	d
-RAM_ACPIREC	include/halinc/halplatform_t.h	133;"	d
+RAM_ACPIREC	include/halinc/halplatform_t.h	135;"	d
 RAM_ACPIREC	initldr/include/ldrtype.h	164;"	d
 RAM_AREACON	include/halinc/halmm_t.h	85;"	d
-RAM_AREACON	include/halinc/halplatform_t.h	135;"	d
+RAM_AREACON	include/halinc/halplatform_t.h	137;"	d
 RAM_AREACON	initldr/include/ldrtype.h	166;"	d
 RAM_RESERV	include/halinc/halmm_t.h	82;"	d
-RAM_RESERV	include/halinc/halplatform_t.h	132;"	d
+RAM_RESERV	include/halinc/halplatform_t.h	134;"	d
 RAM_RESERV	initldr/include/ldrtype.h	163;"	d
 RAM_USABLE	include/halinc/halmm_t.h	81;"	d
-RAM_USABLE	include/halinc/halplatform_t.h	131;"	d
+RAM_USABLE	include/halinc/halplatform_t.h	133;"	d
 RAM_USABLE	initldr/include/ldrtype.h	162;"	d
 READHD_BUFADR	initldr/include/realparm.h	17;"	d
 REALDRV_PHYADR	initldr/include/ldrtype.h	18;"	d
@@ -753,55 +754,55 @@ TIMEMODE	include/halinc/io.h	36;"	d
 TRUE	include/bastypeinc/bastype_t.h	47;"	d
 TRUE	initldr/include/type.h	53;"	d
 UMOD_EFLAGS	include/halinc/halgdtidt_t.h	20;"	d
-USER_VIRTUAL_ADDRESS_END	include/halinc/halplatform_t.h	41;"	d
-USER_VIRTUAL_ADDRESS_START	include/halinc/halplatform_t.h	40;"	d
+USER_VIRTUAL_ADDRESS_END	include/halinc/halplatform_t.h	42;"	d
+USER_VIRTUAL_ADDRESS_START	include/halinc/halplatform_t.h	41;"	d
 U_CS_IDX	include/halinc/halgdtidt_t.h	17;"	d
 U_DS_IDX	include/halinc/halgdtidt_t.h	18;"	d
 VBEINFO_ADR	initldr/include/realparm.h	14;"	d
 VBEMINFO_ADR	initldr/include/realparm.h	15;"	d
-VBEMODE	include/halinc/bdvideo_t.h	87;"	d
+VBEMODE	include/halinc/bdvideo_t.h	88;"	d
 VBEMODE	initldr/include/ldrtype.h	248;"	d
-VBE_DISPI_BPP_15	include/halinc/bdvideo_t.h	260;"	d
+VBE_DISPI_BPP_15	include/halinc/bdvideo_t.h	267;"	d
 VBE_DISPI_BPP_15	initldr/include/ldrtype.h	438;"	d
-VBE_DISPI_BPP_16	include/halinc/bdvideo_t.h	261;"	d
+VBE_DISPI_BPP_16	include/halinc/bdvideo_t.h	268;"	d
 VBE_DISPI_BPP_16	initldr/include/ldrtype.h	439;"	d
-VBE_DISPI_BPP_24	include/halinc/bdvideo_t.h	262;"	d
+VBE_DISPI_BPP_24	include/halinc/bdvideo_t.h	269;"	d
 VBE_DISPI_BPP_24	initldr/include/ldrtype.h	440;"	d
-VBE_DISPI_BPP_32	include/halinc/bdvideo_t.h	263;"	d
+VBE_DISPI_BPP_32	include/halinc/bdvideo_t.h	270;"	d
 VBE_DISPI_BPP_32	initldr/include/ldrtype.h	441;"	d
-VBE_DISPI_BPP_4	include/halinc/bdvideo_t.h	258;"	d
+VBE_DISPI_BPP_4	include/halinc/bdvideo_t.h	265;"	d
 VBE_DISPI_BPP_4	initldr/include/ldrtype.h	436;"	d
-VBE_DISPI_BPP_8	include/halinc/bdvideo_t.h	259;"	d
+VBE_DISPI_BPP_8	include/halinc/bdvideo_t.h	266;"	d
 VBE_DISPI_BPP_8	initldr/include/ldrtype.h	437;"	d
-VBE_DISPI_DISABLED	include/halinc/bdvideo_t.h	264;"	d
+VBE_DISPI_DISABLED	include/halinc/bdvideo_t.h	271;"	d
 VBE_DISPI_DISABLED	initldr/include/ldrtype.h	442;"	d
-VBE_DISPI_ENABLED	include/halinc/bdvideo_t.h	265;"	d
+VBE_DISPI_ENABLED	include/halinc/bdvideo_t.h	272;"	d
 VBE_DISPI_ENABLED	initldr/include/ldrtype.h	443;"	d
-VBE_DISPI_INDEX_BANK	include/halinc/bdvideo_t.h	247;"	d
+VBE_DISPI_INDEX_BANK	include/halinc/bdvideo_t.h	254;"	d
 VBE_DISPI_INDEX_BANK	initldr/include/ldrtype.h	425;"	d
-VBE_DISPI_INDEX_BPP	include/halinc/bdvideo_t.h	245;"	d
+VBE_DISPI_INDEX_BPP	include/halinc/bdvideo_t.h	252;"	d
 VBE_DISPI_INDEX_BPP	initldr/include/ldrtype.h	423;"	d
-VBE_DISPI_INDEX_ENABLE	include/halinc/bdvideo_t.h	246;"	d
+VBE_DISPI_INDEX_ENABLE	include/halinc/bdvideo_t.h	253;"	d
 VBE_DISPI_INDEX_ENABLE	initldr/include/ldrtype.h	424;"	d
-VBE_DISPI_INDEX_ID	include/halinc/bdvideo_t.h	242;"	d
+VBE_DISPI_INDEX_ID	include/halinc/bdvideo_t.h	249;"	d
 VBE_DISPI_INDEX_ID	initldr/include/ldrtype.h	420;"	d
-VBE_DISPI_INDEX_VIRT_HEIGHT	include/halinc/bdvideo_t.h	249;"	d
+VBE_DISPI_INDEX_VIRT_HEIGHT	include/halinc/bdvideo_t.h	256;"	d
 VBE_DISPI_INDEX_VIRT_HEIGHT	initldr/include/ldrtype.h	427;"	d
-VBE_DISPI_INDEX_VIRT_WIDTH	include/halinc/bdvideo_t.h	248;"	d
+VBE_DISPI_INDEX_VIRT_WIDTH	include/halinc/bdvideo_t.h	255;"	d
 VBE_DISPI_INDEX_VIRT_WIDTH	initldr/include/ldrtype.h	426;"	d
-VBE_DISPI_INDEX_XRES	include/halinc/bdvideo_t.h	243;"	d
+VBE_DISPI_INDEX_XRES	include/halinc/bdvideo_t.h	250;"	d
 VBE_DISPI_INDEX_XRES	initldr/include/ldrtype.h	421;"	d
-VBE_DISPI_INDEX_X_OFFSET	include/halinc/bdvideo_t.h	250;"	d
+VBE_DISPI_INDEX_X_OFFSET	include/halinc/bdvideo_t.h	257;"	d
 VBE_DISPI_INDEX_X_OFFSET	initldr/include/ldrtype.h	428;"	d
-VBE_DISPI_INDEX_YRES	include/halinc/bdvideo_t.h	244;"	d
+VBE_DISPI_INDEX_YRES	include/halinc/bdvideo_t.h	251;"	d
 VBE_DISPI_INDEX_YRES	initldr/include/ldrtype.h	422;"	d
-VBE_DISPI_INDEX_Y_OFFSET	include/halinc/bdvideo_t.h	251;"	d
+VBE_DISPI_INDEX_Y_OFFSET	include/halinc/bdvideo_t.h	258;"	d
 VBE_DISPI_INDEX_Y_OFFSET	initldr/include/ldrtype.h	429;"	d
-VBE_DISPI_IOPORT_DATA	include/halinc/bdvideo_t.h	241;"	d
+VBE_DISPI_IOPORT_DATA	include/halinc/bdvideo_t.h	248;"	d
 VBE_DISPI_IOPORT_DATA	initldr/include/ldrtype.h	419;"	d
-VBE_DISPI_IOPORT_INDEX	include/halinc/bdvideo_t.h	240;"	d
+VBE_DISPI_IOPORT_INDEX	include/halinc/bdvideo_t.h	247;"	d
 VBE_DISPI_IOPORT_INDEX	initldr/include/ldrtype.h	418;"	d
-VBE_DISPI_LFB_ENABLED	include/halinc/bdvideo_t.h	266;"	d
+VBE_DISPI_LFB_ENABLED	include/halinc/bdvideo_t.h	273;"	d
 VBE_DISPI_LFB_ENABLED	initldr/include/ldrtype.h	444;"	d
 VBOXVMFLGS	Makefile	/^VBOXVMFLGS = -C $(VM_PATH) -f vbox.mkf$/;"	m
 VDIFNAME	Makefile	/^VDIFNAME = hd.vdi$/;"	m
@@ -1039,8 +1040,26 @@ bf_size	include/halinc/bdvideo_t.h	/^    u32_t bf_size;$/;"	m	struct:s_BMFHEAD
 bf_size	initldr/include/ldrtype.h	/^    u32_t bf_size;$/;"	m	struct:s_BMFHEAD
 bf_tag	include/halinc/bdvideo_t.h	/^    u16_t bf_tag;   \/\/0x4d42$/;"	m	struct:s_BMFHEAD
 bf_tag	initldr/include/ldrtype.h	/^    u16_t bf_tag;   \/\/0x4d42$/;"	m	struct:s_BMFHEAD
+bga_disp_nxtbank	hal/x86/bdvideo.c	/^void bga_disp_nxtbank(void *ghpdev)$/;"	f
+bga_dxreadpix	hal/x86/bdvideo.c	/^pixl_t bga_dxreadpix(void *ghpdev, uint_t x, uint_t y)$/;"	f
+bga_dxwritepix	hal/x86/bdvideo.c	/^void bga_dxwritepix(void *ghpdev, pixl_t pix, uint_t x, uint_t y)$/;"	f
+bga_flush	hal/x86/bdvideo.c	/^void bga_flush(void *ghpdev)$/;"	f
+bga_get_vwh	hal/x86/bdvideo.c	/^sint_t bga_get_vwh(void *ghpdev, uint_t *rvwt, uint_t *rvhi)$/;"	f
+bga_get_xy	hal/x86/bdvideo.c	/^sint_t bga_get_xy(void *ghpdev, uint_t *rx, uint_t *ry)$/;"	f
+bga_get_xyoffset	hal/x86/bdvideo.c	/^sint_t bga_get_xyoffset(void *ghpdev, uint_t *rxoff, uint_t *ryoff)$/;"	f
+bga_ioctrl	hal/x86/bdvideo.c	/^sint_t bga_ioctrl(void *ghpdev, void *outp, uint_t iocode)$/;"	f
+bga_read	hal/x86/bdvideo.c	/^size_t bga_read(void *ghpdev, void *outp, size_t rdsz)$/;"	f
+bga_read_reg	hal/x86/bdvideo.c	/^u16_t bga_read_reg(u16_t index)$/;"	f
 bga_read_reg	initldr/ldrkrl/graph.c	/^u16_t bga_read_reg(u16_t index)$/;"	f
+bga_readpix	hal/x86/bdvideo.c	/^pixl_t bga_readpix(void *ghpdev, uint_t x, uint_t y)$/;"	f
+bga_set_bank	hal/x86/bdvideo.c	/^sint_t bga_set_bank(void *ghpdev, sint_t bnr)$/;"	f
+bga_set_vwh	hal/x86/bdvideo.c	/^sint_t bga_set_vwh(void *ghpdev, uint_t vwt, uint_t vhi)$/;"	f
+bga_set_xy	hal/x86/bdvideo.c	/^sint_t bga_set_xy(void *ghpdev, uint_t x, uint_t y)$/;"	f
+bga_set_xyoffset	hal/x86/bdvideo.c	/^sint_t bga_set_xyoffset(void *ghpdev, uint_t xoff, uint_t yoff)$/;"	f
+bga_write	hal/x86/bdvideo.c	/^size_t bga_write(void *ghpdev, void *inp, size_t wesz)$/;"	f
+bga_write_reg	hal/x86/bdvideo.c	/^void bga_write_reg(u16_t index, u16_t data)$/;"	f
 bga_write_reg	initldr/ldrkrl/graph.c	/^void bga_write_reg(u16_t index, u16_t data)$/;"	f
+bga_writepix	hal/x86/bdvideo.c	/^void bga_writepix(void *ghpdev, pixl_t pix, uint_t x, uint_t y)$/;"	f
 bi_bcount	include/halinc/bdvideo_t.h	/^    u16_t bi_bcount;$/;"	m	struct:s_BITMINFO
 bi_bcount	initldr/include/ldrtype.h	/^    u16_t bi_bcount;$/;"	m	struct:s_BITMINFO
 bi_clrimport	include/halinc/bdvideo_t.h	/^    u32_t bi_clrimport;$/;"	m	struct:s_BITMINFO
@@ -1096,6 +1115,7 @@ cl_r	initldr/include/ldrtype.h	/^    u8_t cl_r;$/;"	m	struct:s_PIXCL
 clear_screen	initldr/ldrkrl/vgastr.c	/^void clear_screen(u16_t srrv)$/;"	f
 cleardisp	initldr/ldrkrl/realintsve.asm	/^cleardisp:$/;"	l
 close_curs	initldr/ldrkrl/vgastr.c	/^void close_curs()$/;"	f
+cosmos_version	hal/x86/bdvideo.c	/^const char *cosmos_version = "Cosmos\\n内核版本:00.01\\n";$/;"	v
 cpmty_mode	initldr/ldrkrl/ldrkrl32.asm	/^cpmty_mode:$/;"	l
 cpuflg_t	include/bastypeinc/bastype_t.h	/^typedef u64_t cpuflg_t;$/;"	t
 cpuflg_t	initldr/include/type.h	/^typedef u64_t cpuflg_t;$/;"	t
@@ -1152,6 +1172,8 @@ drv_t	include/bastypeinc/bastype_t.h	/^typedef unsigned long drv_t;$/;"	t
 drv_t	initldr/include/type.h	/^typedef unsigned long drv_t; $/;"	t
 drvstus_t	include/bastypeinc/bastype_t.h	/^typedef sint_t drvstus_t;$/;"	t
 drvstus_t	initldr/include/type.h	/^typedef sint_t drvstus_t;$/;"	t
+drxput_pixonechar	hal/x86/bdvideo.c	/^void drxput_pixonechar(dftgraph_t *kghp, u32_t unicode, pixl_t pix)$/;"	f
+drxw_pixcolor	hal/x86/bdvideo.c	/^void drxw_pixcolor(dftgraph_t *kghp, u32_t x, u32_t y, pixl_t pix)$/;"	f
 e820map_t	include/halinc/halplatform_t.h	/^}__attribute__((packed)) e820map_t;$/;"	t	typeref:struct:s_e820
 e820map_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) e820map_t;$/;"	t	typeref:struct:s_e820
 eGdtLen	hal/x86/init_entry.asm	/^eGdtLen			equ	$ - enull_x64_dsc			; GDT长度$/;"	d
@@ -1194,29 +1216,33 @@ fh_sectnr	include/halinc/bdvideo_t.h	/^    u8_t  fh_sectnr;$/;"	m	struct:s_FONTF
 fh_sectnr	initldr/include/ldrtype.h	/^    u8_t  fh_sectnr;$/;"	m	struct:s_FONTFHDER
 fh_wcpflg	include/halinc/bdvideo_t.h	/^    u16_t fh_wcpflg;$/;"	m	struct:s_FONTFHDER
 fh_wcpflg	initldr/include/ldrtype.h	/^    u16_t fh_wcpflg;$/;"	m	struct:s_FONTFHDER
-fhd_frealsz	include/halinc/halplatform_t.h	/^    u64_t fhd_frealsz;$/;"	m	struct:s_fhdsc
+fhd_frealsz	include/halinc/halplatform_t.h	/^    u64_t fhd_frealsz;\/\/文件实际大小$/;"	m	struct:s_fhdsc
 fhd_frealsz	initldr/include/ldrtype.h	/^    u64_t fhd_frealsz;$/;"	m	struct:s_fhdsc
-fhd_fsum	include/halinc/halplatform_t.h	/^    u64_t fhd_fsum;$/;"	m	struct:s_fhdsc
+fhd_fsum	include/halinc/halplatform_t.h	/^    u64_t fhd_fsum;\/\/文件校验和$/;"	m	struct:s_fhdsc
 fhd_fsum	initldr/include/ldrtype.h	/^    u64_t fhd_fsum;$/;"	m	struct:s_fhdsc
-fhd_id	include/halinc/halplatform_t.h	/^    u64_t fhd_id;$/;"	m	struct:s_fhdsc
+fhd_id	include/halinc/halplatform_t.h	/^    u64_t fhd_id;\/\/文件id$/;"	m	struct:s_fhdsc
 fhd_id	initldr/include/ldrtype.h	/^    u64_t fhd_id;$/;"	m	struct:s_fhdsc
-fhd_intsfend	include/halinc/halplatform_t.h	/^    u64_t fhd_intsfend;$/;"	m	struct:s_fhdsc
+fhd_intsfend	include/halinc/halplatform_t.h	/^    u64_t fhd_intsfend;\/\/文件实际的结束偏移:$/;"	m	struct:s_fhdsc
 fhd_intsfend	initldr/include/ldrtype.h	/^    u64_t fhd_intsfend;$/;"	m	struct:s_fhdsc
-fhd_intsfsoff	include/halinc/halplatform_t.h	/^    u64_t fhd_intsfsoff;$/;"	m	struct:s_fhdsc
+fhd_intsfsoff	include/halinc/halplatform_t.h	/^    u64_t fhd_intsfsoff; \/\/文件在映像文件位置开始的偏移$/;"	m	struct:s_fhdsc
 fhd_intsfsoff	initldr/include/ldrtype.h	/^    u64_t fhd_intsfsoff;$/;"	m	struct:s_fhdsc
-fhd_name	include/halinc/halplatform_t.h	/^    char   fhd_name[FHDSC_NMAX];$/;"	m	struct:s_fhdsc
+fhd_name	include/halinc/halplatform_t.h	/^    char   fhd_name[FHDSC_NMAX]; \/\/文件名$/;"	m	struct:s_fhdsc
 fhd_name	initldr/include/ldrtype.h	/^    char   fhd_name[FHDSC_NMAX];$/;"	m	struct:s_fhdsc
-fhd_stuts	include/halinc/halplatform_t.h	/^    u64_t fhd_stuts;$/;"	m	struct:s_fhdsc
+fhd_stuts	include/halinc/halplatform_t.h	/^    u64_t fhd_stuts; \/\/文件状态j$/;"	m	struct:s_fhdsc
 fhd_stuts	initldr/include/ldrtype.h	/^    u64_t fhd_stuts;$/;"	m	struct:s_fhdsc
-fhd_subtype	include/halinc/halplatform_t.h	/^    u64_t fhd_subtype;$/;"	m	struct:s_fhdsc
+fhd_subtype	include/halinc/halplatform_t.h	/^    u64_t fhd_subtype; \/\/子文件类型$/;"	m	struct:s_fhdsc
 fhd_subtype	initldr/include/ldrtype.h	/^    u64_t fhd_subtype;$/;"	m	struct:s_fhdsc
-fhd_type	include/halinc/halplatform_t.h	/^    u64_t fhd_type;$/;"	m	struct:s_fhdsc
+fhd_type	include/halinc/halplatform_t.h	/^    u64_t fhd_type; \/\/文件类型$/;"	m	struct:s_fhdsc
 fhd_type	initldr/include/ldrtype.h	/^    u64_t fhd_type;$/;"	m	struct:s_fhdsc
 fhdsc_t	include/halinc/halplatform_t.h	/^}fhdsc_t;$/;"	t	typeref:struct:s_fhdsc
 fhdsc_t	initldr/include/ldrtype.h	/^}fhdsc_t;$/;"	t	typeref:struct:s_fhdsc
+fill_fullbitmap	hal/x86/bdvideo.c	/^void fill_fullbitmap(char_t *bmfname)$/;"	f
+fill_graph	hal/x86/bdvideo.c	/^void fill_graph(dftgraph_t *kghp, pixl_t pix)$/;"	f
+fill_rect	hal/x86/bdvideo.c	/^void fill_rect(pixl_t pix, uint_t x, uint_t y, uint_t tx, uint_t ty)$/;"	f
 find_acpi_rsdp	initldr/ldrkrl/chkcpmm.c	/^PUBLIC mrsdp_t *find_acpi_rsdp()$/;"	f
 find_file	initldr/ldrkrl/inithead.c	/^fhdsc_t *find_file(char_t *fname)$/;"	f
 findacpi_rsdp_core	initldr/ldrkrl/chkcpmm.c	/^mrsdp_t *findacpi_rsdp_core(void *findstart, u32_t findlen)$/;"	f
+flush_videoram	hal/x86/bdvideo.c	/^void flush_videoram(dftgraph_t *kghp)$/;"	f
 fntchmap	include/halinc/bdvideo_t.h	/^    u8_t fntchmap[MAX_CHARBITBY];$/;"	m	struct:s_FNTDATA
 fntchmap	initldr/include/ldrtype.h	/^    u8_t fntchmap[MAX_CHARBITBY];$/;"	m	struct:s_FNTDATA
 fntdata_t	include/halinc/bdvideo_t.h	/^}__attribute__((packed)) fntdata_t;$/;"	t	typeref:struct:s_FNTDATA
@@ -1240,12 +1266,14 @@ fsf_off	include/halinc/bdvideo_t.h	/^    u32_t fsf_off;$/;"	m	struct:s_FTSECTIF
 fsf_off	initldr/include/ldrtype.h	/^    u32_t fsf_off;$/;"	m	struct:s_FTSECTIF
 ftsectif_t	include/halinc/bdvideo_t.h	/^}__attribute__((packed)) ftsectif_t;$/;"	t	typeref:struct:s_FTSECTIF
 ftsectif_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) ftsectif_t;$/;"	t	typeref:struct:s_FTSECTIF
-func_table	initldr/ldrkrl/realintsve.asm	/^func_table:$/;"	l
+func_table	initldr/ldrkrl/realintsve.asm	/^func_table: ;函数表$/;"	l
 gate_t	include/halinc/halgdtidt_t.h	/^}__attribute__((packed)) gate_t;$/;"	t	typeref:struct:s_GATE
 gdtLen	include/halinc/halgdtidt_t.h	/^	u16_t gdtLen;$/;"	m	struct:s_GDTPTR
 gdtbass	include/halinc/halgdtidt_t.h	/^	u64_t gdtbass;$/;"	m	struct:s_GDTPTR
 get_bgadevice	initldr/ldrkrl/graph.c	/^u32_t get_bgadevice()$/;"	f
 get_file_rpadrandsz	initldr/ldrkrl/fs.c	/^void get_file_rpadrandsz(char_t *fname, machbstart_t *mbsp, u32_t *retadr, u32_t *retsz)$/;"	f
+get_file_rvadrandsz	hal/x86/halplatform.c	/^void get_file_rvadrandsz(char_t *fname, machbstart_t *mbsp, u64_t *retadr, u64_t *retsz)$/;"	f
+get_fileinfo	hal/x86/halplatform.c	/^fhdsc_t *get_fileinfo(char_t *fname, machbstart_t *mbsp)$/;"	f
 get_fileinfo	initldr/ldrkrl/fs.c	/^fhdsc_t *get_fileinfo(char_t *fname, machbstart_t *mbsp)$/;"	f
 get_filesz	initldr/ldrkrl/fs.c	/^u64_t get_filesz(char_t *filenm, machbstart_t *mbsp)$/;"	f
 get_memsize	initldr/ldrkrl/chkcpmm.c	/^u64_t get_memsize(e820map_t *e8p, u32_t enr)$/;"	f
@@ -1335,7 +1363,12 @@ global	initldr/ldrkrl/realintsve.asm	/^global _start$/;"	l
 graph_t	include/halinc/bdvideo_t.h	/^}__attribute__((packed)) graph_t;$/;"	t	typeref:struct:s_GRAPH
 graph_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) graph_t;$/;"	t	typeref:struct:s_GRAPH
 graph_t_init	initldr/ldrkrl/graph.c	/^void graph_t_init(graph_t* initp)$/;"	f
+gstr_write	hal/x86/bdvideo.c	/^void gstr_write(dftgraph_t *kghp, char_t *buf)$/;"	f
+hal_background	hal/x86/bdvideo.c	/^void hal_background()$/;"	f
+hal_dspversion	hal/x86/bdvideo.c	/^void hal_dspversion()$/;"	f
+hal_logo	hal/x86/bdvideo.c	/^void hal_logo()$/;"	f
 hal_start	hal/x86/hal_start.c	/^void hal_start()$/;"	f
+hal_sysdie	hal/x86/halcpuctrl.c	/^void hal_sysdie(char_t * errmsg)$/;"	f
 hand_t	include/bastypeinc/bastype_t.h	/^typedef sint_t hand_t;$/;"	t
 i_deep	include/halinc/halintupt_t.h	/^    uint_t      i_deep;         \/\/中断嵌套深度$/;"	m	struct:s_INTFLTDSC
 i_extp	include/halinc/halintupt_t.h	/^    void*       i_extp;$/;"	m	struct:s_INTFLTDSC
@@ -1392,6 +1425,8 @@ include	script/task.S	/^include krnlbuidcmd.mk$/;"	l
 include	script/task.S	/^include krnlbuidrule.mk$/;"	l
 include	script/task.S	/^include krnlobjs.mk$/;"	l
 init_acpi	initldr/ldrkrl/chkcpmm.c	/^PUBLIC void init_acpi(machbstart_t *mbsp)$/;"	f
+init_bdvideo	hal/x86/bdvideo.c	/^PUBLIC LKINIT void init_bdvideo()$/;"	f
+init_bga	hal/x86/bdvideo.c	/^void init_bga()$/;"	f
 init_bgadevice	initldr/ldrkrl/graph.c	/^void init_bgadevice(machbstart_t* mbsp)$/;"	f
 init_bstartpages	initldr/ldrkrl/chkcpmm.c	/^void init_bstartpages(machbstart_t *mbsp)$/;"	f
 init_bstartpagesold	initldr/ldrkrl/chkcpmm.c	/^void init_bstartpagesold(machbstart_t *mbsp)$/;"	f
@@ -1400,12 +1435,17 @@ init_chkcpu	initldr/ldrkrl/chkcpmm.c	/^void init_chkcpu(machbstart_t *mbsp)$/;"	
 init_chkmm	initldr/ldrkrl/chkcpmm.c	/^void init_chkmm()$/;"	f
 init_curs	initldr/ldrkrl/vgastr.c	/^void init_curs()$/;"	f
 init_defutfont	initldr/ldrkrl/fs.c	/^void init_defutfont(machbstart_t *mbsp)$/;"	f
+init_dftgraph	hal/x86/bdvideo.c	/^PUBLIC void init_dftgraph()$/;"	f
 init_graph	initldr/ldrkrl/graph.c	/^void init_graph(machbstart_t* mbsp)$/;"	f
+init_hal	hal/x86/halinit.c	/^void init_hal()$/;"	f
+init_halplaltform	hal/x86/halplatform.c	/^void init_halplaltform()$/;"	f
 init_kinitfvram	initldr/ldrkrl/graph.c	/^void init_kinitfvram(machbstart_t* mbsp)$/;"	f
 init_krlfile	initldr/ldrkrl/fs.c	/^void init_krlfile(machbstart_t *mbsp)$/;"	f
 init_krlinitstack	initldr/ldrkrl/chkcpmm.c	/^void init_krlinitstack(machbstart_t *mbsp)$/;"	f
+init_machbstart	hal/x86/halplatform.c	/^void init_machbstart()$/;"	f
 init_mem	initldr/ldrkrl/chkcpmm.c	/^void init_mem(machbstart_t *mbsp)$/;"	f
 init_meme820	initldr/ldrkrl/chkcpmm.c	/^void init_meme820(machbstart_t *mbsp)$/;"	f
+init_vbe	hal/x86/bdvideo.c	/^void init_vbe()$/;"	f
 inithead_entry	initldr/ldrkrl/inithead.c	/^void inithead_entry()$/;"	f
 int131errmsg	initldr/ldrkrl/realintsve.asm	/^int131errmsg: db     "int 13 read hdsk  error"$/;"	d
 intfltdsc_t	include/halinc/halintupt_t.h	/^}intfltdsc_t;$/;"	t	typeref:struct:s_INTFLTDSC
@@ -1459,6 +1499,7 @@ koblst_t	include/halinc/kmsob_t.h	/^}koblst_t;$/;"	t	typeref:struct:s_KOBLST
 kpde_t	include/halinc/pages64_t.h	/^}__attribute__((packed)) kpde_t;$/;"	t	typeref:struct:s_KPDE
 kpdpte_t	include/halinc/pages64_t.h	/^}__attribute__((packed)) kpdpte_t;$/;"	t	typeref:struct:s_KPDPTE
 kpml4_t	include/halinc/pages64_t.h	/^}__attribute__((packed)) kpml4_t;$/;"	t	typeref:struct:s_KPML4
+kprint	hal/x86/halprint.c	/^void kprint(const char_t *fmt, ...)$/;"	f
 kprint	initldr/ldrkrl/vgastr.c	/^void kprint(const char_t *fmt, ...)$/;"	f
 ks_lock	include/halinc/kmsob_t.h	/^	spinlock_t ks_lock;$/;"	m	struct:s_KMSOBMGRHED
 ks_msobche	include/halinc/kmsob_t.h	/^	kmsob_t* ks_msobche;$/;"	m	struct:s_KMSOBMGRHED
@@ -1516,6 +1557,7 @@ ma_type	include/halinc/memarea_t.h	/^	uint_t ma_type;$/;"	m	struct:s_MEMAREA
 ma_waitlst	include/halinc/memarea_t.h	/^	wait_l_head_t ma_waitlst;$/;"	m	struct:s_MEMAREA
 machbstart_t	include/halinc/halplatform_t.h	/^}__attribute__((packed)) machbstart_t;$/;"	t	typeref:struct:s_MACHBSTART
 machbstart_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) machbstart_t;$/;"	t	typeref:struct:s_MACHBSTART
+machbstart_t_init	hal/x86/halplatform.c	/^void machbstart_t_init(machbstart_t *initp)$/;"	f
 machbstart_t_init	initldr/ldrkrl/bstartparm.c	/^void machbstart_t_init(machbstart_t *initp)$/;"	f
 mafo_aloc	include/halinc/memarea_t.h	/^	mmstus_t (*mafo_aloc)(struct s_MEMAREA* memarea,mmafrets_t* mafrspack,void* valp,uint_t val);$/;"	m	struct:s_MAFUNCOBJS
 mafo_exit	include/halinc/memarea_t.h	/^	mmstus_t (*mafo_exit)(struct s_MEMAREA* memarea);$/;"	m	struct:s_MAFUNCOBJS
@@ -1536,14 +1578,14 @@ mat_mask	include/halinc/memarea_t.h	/^	u32_t mat_mask;$/;"	m	struct:s_MMAFRETS
 mat_phyadr	include/halinc/memarea_t.h	/^	uint_t mat_phyadr;$/;"	m	struct:s_MMAFRETS
 mat_runmode	include/halinc/memarea_t.h	/^	u16_t mat_runmode;$/;"	m	struct:s_MMAFRETS
 mat_sz	include/halinc/memarea_t.h	/^	uint_t mat_sz;$/;"	m	struct:s_MMAFRETS
-mb_bfontpadr	include/halinc/halplatform_t.h	/^    u64_t   mb_bfontpadr;$/;"	m	struct:s_MACHBSTART
+mb_bfontpadr	include/halinc/halplatform_t.h	/^    u64_t   mb_bfontpadr; \/\/操作系统地址地址j$/;"	m	struct:s_MACHBSTART
 mb_bfontpadr	initldr/include/ldrtype.h	/^    u64_t   mb_bfontpadr;$/;"	m	struct:s_MACHBSTART
-mb_bfontsz	include/halinc/halplatform_t.h	/^    u64_t   mb_bfontsz;$/;"	m	struct:s_MACHBSTART
+mb_bfontsz	include/halinc/halplatform_t.h	/^    u64_t   mb_bfontsz; \/\/操作系统字体大小$/;"	m	struct:s_MACHBSTART
 mb_bfontsz	initldr/include/ldrtype.h	/^    u64_t   mb_bfontsz;$/;"	m	struct:s_MACHBSTART
 mb_byte	initldr/include/ldrtype.h	/^    char_t mb_byte[446];$/;"	m	struct:s_MBR
 mb_chksum	include/halinc/halplatform_t.h	/^    u64_t   mb_chksum;\/\/8$/;"	m	struct:s_MACHBSTART
 mb_chksum	initldr/include/ldrtype.h	/^    u64_t   mb_chksum;\/\/8$/;"	m	struct:s_MACHBSTART
-mb_cpumode	include/halinc/halplatform_t.h	/^    u64_t   mb_cpumode;$/;"	m	struct:s_MACHBSTART
+mb_cpumode	include/halinc/halplatform_t.h	/^    u64_t   mb_cpumode; \/\/机器CPU工作模式$/;"	m	struct:s_MACHBSTART
 mb_cpumode	initldr/include/ldrtype.h	/^    u64_t   mb_cpumode;$/;"	m	struct:s_MACHBSTART
 mb_e820exnr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820exnr;$/;"	m	struct:s_MACHBSTART
 mb_e820exnr	initldr/include/ldrtype.h	/^    u64_t   mb_e820exnr;$/;"	m	struct:s_MACHBSTART
@@ -1551,34 +1593,34 @@ mb_e820expadr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820expadr;$/;"	m	
 mb_e820expadr	initldr/include/ldrtype.h	/^    u64_t   mb_e820expadr;$/;"	m	struct:s_MACHBSTART
 mb_e820exsz	include/halinc/halplatform_t.h	/^    u64_t   mb_e820exsz;$/;"	m	struct:s_MACHBSTART
 mb_e820exsz	initldr/include/ldrtype.h	/^    u64_t   mb_e820exsz;$/;"	m	struct:s_MACHBSTART
-mb_e820nr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820nr;$/;"	m	struct:s_MACHBSTART
+mb_e820nr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820nr;\/\/机器e820数组个数$/;"	m	struct:s_MACHBSTART
 mb_e820nr	initldr/include/ldrtype.h	/^    u64_t   mb_e820nr;$/;"	m	struct:s_MACHBSTART
-mb_e820padr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820padr;$/;"	m	struct:s_MACHBSTART
+mb_e820padr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820padr; \/\/机器e820数组地址$/;"	m	struct:s_MACHBSTART
 mb_e820padr	initldr/include/ldrtype.h	/^    u64_t   mb_e820padr;$/;"	m	struct:s_MACHBSTART
-mb_e820sz	include/halinc/halplatform_t.h	/^    u64_t   mb_e820sz;$/;"	m	struct:s_MACHBSTART
+mb_e820sz	include/halinc/halplatform_t.h	/^    u64_t   mb_e820sz; \/\/机器e820数组大小$/;"	m	struct:s_MACHBSTART
 mb_e820sz	initldr/include/ldrtype.h	/^    u64_t   mb_e820sz;$/;"	m	struct:s_MACHBSTART
 mb_ebdaphyadr	include/halinc/halplatform_t.h	/^    u64_t   mb_ebdaphyadr;$/;"	m	struct:s_MACHBSTART
 mb_ebdaphyadr	initldr/include/ldrtype.h	/^    u64_t   mb_ebdaphyadr;$/;"	m	struct:s_MACHBSTART
 mb_endmgic	initldr/include/ldrtype.h	/^    u16_t mb_endmgic;$/;"	m	struct:s_MBR
-mb_fvrmphyadr	include/halinc/halplatform_t.h	/^    u64_t   mb_fvrmphyadr;$/;"	m	struct:s_MACHBSTART
+mb_fvrmphyadr	include/halinc/halplatform_t.h	/^    u64_t   mb_fvrmphyadr; \/\/机器显存地址$/;"	m	struct:s_MACHBSTART
 mb_fvrmphyadr	initldr/include/ldrtype.h	/^    u64_t   mb_fvrmphyadr;$/;"	m	struct:s_MACHBSTART
-mb_fvrmsz	include/halinc/halplatform_t.h	/^    u64_t   mb_fvrmsz;$/;"	m	struct:s_MACHBSTART
+mb_fvrmsz	include/halinc/halplatform_t.h	/^    u64_t   mb_fvrmsz; \/\/机器显存大小$/;"	m	struct:s_MACHBSTART
 mb_fvrmsz	initldr/include/ldrtype.h	/^    u64_t   mb_fvrmsz;$/;"	m	struct:s_MACHBSTART
 mb_ghparm	include/halinc/halplatform_t.h	/^    graph_t mb_ghparm;$/;"	m	struct:s_MACHBSTART
 mb_ghparm	initldr/include/ldrtype.h	/^    graph_t mb_ghparm;$/;"	m	struct:s_MACHBSTART
-mb_imgpadr	include/halinc/halplatform_t.h	/^    u64_t   mb_imgpadr;$/;"	m	struct:s_MACHBSTART
+mb_imgpadr	include/halinc/halplatform_t.h	/^    u64_t   mb_imgpadr; \/\/操作系统系统镜像$/;"	m	struct:s_MACHBSTART
 mb_imgpadr	initldr/include/ldrtype.h	/^    u64_t   mb_imgpadr;$/;"	m	struct:s_MACHBSTART
-mb_imgsz	include/halinc/halplatform_t.h	/^    u64_t   mb_imgsz;$/;"	m	struct:s_MACHBSTART
+mb_imgsz	include/halinc/halplatform_t.h	/^    u64_t   mb_imgsz; \/\/操作系统映像大小$/;"	m	struct:s_MACHBSTART
 mb_imgsz	initldr/include/ldrtype.h	/^    u64_t   mb_imgsz;$/;"	m	struct:s_MACHBSTART
 mb_kalldendpadr	include/halinc/halplatform_t.h	/^    u64_t   mb_kalldendpadr;$/;"	m	struct:s_MACHBSTART
 mb_kalldendpadr	initldr/include/ldrtype.h	/^    u64_t   mb_kalldendpadr;$/;"	m	struct:s_MACHBSTART
-mb_kpmapphymemsz	include/halinc/halplatform_t.h	/^    u64_t   mb_kpmapphymemsz;$/;"	m	struct:s_MACHBSTART
+mb_kpmapphymemsz	include/halinc/halplatform_t.h	/^    u64_t   mb_kpmapphymemsz;\/\/操作系统映像空间大小$/;"	m	struct:s_MACHBSTART
 mb_kpmapphymemsz	initldr/include/ldrtype.h	/^    u64_t   mb_kpmapphymemsz;$/;"	m	struct:s_MACHBSTART
-mb_krlimgpadr	include/halinc/halplatform_t.h	/^    u64_t   mb_krlimgpadr;$/;"	m	struct:s_MACHBSTART
+mb_krlimgpadr	include/halinc/halplatform_t.h	/^    u64_t   mb_krlimgpadr; $/;"	m	struct:s_MACHBSTART
 mb_krlimgpadr	initldr/include/ldrtype.h	/^    u64_t   mb_krlimgpadr;$/;"	m	struct:s_MACHBSTART
-mb_krlinitstack	include/halinc/halplatform_t.h	/^    u64_t   mb_krlinitstack;\/\/16$/;"	m	struct:s_MACHBSTART
+mb_krlinitstack	include/halinc/halplatform_t.h	/^    u64_t   mb_krlinitstack;\/\/16 内核栈地址j$/;"	m	struct:s_MACHBSTART
 mb_krlinitstack	initldr/include/ldrtype.h	/^    u64_t   mb_krlinitstack;\/\/16$/;"	m	struct:s_MACHBSTART
-mb_krlitstacksz	include/halinc/halplatform_t.h	/^    u64_t   mb_krlitstacksz;\/\/24$/;"	m	struct:s_MACHBSTART
+mb_krlitstacksz	include/halinc/halplatform_t.h	/^    u64_t   mb_krlitstacksz;\/\/24 内核栈大小$/;"	m	struct:s_MACHBSTART
 mb_krlitstacksz	initldr/include/ldrtype.h	/^    u64_t   mb_krlitstacksz;\/\/24$/;"	m	struct:s_MACHBSTART
 mb_krlrunmode	include/halinc/halplatform_t.h	/^    u64_t   mb_krlrunmode;$/;"	m	struct:s_MACHBSTART
 mb_krlrunmode	initldr/include/ldrtype.h	/^    u64_t   mb_krlrunmode;$/;"	m	struct:s_MACHBSTART
@@ -1602,7 +1644,7 @@ mb_memmappadr	include/halinc/halplatform_t.h	/^    u64_t   mb_memmappadr;$/;"	m	
 mb_memmappadr	initldr/include/ldrtype.h	/^    u64_t   mb_memmappadr;$/;"	m	struct:s_MACHBSTART
 mb_memmapsz	include/halinc/halplatform_t.h	/^    u64_t   mb_memmapsz;$/;"	m	struct:s_MACHBSTART
 mb_memmapsz	initldr/include/ldrtype.h	/^    u64_t   mb_memmapsz;$/;"	m	struct:s_MACHBSTART
-mb_memsz	include/halinc/halplatform_t.h	/^    u64_t   mb_memsz;$/;"	m	struct:s_MACHBSTART
+mb_memsz	include/halinc/halplatform_t.h	/^    u64_t   mb_memsz;\/\/机器内大小$/;"	m	struct:s_MACHBSTART
 mb_memsz	initldr/include/ldrtype.h	/^    u64_t   mb_memsz;$/;"	m	struct:s_MACHBSTART
 mb_memznchksum	include/halinc/halplatform_t.h	/^    u64_t   mb_memznchksum;$/;"	m	struct:s_MACHBSTART
 mb_memznchksum	initldr/include/ldrtype.h	/^    u64_t   mb_memznchksum;$/;"	m	struct:s_MACHBSTART
@@ -1619,9 +1661,9 @@ mb_mrsdp	initldr/include/ldrtype.h	/^    mrsdp_t mb_mrsdp;$/;"	m	struct:s_MACHBS
 mb_nextwtpadr	include/halinc/halplatform_t.h	/^    u64_t   mb_nextwtpadr;$/;"	m	struct:s_MACHBSTART
 mb_nextwtpadr	initldr/include/ldrtype.h	/^    u64_t   mb_nextwtpadr;$/;"	m	struct:s_MACHBSTART
 mb_part	initldr/include/ldrtype.h	/^    dpt_t mb_part[4];$/;"	m	struct:s_MBR
-mb_pml4padr	include/halinc/halplatform_t.h	/^    u64_t   mb_pml4padr;$/;"	m	struct:s_MACHBSTART
+mb_pml4padr	include/halinc/halplatform_t.h	/^    u64_t   mb_pml4padr; \/\/机器页表数据地址$/;"	m	struct:s_MACHBSTART
 mb_pml4padr	initldr/include/ldrtype.h	/^    u64_t   mb_pml4padr;$/;"	m	struct:s_MACHBSTART
-mb_subpageslen	include/halinc/halplatform_t.h	/^    u64_t   mb_subpageslen;$/;"	m	struct:s_MACHBSTART
+mb_subpageslen	include/halinc/halplatform_t.h	/^    u64_t   mb_subpageslen;\/\/机器页表个数$/;"	m	struct:s_MACHBSTART
 mb_subpageslen	initldr/include/ldrtype.h	/^    u64_t   mb_subpageslen;$/;"	m	struct:s_MACHBSTART
 mbhdr	initldr/ldrkrl/imginithead.asm	/^mbhdr:$/;"	l
 mbr_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) mbr_t;$/;"	t	typeref:struct:s_MBR
@@ -1646,39 +1688,39 @@ md_lock	include/halinc/msadsc_t.h	/^	spinlock_t md_lock; \/\/4$/;"	m	struct:s_MS
 md_odlink	include/halinc/msadsc_t.h	/^	void* md_odlink;\/\/8$/;"	m	struct:s_MSADSC
 md_phyadrs	include/halinc/msadsc_t.h	/^	phyadrflgs_t md_phyadrs;\/\/8$/;"	m	struct:s_MSADSC
 mdc_endgic	include/halinc/halplatform_t.h	/^    u64_t mdc_endgic;$/;"	m	struct:s_mlosrddsc
-mdc_endgic	initldr/include/ldrtype.h	/^    u64_t mdc_endgic;$/;"	m	struct:s_mlosrddsc
+mdc_endgic	initldr/include/ldrtype.h	/^    u64_t mdc_endgic;\/\/映像文件结束标识j$/;"	m	struct:s_mlosrddsc
 mdc_fhdbk_e	include/halinc/halplatform_t.h	/^    u64_t mdc_fhdbk_e;$/;"	m	struct:s_mlosrddsc
-mdc_fhdbk_e	initldr/include/ldrtype.h	/^    u64_t mdc_fhdbk_e;$/;"	m	struct:s_mlosrddsc
+mdc_fhdbk_e	initldr/include/ldrtype.h	/^    u64_t mdc_fhdbk_e; \/\/映像文件中文件头描述的结束偏移$/;"	m	struct:s_mlosrddsc
 mdc_fhdbk_rsz	include/halinc/halplatform_t.h	/^    u64_t mdc_fhdbk_rsz;$/;"	m	struct:s_mlosrddsc
-mdc_fhdbk_rsz	initldr/include/ldrtype.h	/^    u64_t mdc_fhdbk_rsz;$/;"	m	struct:s_mlosrddsc
+mdc_fhdbk_rsz	initldr/include/ldrtype.h	/^    u64_t mdc_fhdbk_rsz; \/\/描述实际大小j$/;"	m	struct:s_mlosrddsc
 mdc_fhdbk_s	include/halinc/halplatform_t.h	/^    u64_t mdc_fhdbk_s;$/;"	m	struct:s_mlosrddsc
-mdc_fhdbk_s	initldr/include/ldrtype.h	/^    u64_t mdc_fhdbk_s;$/;"	m	struct:s_mlosrddsc
+mdc_fhdbk_s	initldr/include/ldrtype.h	/^    u64_t mdc_fhdbk_s; \/\/ 映像文件中文件头描述的开始偏移$/;"	m	struct:s_mlosrddsc
 mdc_fhdbk_sum	include/halinc/halplatform_t.h	/^    u64_t mdc_fhdbk_sum;$/;"	m	struct:s_mlosrddsc
-mdc_fhdbk_sum	initldr/include/ldrtype.h	/^    u64_t mdc_fhdbk_sum;$/;"	m	struct:s_mlosrddsc
+mdc_fhdbk_sum	initldr/include/ldrtype.h	/^    u64_t mdc_fhdbk_sum;\/\/描述校验和$/;"	m	struct:s_mlosrddsc
 mdc_fhdnr	include/halinc/halplatform_t.h	/^    u64_t mdc_fhdnr;$/;"	m	struct:s_mlosrddsc
-mdc_fhdnr	initldr/include/ldrtype.h	/^    u64_t mdc_fhdnr;$/;"	m	struct:s_mlosrddsc
+mdc_fhdnr	initldr/include/ldrtype.h	/^    u64_t mdc_fhdnr;\/\/描述符的个数$/;"	m	struct:s_mlosrddsc
 mdc_filbk_e	include/halinc/halplatform_t.h	/^    u64_t mdc_filbk_e;$/;"	m	struct:s_mlosrddsc
-mdc_filbk_e	initldr/include/ldrtype.h	/^    u64_t mdc_filbk_e;$/;"	m	struct:s_mlosrddsc
+mdc_filbk_e	initldr/include/ldrtype.h	/^    u64_t mdc_filbk_e;\/\/结束偏移$/;"	m	struct:s_mlosrddsc
 mdc_filbk_rsz	include/halinc/halplatform_t.h	/^    u64_t mdc_filbk_rsz;$/;"	m	struct:s_mlosrddsc
-mdc_filbk_rsz	initldr/include/ldrtype.h	/^    u64_t mdc_filbk_rsz;$/;"	m	struct:s_mlosrddsc
+mdc_filbk_rsz	initldr/include/ldrtype.h	/^    u64_t mdc_filbk_rsz; \/\/映像文件文件数据实际大小$/;"	m	struct:s_mlosrddsc
 mdc_filbk_s	include/halinc/halplatform_t.h	/^    u64_t mdc_filbk_s;$/;"	m	struct:s_mlosrddsc
-mdc_filbk_s	initldr/include/ldrtype.h	/^    u64_t mdc_filbk_s;$/;"	m	struct:s_mlosrddsc
+mdc_filbk_s	initldr/include/ldrtype.h	/^    u64_t mdc_filbk_s;\/\/映像文件中文件数据的开始偏移$/;"	m	struct:s_mlosrddsc
 mdc_filbk_sum	include/halinc/halplatform_t.h	/^    u64_t mdc_filbk_sum;$/;"	m	struct:s_mlosrddsc
-mdc_filbk_sum	initldr/include/ldrtype.h	/^    u64_t mdc_filbk_sum;$/;"	m	struct:s_mlosrddsc
+mdc_filbk_sum	initldr/include/ldrtype.h	/^    u64_t mdc_filbk_sum;\/\/文件数据校验和$/;"	m	struct:s_mlosrddsc
 mdc_filnr	include/halinc/halplatform_t.h	/^    u64_t mdc_filnr;$/;"	m	struct:s_mlosrddsc
-mdc_filnr	initldr/include/ldrtype.h	/^    u64_t mdc_filnr;$/;"	m	struct:s_mlosrddsc
+mdc_filnr	initldr/include/ldrtype.h	/^    u64_t mdc_filnr;\/\/文件头有多少个$/;"	m	struct:s_mlosrddsc
 mdc_ldrbk_e	include/halinc/halplatform_t.h	/^    u64_t mdc_ldrbk_e;$/;"	m	struct:s_mlosrddsc
-mdc_ldrbk_e	initldr/include/ldrtype.h	/^    u64_t mdc_ldrbk_e;$/;"	m	struct:s_mlosrddsc
+mdc_ldrbk_e	initldr/include/ldrtype.h	/^    u64_t mdc_ldrbk_e; \/\/end offset$/;"	m	struct:s_mlosrddsc
 mdc_ldrbk_rsz	include/halinc/halplatform_t.h	/^    u64_t mdc_ldrbk_rsz;$/;"	m	struct:s_mlosrddsc
-mdc_ldrbk_rsz	initldr/include/ldrtype.h	/^    u64_t mdc_ldrbk_rsz;$/;"	m	struct:s_mlosrddsc
+mdc_ldrbk_rsz	initldr/include/ldrtype.h	/^    u64_t mdc_ldrbk_rsz; \/\/二级引导实际大小$/;"	m	struct:s_mlosrddsc
 mdc_ldrbk_s	include/halinc/halplatform_t.h	/^    u64_t mdc_ldrbk_s;$/;"	m	struct:s_mlosrddsc
-mdc_ldrbk_s	initldr/include/ldrtype.h	/^    u64_t mdc_ldrbk_s;$/;"	m	struct:s_mlosrddsc
+mdc_ldrbk_s	initldr/include/ldrtype.h	/^    u64_t mdc_ldrbk_s; \/\/映像文件中二级引导的开始偏移$/;"	m	struct:s_mlosrddsc
 mdc_ldrbk_sum	include/halinc/halplatform_t.h	/^    u64_t mdc_ldrbk_sum;$/;"	m	struct:s_mlosrddsc
-mdc_ldrbk_sum	initldr/include/ldrtype.h	/^    u64_t mdc_ldrbk_sum;$/;"	m	struct:s_mlosrddsc
+mdc_ldrbk_sum	initldr/include/ldrtype.h	/^    u64_t mdc_ldrbk_sum;\/\/校验和$/;"	m	struct:s_mlosrddsc
 mdc_ldrcodenr	include/halinc/halplatform_t.h	/^    u64_t mdc_ldrcodenr;$/;"	m	struct:s_mlosrddsc
-mdc_ldrcodenr	initldr/include/ldrtype.h	/^    u64_t mdc_ldrcodenr;$/;"	m	struct:s_mlosrddsc
+mdc_ldrcodenr	initldr/include/ldrtype.h	/^    u64_t mdc_ldrcodenr; \/\/映像文件二级引导器的文件头描述符的索引值$/;"	m	struct:s_mlosrddsc
 mdc_mgic	include/halinc/halplatform_t.h	/^    u64_t mdc_mgic;$/;"	m	struct:s_mlosrddsc
-mdc_mgic	initldr/include/ldrtype.h	/^    u64_t mdc_mgic;$/;"	m	struct:s_mlosrddsc
+mdc_mgic	initldr/include/ldrtype.h	/^    u64_t mdc_mgic; \/\/映像文件标识$/;"	m	struct:s_mlosrddsc
 mdc_rv	include/halinc/halplatform_t.h	/^    u64_t mdc_rv;$/;"	m	struct:s_mlosrddsc
 mdc_rv	initldr/include/ldrtype.h	/^    u64_t mdc_rv;$/;"	m	struct:s_mlosrddsc
 mdc_sfeoff	include/halinc/halplatform_t.h	/^    u64_t mdc_sfeoff;$/;"	m	struct:s_mlosrddsc
@@ -1688,7 +1730,7 @@ mdc_sfrlsz	initldr/include/ldrtype.h	/^    u64_t mdc_sfrlsz;$/;"	m	struct:s_mlos
 mdc_sfsoff	include/halinc/halplatform_t.h	/^    u64_t mdc_sfsoff;$/;"	m	struct:s_mlosrddsc
 mdc_sfsoff	initldr/include/ldrtype.h	/^    u64_t mdc_sfsoff;$/;"	m	struct:s_mlosrddsc
 mdc_sfsum	include/halinc/halplatform_t.h	/^    u64_t mdc_sfsum;$/;"	m	struct:s_mlosrddsc
-mdc_sfsum	initldr/include/ldrtype.h	/^    u64_t mdc_sfsum;$/;"	m	struct:s_mlosrddsc
+mdc_sfsum	initldr/include/ldrtype.h	/^    u64_t mdc_sfsum; $/;"	m	struct:s_mlosrddsc
 memarea_t	include/halinc/memarea_t.h	/^}memarea_t;$/;"	t	typeref:struct:s_MEMAREA
 memcopy	include/halinc/io.h	/^KLINE void memcopy(void *src, void *dest, uint_t count)$/;"	f
 memdivmer_t	include/halinc/memarea_t.h	/^}memdivmer_t;$/;"	t	typeref:struct:s_MEMDIVMER
@@ -1746,6 +1788,7 @@ mt_mobjnr	include/halinc/kmsob_t.h	/^	uint_t mt_mobjnr;	$/;"	m	struct:s_KMBEXT
 mt_vend	include/halinc/kmsob_t.h	/^	adr_t mt_vend;$/;"	m	struct:s_KMBEXT
 mt_vstat	include/halinc/kmsob_t.h	/^	adr_t mt_vstat;$/;"	m	struct:s_KMBEXT
 next	include/bastypeinc/list_t.h	/^       struct s_LIST_H *prev,*next;$/;"	m	struct:s_LIST_H	typeref:struct:s_LIST_H::
+numberk	hal/x86/halprint.c	/^char_t *numberk(char_t *str, uint_t n, sint_t base)$/;"	f
 numberk	initldr/ldrkrl/vgastr.c	/^char_t *numberk(char_t *str, uint_t n, sint_t base)$/;"	f
 ocymsz	initldr/include/ldrtype.h	/^    u64_t ocymsz;$/;"	m	struct:s_KLFOCPYMBLK
 oemdata	include/halinc/bdvideo_t.h	/^        u8_t oemdata[256];$/;"	m	struct:s_VBEINFO
@@ -1798,6 +1841,7 @@ parmv4	include/halinc/cpu_t.h	/^    reg_t parmv4;\/\/ebx$/;"	m	struct:s_INTSTKRE
 parmv5	include/halinc/cpu_t.h	/^    reg_t parmv5;\/\/ebp$/;"	m	struct:s_INTSTKREGS
 parmv6	include/halinc/cpu_t.h	/^    reg_t parmv6;\/\/esi $/;"	m	struct:s_INTSTKREGS
 parmv7	include/halinc/cpu_t.h	/^    reg_t parmv7;\/\/edi$/;"	m	struct:s_INTSTKREGS
+phyadr_to_viradr	hal/x86/halplatform.c	/^adr_t phyadr_to_viradr(adr_t kphyadr)$/;"	f
 phyadrflgs_t	include/halinc/msadsc_t.h	/^}__attribute__((packed)) phyadrflgs_t;$/;"	t	typeref:struct:s_PHYADRFLGS
 phyadrspce_t	include/halinc/halmm_t.h	/^}phyadrspce_t;$/;"	t	typeref:struct:s_PHYADRSPCE
 phymem_t	include/halinc/halmm_t.h	/^}phymem_t;$/;"	t	typeref:struct:s_PHYMEM
@@ -1821,7 +1865,7 @@ pmr_saddr	include/halinc/halmm_t.h	/^    u64_t pmr_saddr;$/;"	m	struct:s_PHYMMAR
 pmr_stus	include/halinc/halmm_t.h	/^    u32_t pmr_stus;$/;"	m	struct:s_PHYMMARGE
 pmr_stype	include/halinc/halmm_t.h	/^    u32_t pmr_stype;$/;"	m	struct:s_PHYMMARGE
 pmr_type	include/halinc/halmm_t.h	/^    u32_t pmr_type;$/;"	m	struct:s_PHYMMARGE
-pop	initldr/ldrkrl/ldrkrl32.asm	/^	pop	ds$/;"	d
+pop	initldr/ldrkrl/ldrkrl32.asm	/^	pop	ds ;恢复通用寄存器$/;"	d
 pop	initldr/ldrkrl/realintsve.asm	/^	pop ds$/;"	d
 pop	initldr/ldrkrl/realintsve.asm	/^        pop di$/;"	d
 prev	include/bastypeinc/list_t.h	/^       struct s_LIST_H *prev,*next;$/;"	m	struct:s_LIST_H	typeref:struct:s_LIST_H::s_LIST_H
@@ -1832,6 +1876,7 @@ push	initldr/ldrkrl/ldrkrl32.asm	/^	push    ds$/;"	d
 push	initldr/ldrkrl/realintsve.asm	/^	push ds$/;"	d
 push	initldr/ldrkrl/realintsve.asm	/^        push di$/;"	d
 put_one_char	initldr/ldrkrl/vgastr.c	/^void put_one_char(char_t cr, uint_t x, uint_t y)$/;"	f
+put_pixonechar	hal/x86/bdvideo.c	/^void put_pixonechar(dftgraph_t *kghp, u32_t unicode, pixl_t pix)$/;"	f
 r_file_to_padr	initldr/ldrkrl/fs.c	/^u64_t r_file_to_padr(machbstart_t *mbsp, u32_t f2adr, char_t *fnm)$/;"	f
 read_kcr2	include/halinc/io.h	/^KLINE u32_t read_kcr2()$/;"	f
 read_kesp	include/halinc/io.h	/^KLINE u32_t read_kesp()$/;"	f
@@ -1846,7 +1891,9 @@ reserv92	include/halinc/halgdtidt_t.h	/^	u64_t reserv92;$/;"	m	struct:s_X64TSS
 reserved	include/halinc/bdvideo_t.h	/^        u8_t reserved[222];$/;"	m	struct:s_VBEINFO
 reserved	initldr/include/ldrtype.h	/^        u8_t reserved[222];$/;"	m	struct:s_VBEINFO
 restore_flags_sti	include/halinc/io.h	/^KLINE void restore_flags_sti(cpuflg_t *flagsres)$/;"	f
+ret_charsinfo	hal/x86/bdvideo.c	/^u8_t *ret_charsinfo(dftgraph_t *kghp, u32_t unicode, int *retchwx, int *retchhx, int *retlinb)$/;"	f
 ret_imgfilesz	initldr/ldrkrl/fs.c	/^u64_t ret_imgfilesz()$/;"	f
+ret_vramadr_inbnk	hal/x86/bdvideo.c	/^u64_t *ret_vramadr_inbnk(void *ghpdev)$/;"	f
 retn_ifilenm	script/lmkfbuild.c	/^char* retn_ifilenm(int gc,char* argv[])$/;"	f
 retn_ofilenm	script/lmkfbuild.c	/^char* retn_ofilenm(int gc,char * argv[])$/;"	f
 rp_chksum	include/halinc/halplatform_t.h	/^    u8_t rp_chksum;$/;"	m	struct:s_MRSDP
@@ -2001,14 +2048,18 @@ sem_flg	include/bastypeinc/sem_t.h	/^	uint_t sem_flg;$/;"	m	struct:s_SEM
 sem_lock	include/bastypeinc/sem_t.h	/^	spinlock_t sem_lock;$/;"	m	struct:s_SEM
 sem_t	include/bastypeinc/sem_t.h	/^}sem_t;$/;"	t	typeref:struct:s_SEM
 sem_waitlst	include/bastypeinc/sem_t.h	/^	kwlst_t sem_waitlst;$/;"	m	struct:s_SEM
+set_charsdxwflush	hal/x86/bdvideo.c	/^void set_charsdxwflush(u64_t chardxw, u64_t flush)$/;"	f
 set_cr3	include/halinc/io.h	/^KLINE void set_cr3(u64_t pl4adr)$/;"	f
 set_curs	initldr/ldrkrl/vgastr.c	/^void set_curs(u32_t x, u32_t y)$/;"	f
+set_deffontpx	hal/x86/bdvideo.c	/^pixl_t set_deffontpx(pixl_t setpx)$/;"	f
+set_ncharsxy	hal/x86/bdvideo.c	/^void set_ncharsxy(u64_t x, u64_t y)$/;"	f
 set_vbemodeinfo	initldr/ldrkrl/graph.c	/^void set_vbemodeinfo()$/;"	f
 setvbmodeerrmsg	initldr/ldrkrl/realintsve.asm	/^setvbmodeerrmsg: db     "set vbemode err"$/;"	d
 sint_t	include/bastypeinc/bastype_t.h	/^typedef long sint_t;$/;"	t
 sint_t	initldr/include/type.h	/^typedef long sint_t;$/;"	t
 size_t	include/bastypeinc/bastype_t.h	/^typedef unsigned long size_t;$/;"	t
 size_t	initldr/include/type.h	/^typedef unsigned long size_t;$/;"	t
+slou_sreen	hal/x86/bdvideo.c	/^void slou_sreen(uint_t hy)$/;"	f
 so_alclst	include/halinc/kmsob_t.h	/^	list_h_t so_alclst;$/;"	m	struct:s_KMSOB
 so_extdp	include/halinc/kmsob_t.h	/^	void* so_extdp;$/;"	m	struct:s_KMSOB
 so_flgs	include/halinc/kmsob_t.h	/^	uint_t so_flgs;$/;"	m	struct:s_KMSOB
@@ -2030,11 +2081,14 @@ sphyadr	initldr/include/ldrtype.h	/^    u64_t sphyadr;$/;"	m	struct:s_KLFOCPYMBL
 spinlock_t	include/bastypeinc/spinlock_t.h	/^} spinlock_t;$/;"	t	typeref:struct:__anon1
 str_t	include/bastypeinc/bastype_t.h	/^typedef const char* str_t;$/;"	t
 str_t	initldr/include/type.h	/^typedef const char* str_t;$/;"	t
+strcmp1	hal/x86/halplatform.c	/^int strcmp1(const char *a, const char *b)$/;"	f
 strcmpl	initldr/ldrkrl/fs.c	/^int strcmpl(const char *a, const char *b)$/;"	f
 strcmpl	initldr/ldrkrl/inithead.c	/^int strcmpl(const char *a, const char *b)$/;"	f
 strcopy	initldr/ldrkrl/vgastr.c	/^char_t *strcopy(char_t *buf, char_t *str_s)$/;"	f
+strcopyk	hal/x86/halprint.c	/^char_t *strcopyk(char_t *buf, char_t *str_s)$/;"	f
 syscall_t	initldr/include/type.h	/^typedef void (*syscall_t)();$/;"	t
 sysstus_t	include/bastypeinc/bastype_t.h	/^typedef sint_t sysstus_t;$/;"	t
+systtem_error	hal/x86/halcpuctrl.c	/^void systtem_error(char_t *errmsg)$/;"	f
 test_bga	initldr/ldrkrl/graph.c	/^void  test_bga()$/;"	f
 testm2m	initldr/ldrkrl/bstartparm.c	/^void testm2m()$/;"	f
 totalmemory	include/halinc/bdvideo_t.h	/^        u16_t totalmemory;$/;"	m	struct:s_VBEINFO
@@ -2067,6 +2121,7 @@ uint_t	include/bastypeinc/bastype_t.h	/^typedef unsigned long uint_t;$/;"	t
 uint_t	initldr/include/type.h	/^typedef unsigned long uint_t;$/;"	t
 utf8_t	include/halinc/bdvideo_t.h	/^}__attribute__((packed)) utf8_t;$/;"	t	typeref:struct:s_UTF8
 utf8_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) utf8_t;$/;"	t	typeref:struct:s_UTF8
+utf8_to_unicode	hal/x86/bdvideo.c	/^u32_t utf8_to_unicode(utf8_t *utfp, int *retuib)$/;"	f
 utf8_to_unicode	initldr/ldrkrl/graph.c	/^u32_t utf8_to_unicode(utf8_t* utfp,int* retuib)$/;"	f
 utf_b1	include/halinc/bdvideo_t.h	/^    u8_t utf_b1;$/;"	m	struct:s_UTF8
 utf_b1	initldr/include/ldrtype.h	/^    u8_t utf_b1;$/;"	m	struct:s_UTF8
@@ -2085,6 +2140,21 @@ va_end	include/halinc/halprint_t.h	13;"	d
 va_list	include/halinc/halprint_t.h	/^typedef __builtin_va_list va_list;$/;"	t
 va_list_t	initldr/include/type.h	/^typedef char_t* va_list_t;$/;"	t
 va_start	include/halinc/halprint_t.h	12;"	d
+vbe_dxreadpix	hal/x86/bdvideo.c	/^pixl_t vbe_dxreadpix(void *ghpdev, uint_t x, uint_t y)$/;"	f
+vbe_dxwritepix	hal/x86/bdvideo.c	/^void vbe_dxwritepix(void *ghpdev, pixl_t pix, uint_t x, uint_t y)$/;"	f
+vbe_flush	hal/x86/bdvideo.c	/^void vbe_flush(void *ghpdev)$/;"	f
+vbe_get_vwh	hal/x86/bdvideo.c	/^sint_t vbe_get_vwh(void *ghpdev, uint_t *rvwt, uint_t *rvhi)$/;"	f
+vbe_get_xy	hal/x86/bdvideo.c	/^sint_t vbe_get_xy(void *ghpdev, uint_t *rx, uint_t *ry)$/;"	f
+vbe_get_xyoffset	hal/x86/bdvideo.c	/^sint_t vbe_get_xyoffset(void *ghpdev, uint_t *rxoff, uint_t *ryoff)$/;"	f
+vbe_ioctrl	hal/x86/bdvideo.c	/^sint_t vbe_ioctrl(void *ghpdev, void *outp, uint_t iocode)$/;"	f
+vbe_read	hal/x86/bdvideo.c	/^size_t vbe_read(void *ghpdev, void *outp, size_t rdsz)$/;"	f
+vbe_readpix	hal/x86/bdvideo.c	/^pixl_t vbe_readpix(void *ghpdev, uint_t x, uint_t y)$/;"	f
+vbe_set_bank	hal/x86/bdvideo.c	/^sint_t vbe_set_bank(void *ghpdev, sint_t bnr)$/;"	f
+vbe_set_vwh	hal/x86/bdvideo.c	/^sint_t vbe_set_vwh(void *ghpdev, uint_t vwt, uint_t vhi)$/;"	f
+vbe_set_xy	hal/x86/bdvideo.c	/^sint_t vbe_set_xy(void *ghpdev, uint_t x, uint_t y)$/;"	f
+vbe_set_xyoffset	hal/x86/bdvideo.c	/^sint_t vbe_set_xyoffset(void *ghpdev, uint_t xoff, uint_t yoff)$/;"	f
+vbe_write	hal/x86/bdvideo.c	/^size_t vbe_write(void *ghpdev, void *inp, size_t wesz)$/;"	f
+vbe_writepix	hal/x86/bdvideo.c	/^void vbe_writepix(void *ghpdev, pixl_t pix, uint_t x, uint_t y)$/;"	f
 vbeinfo_t	include/halinc/bdvideo_t.h	/^}__attribute__((packed)) vbeinfo_t;$/;"	t	typeref:struct:s_VBEINFO
 vbeinfo_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) vbeinfo_t;$/;"	t	typeref:struct:s_VBEINFO
 vbeominfo_t	include/halinc/bdvideo_t.h	/^}__attribute__((packed)) vbeominfo_t;$/;"	t	typeref:struct:s_VBEOMINFO
@@ -2096,8 +2166,10 @@ vbeversion	initldr/include/ldrtype.h	/^        u16_t vbeversion;$/;"	m	struct:s_
 vfartolineadr	initldr/ldrkrl/graph.c	/^u32_t vfartolineadr(u32_t vfar)$/;"	f
 videomodeptr	include/halinc/bdvideo_t.h	/^        u32_t videomodeptr;$/;"	m	struct:s_VBEINFO
 videomodeptr	initldr/include/ldrtype.h	/^        u32_t videomodeptr;$/;"	m	struct:s_VBEINFO
+virtadr_to_phyadr	hal/x86/halplatform.c	/^adr_t virtadr_to_phyadr(adr_t kviradr)$/;"	f
 vmem_e	initldr/include/vgastr_t.h	/^    uint_t vmem_e;$/;"	m	struct:s_CURSOR
 vmem_s	initldr/include/vgastr_t.h	/^    uint_t vmem_s;$/;"	m	struct:s_CURSOR
+vsprintfk	hal/x86/halprint.c	/^void vsprintfk(char_t *buf, const char_t *fmt, va_list args)$/;"	f
 vsprintfk	initldr/ldrkrl/vgastr.c	/^void vsprintfk(char_t *buf, const char_t *fmt, va_list_t args)$/;"	f
 wait_l_head_t	include/bastypeinc/sem_t.h	/^}wait_l_head_t;$/;"	t	typeref:struct:s_WAIT_L_HEAD
 wait_l_t	include/bastypeinc/sem_t.h	/^}wait_l_t;$/;"	t	typeref:struct:s_WAIT_L
@@ -2114,6 +2186,7 @@ wlh_privte	include/bastypeinc/sem_t.h	/^	void* wlh_privte;$/;"	m	struct:s_WAIT_L
 wlh_upfun	include/bastypeinc/sem_t.h	/^	bool_t  (*wlh_upfun)(u32_t func,struct s_WAIT_L_HEAD* wlhp);$/;"	m	struct:s_WAIT_L_HEAD
 write_ldrkrlfile	initldr/ldrkrl/inithead.c	/^void write_ldrkrlfile()$/;"	f
 write_msr	include/halinc/io.h	/^KLINE void write_msr(const u32_t reg, const u64_t val)$/;"	f
+write_pixcolor	hal/x86/bdvideo.c	/^void write_pixcolor(dftgraph_t *kghp, u32_t x, u32_t y, pixl_t pix)$/;"	f
 write_pixcolor	initldr/ldrkrl/graph.c	/^void write_pixcolor(machbstart_t* mbsp,u32_t x,u32_t y,pixl_t pix)$/;"	f
 write_realintsvefile	initldr/ldrkrl/inithead.c	/^void write_realintsvefile()$/;"	f
 x	initldr/include/vgastr_t.h	/^    uint_t x;$/;"	m	struct:s_CURSOR
