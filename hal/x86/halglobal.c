@@ -14,5 +14,6 @@ HAL_DEFGLOB_VARIABLE(iidtr_t,x64_iidt_reg);
 HAL_DEFGLOB_VARIABLE(machbstart_t, kmachbsp);
 HAL_DEFGLOB_VARIABLE(dftgraph_t, kdftgh);
 
+//定义intfltdsc_t 结构数组大小为256
 HAL_DEFGLOB_VARIABLE(intfltdsc_t, machintflt)[IDTMAX];
 #endif

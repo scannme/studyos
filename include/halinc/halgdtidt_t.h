@@ -5,6 +5,7 @@
 **********************************************************/
 #ifndef _HALGDTIDT_T_H
 #define _HALGDTIDT_T_H
+#include "bastype.h"
 
 #define DEVCLASSMAX 256
 #define GDTMAX 10
