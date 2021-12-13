@@ -75,13 +75,13 @@ BLK512KB_MASK	include/halinc/halmm_t.h	57;"	d
 BLK512KB_SIZE	include/halinc/halmm_t.h	43;"	d
 BLKSZ_HEAD_MAX	include/halinc/halmm_t.h	62;"	d
 BUILDFILE_H	include/script/buildfile.h	2;"	d
-BUILD_DRIV_OBJS	include/script/buildfile.h	11;"	d
-BUILD_FSYS_OBJS	include/script/buildfile.h	10;"	d
+BUILD_DRIV_OBJS	include/script/buildfile.h	12;"	d
+BUILD_FSYS_OBJS	include/script/buildfile.h	11;"	d
 BUILD_HALY_OBJS	include/script/buildfile.h	6;"	d
-BUILD_KRNL_OBJS	include/script/buildfile.h	8;"	d
-BUILD_LIBS_OBJS	include/script/buildfile.h	12;"	d
-BUILD_LINK_OBJS	include/script/buildfile.h	15;"	d
-BUILD_MEMY_OBJS	include/script/buildfile.h	9;"	d
+BUILD_KRNL_OBJS	include/script/buildfile.h	9;"	d
+BUILD_LIBS_OBJS	include/script/buildfile.h	13;"	d
+BUILD_LINK_OBJS	include/script/buildfile.h	16;"	d
+BUILD_MEMY_OBJS	include/script/buildfile.h	10;"	d
 BUILD_MK_BOOT_OBJS	build/krnlobjs.mk	/^BUILD_MK_BOOT_OBJS :=$/;"	m
 BUILD_MK_BOOT_OBJS	script/krnlobjs.S	/^BUILD_MK_BOOT_OBJS +=BUILD_BOOT_OBJS$/;"	l
 BUILD_MK_BOOT_OBJS	script/krnlobjs.S	/^BUILD_MK_BOOT_OBJS :=$/;"	d
@@ -112,7 +112,7 @@ BUILD_MK_TASK_OBJS	script/krnlobjs.S	/^BUILD_MK_TASK_OBJS :=$/;"	d
 BUILD_PATH	Makefile	/^BUILD_PATH = .\/build$/;"	m
 BUILD_PATH	Makefile.x86	/^BUILD_PATH = .\/build\/$/;"	d
 BUILD_PATH	initldr/Makefile	/^BUILD_PATH = .\/build$/;"	m
-BUILD_TASK_OBJS	include/script/buildfile.h	13;"	d
+BUILD_TASK_OBJS	include/script/buildfile.h	14;"	d
 BankSize	include/halinc/bdvideo_t.h	/^    u8_t  BankSize;$/;"	m	struct:s_VBEOMINFO
 BankSize	initldr/include/ldrtype.h	/^    u8_t  BankSize;$/;"	m	struct:s_VBEOMINFO
 BitsPerPixel	include/halinc/bdvideo_t.h	/^    u8_t  BitsPerPixel;$/;"	m	struct:s_VBEOMINFO
@@ -172,33 +172,33 @@ CPU_UND_MODE	include/halinc/halcpuctrl_t.h	14;"	d
 CPU_USR_MODE	include/halinc/halcpuctrl_t.h	9;"	d
 CPU_VECTOR_PHYADR	include/halinc/halplatform_t.h	24;"	d
 CPU_VECTOR_VIRADR	include/halinc/halplatform_t.h	25;"	d
-DA_32	include/halinc/halgdtidt_t.h	45;"	d
-DA_386CGate	include/halinc/halgdtidt_t.h	63;"	d
-DA_386IGate	include/halinc/halgdtidt_t.h	64;"	d
-DA_386TGate	include/halinc/halgdtidt_t.h	65;"	d
-DA_386TSS	include/halinc/halgdtidt_t.h	62;"	d
-DA_64	include/halinc/halgdtidt_t.h	44;"	d
-DA_C	include/halinc/halgdtidt_t.h	55;"	d
-DA_CCO	include/halinc/halgdtidt_t.h	57;"	d
-DA_CCOR	include/halinc/halgdtidt_t.h	58;"	d
-DA_CR	include/halinc/halgdtidt_t.h	56;"	d
-DA_DPL0	include/halinc/halgdtidt_t.h	47;"	d
-DA_DPL1	include/halinc/halgdtidt_t.h	48;"	d
-DA_DPL2	include/halinc/halgdtidt_t.h	49;"	d
-DA_DPL3	include/halinc/halgdtidt_t.h	50;"	d
-DA_DR	include/halinc/halgdtidt_t.h	52;"	d
-DA_DRW	include/halinc/halgdtidt_t.h	53;"	d
-DA_DRWA	include/halinc/halgdtidt_t.h	54;"	d
-DA_LDT	include/halinc/halgdtidt_t.h	60;"	d
-DA_LIMIT_4K	include/halinc/halgdtidt_t.h	46;"	d
-DA_TaskGate	include/halinc/halgdtidt_t.h	61;"	d
+DA_32	include/halinc/halgdtidt_t.h	46;"	d
+DA_386CGate	include/halinc/halgdtidt_t.h	64;"	d
+DA_386IGate	include/halinc/halgdtidt_t.h	65;"	d
+DA_386TGate	include/halinc/halgdtidt_t.h	66;"	d
+DA_386TSS	include/halinc/halgdtidt_t.h	63;"	d
+DA_64	include/halinc/halgdtidt_t.h	45;"	d
+DA_C	include/halinc/halgdtidt_t.h	56;"	d
+DA_CCO	include/halinc/halgdtidt_t.h	58;"	d
+DA_CCOR	include/halinc/halgdtidt_t.h	59;"	d
+DA_CR	include/halinc/halgdtidt_t.h	57;"	d
+DA_DPL0	include/halinc/halgdtidt_t.h	48;"	d
+DA_DPL1	include/halinc/halgdtidt_t.h	49;"	d
+DA_DPL2	include/halinc/halgdtidt_t.h	50;"	d
+DA_DPL3	include/halinc/halgdtidt_t.h	51;"	d
+DA_DR	include/halinc/halgdtidt_t.h	53;"	d
+DA_DRW	include/halinc/halgdtidt_t.h	54;"	d
+DA_DRWA	include/halinc/halgdtidt_t.h	55;"	d
+DA_LDT	include/halinc/halgdtidt_t.h	61;"	d
+DA_LIMIT_4K	include/halinc/halgdtidt_t.h	47;"	d
+DA_TaskGate	include/halinc/halgdtidt_t.h	62;"	d
 DBUGVM	Makefile	/^DBUGVM = bochs -q$/;"	m
 DD	Makefile	/^DD = dd$/;"	m
 DD	Makefile.x86	/^DD = dd$/;"	d
 DD	build/krnlbuidcmd.mk	/^DD = dd$/;"	m
 DD	initldr/Makefile	/^DD = dd$/;"	m
 DD	script/krnlbuidcmd.S	/^DD		= dd$/;"	d
-DEVCLASSMAX	include/halinc/halgdtidt_t.h	9;"	d
+DEVCLASSMAX	include/halinc/halgdtidt_t.h	10;"	d
 DEV_TYPE_NOT	include/halinc/halmm_t.h	10;"	d
 DFCERRSTUS	include/bastypeinc/bastype_t.h	49;"	d
 DFCOKSTUS	include/bastypeinc/bastype_t.h	50;"	d
@@ -238,7 +238,7 @@ GDTBASE	initldr/ldrkrl/imginithead.asm	/^GDTBASE	dd GDT_START$/;"	d
 GDTBASE	initldr/ldrkrl/ldrkrl32.asm	/^GDTBASE	dd GDT_START$/;"	d
 GDTLEN	initldr/ldrkrl/imginithead.asm	/^GDTLEN	dw GDT_END-GDT_START-1	;GDT界限$/;"	d
 GDTLEN	initldr/ldrkrl/ldrkrl32.asm	/^GDTLEN	dw GDT_END-GDT_START-1	;GDT界限$/;"	d
-GDTMAX	include/halinc/halgdtidt_t.h	10;"	d
+GDTMAX	include/halinc/halgdtidt_t.h	11;"	d
 GDT_END	initldr/ldrkrl/imginithead.asm	/^GDT_END:$/;"	l
 GDT_END	initldr/ldrkrl/ldrkrl32.asm	/^GDT_END:$/;"	l
 GDT_PTR	initldr/ldrkrl/imginithead.asm	/^GDT_PTR:$/;"	l
@@ -275,7 +275,7 @@ ICW1	include/halinc/io.h	10;"	d
 ICW4	include/halinc/io.h	17;"	d
 IDTBAS	initldr/ldrkrl/ldrkrl32.asm	/^IDTBAS	dd 0$/;"	d
 IDTLEN	initldr/ldrkrl/ldrkrl32.asm	/^IDTLEN	dw 0x3ff$/;"	d
-IDTMAX	include/halinc/halgdtidt_t.h	11;"	d
+IDTMAX	include/halinc/halgdtidt_t.h	12;"	d
 IDT_PTR	initldr/ldrkrl/ldrkrl32.asm	/^IDT_PTR:$/;"	l
 IKSTACK_PHYADR	initldr/include/ldrtype.h	21;"	d
 IKSTACK_SIZE	initldr/include/ldrtype.h	22;"	d
@@ -286,9 +286,9 @@ IMGSECTNR	Makefile	/^IMGSECTNR = 204800$/;"	m
 IMGSHEL_PHYADR	initldr/include/ldrtype.h	20;"	d
 IMGTOVDI	Makefile	/^IMGTOVDI = qemu-img convert -f raw -O vdi$/;"	m
 IMGTOVMDK	Makefile	/^IMGTOVMDK = qemu-img convert -f raw -O vmdk$/;"	m
-INDEX_DUMMY	include/halinc/halgdtidt_t.h	30;"	d
-INDEX_FLAT_C	include/halinc/halgdtidt_t.h	31;"	d
-INDEX_FLAT_RW	include/halinc/halgdtidt_t.h	32;"	d
+INDEX_DUMMY	include/halinc/halgdtidt_t.h	31;"	d
+INDEX_FLAT_C	include/halinc/halgdtidt_t.h	32;"	d
+INDEX_FLAT_RW	include/halinc/halgdtidt_t.h	33;"	d
 INITHEAD_H	initldr/include/inithead.h	2;"	d
 INITLDRIMH	Makefile	/^INITLDRIMH = initldrimh.bin$/;"	m
 INITLDRKRL	Makefile	/^INITLDRKRL = initldrkrl.bin$/;"	m
@@ -302,36 +302,36 @@ INIT_HEAD_STACK_ADDR	include/halinc/halplatform_t.h	22;"	d
 INSTALLSRCFILE_PATH	Makefile	/^INSTALLSRCFILE_PATH =.\/release\/Cosmos.eki$/;"	m
 INSTALL_PATH	Makefile	/^INSTALL_PATH =\/boot\/$/;"	m
 INTSRC_MAX	include/halinc/halplatform_t.h	35;"	d
-INT_VECTOR_ALIGN_CHEK	include/halinc/halgdtidt_t.h	84;"	d
-INT_VECTOR_APIC_ERROR	include/halinc/halgdtidt_t.h	99;"	d
-INT_VECTOR_APIC_IPI_SCHEDUL	include/halinc/halgdtidt_t.h	92;"	d
-INT_VECTOR_APIC_LINTI	include/halinc/halgdtidt_t.h	98;"	d
-INT_VECTOR_APIC_LINTO	include/halinc/halgdtidt_t.h	97;"	d
-INT_VECTOR_APIC_PERFORM	include/halinc/halgdtidt_t.h	96;"	d
-INT_VECTOR_APIC_SVR	include/halinc/halgdtidt_t.h	93;"	d
-INT_VECTOR_APIC_THERMAL	include/halinc/halgdtidt_t.h	95;"	d
-INT_VECTOR_APIC_TIMER	include/halinc/halgdtidt_t.h	94;"	d
-INT_VECTOR_BOUNDS	include/halinc/halgdtidt_t.h	73;"	d
-INT_VECTOR_BREAKPOINT	include/halinc/halgdtidt_t.h	71;"	d
-INT_VECTOR_COPROC_ERR	include/halinc/halgdtidt_t.h	83;"	d
-INT_VECTOR_COPROC_NOT	include/halinc/halgdtidt_t.h	75;"	d
-INT_VECTOR_COPROC_SEG	include/halinc/halgdtidt_t.h	77;"	d
-INT_VECTOR_DEBUG	include/halinc/halgdtidt_t.h	69;"	d
-INT_VECTOR_DIVIDE	include/halinc/halgdtidt_t.h	68;"	d
-INT_VECTOR_DOUBLE_FAULT	include/halinc/halgdtidt_t.h	76;"	d
-INT_VECTOR_INVAL_OP	include/halinc/halgdtidt_t.h	74;"	d
-INT_VECTOR_INVAL_TSS	include/halinc/halgdtidt_t.h	78;"	d
-INT_VECTOR_IRQ0	include/halinc/halgdtidt_t.h	89;"	d
-INT_VECTOR_IRQ8	include/halinc/halgdtidt_t.h	90;"	d
-INT_VECTOR_MACHI_CHEK	include/halinc/halgdtidt_t.h	85;"	d
-INT_VECTOR_NMI	include/halinc/halgdtidt_t.h	70;"	d
-INT_VECTOR_OVERFLOW	include/halinc/halgdtidt_t.h	72;"	d
-INT_VECTOR_PAGE_FAULT	include/halinc/halgdtidt_t.h	82;"	d
-INT_VECTOR_PROTECTION	include/halinc/halgdtidt_t.h	81;"	d
-INT_VECTOR_SEG_NOT	include/halinc/halgdtidt_t.h	79;"	d
-INT_VECTOR_SIMD_FAULT	include/halinc/halgdtidt_t.h	86;"	d
-INT_VECTOR_STACK_FAULT	include/halinc/halgdtidt_t.h	80;"	d
-INT_VECTOR_SYSCALL	include/halinc/halgdtidt_t.h	101;"	d
+INT_VECTOR_ALIGN_CHEK	include/halinc/halgdtidt_t.h	85;"	d
+INT_VECTOR_APIC_ERROR	include/halinc/halgdtidt_t.h	100;"	d
+INT_VECTOR_APIC_IPI_SCHEDUL	include/halinc/halgdtidt_t.h	93;"	d
+INT_VECTOR_APIC_LINTI	include/halinc/halgdtidt_t.h	99;"	d
+INT_VECTOR_APIC_LINTO	include/halinc/halgdtidt_t.h	98;"	d
+INT_VECTOR_APIC_PERFORM	include/halinc/halgdtidt_t.h	97;"	d
+INT_VECTOR_APIC_SVR	include/halinc/halgdtidt_t.h	94;"	d
+INT_VECTOR_APIC_THERMAL	include/halinc/halgdtidt_t.h	96;"	d
+INT_VECTOR_APIC_TIMER	include/halinc/halgdtidt_t.h	95;"	d
+INT_VECTOR_BOUNDS	include/halinc/halgdtidt_t.h	74;"	d
+INT_VECTOR_BREAKPOINT	include/halinc/halgdtidt_t.h	72;"	d
+INT_VECTOR_COPROC_ERR	include/halinc/halgdtidt_t.h	84;"	d
+INT_VECTOR_COPROC_NOT	include/halinc/halgdtidt_t.h	76;"	d
+INT_VECTOR_COPROC_SEG	include/halinc/halgdtidt_t.h	78;"	d
+INT_VECTOR_DEBUG	include/halinc/halgdtidt_t.h	70;"	d
+INT_VECTOR_DIVIDE	include/halinc/halgdtidt_t.h	69;"	d
+INT_VECTOR_DOUBLE_FAULT	include/halinc/halgdtidt_t.h	77;"	d
+INT_VECTOR_INVAL_OP	include/halinc/halgdtidt_t.h	75;"	d
+INT_VECTOR_INVAL_TSS	include/halinc/halgdtidt_t.h	79;"	d
+INT_VECTOR_IRQ0	include/halinc/halgdtidt_t.h	90;"	d
+INT_VECTOR_IRQ8	include/halinc/halgdtidt_t.h	91;"	d
+INT_VECTOR_MACHI_CHEK	include/halinc/halgdtidt_t.h	86;"	d
+INT_VECTOR_NMI	include/halinc/halgdtidt_t.h	71;"	d
+INT_VECTOR_OVERFLOW	include/halinc/halgdtidt_t.h	73;"	d
+INT_VECTOR_PAGE_FAULT	include/halinc/halgdtidt_t.h	83;"	d
+INT_VECTOR_PROTECTION	include/halinc/halgdtidt_t.h	82;"	d
+INT_VECTOR_SEG_NOT	include/halinc/halgdtidt_t.h	80;"	d
+INT_VECTOR_SIMD_FAULT	include/halinc/halgdtidt_t.h	87;"	d
+INT_VECTOR_STACK_FAULT	include/halinc/halgdtidt_t.h	81;"	d
+INT_VECTOR_SYSCALL	include/halinc/halgdtidt_t.h	102;"	d
 KERNELCE_PATH	build/drv.mk	/^KERNELCE_PATH = ..\/drivers\/$/;"	m
 KERNELCE_PATH	build/hal.mk	/^KERNELCE_PATH = ..\/hal\/x86\/$/;"	m
 KERNELCE_PATH	build/krl.mk	/^KERNELCE_PATH = ..\/kernel\/$/;"	m
@@ -346,8 +346,8 @@ KERNELCE_PATH	script/lib.S	/^KERNELCE_PATH	= ..\/lib\/$/;"	d
 KERNELCE_PATH	script/task.S	/^KERNELCE_PATH	= ..\/task\/$/;"	d
 KERNEL_PHYI_ADDR	include/halinc/halplatform_t.h	19;"	d
 KERNEL_VIRT_ADDR	include/halinc/halplatform_t.h	18;"	d
-KERNL_BINF_FILE	include/script/buildfile.h	22;"	d
-KERNL_ELFF_FILE	include/script/buildfile.h	21;"	d
+KERNL_BINF_FILE	include/script/buildfile.h	23;"	d
+KERNL_ELFF_FILE	include/script/buildfile.h	22;"	d
 KERNL_MK_BINF_FILE	build/krnlobjs.mk	/^KERNL_MK_BINF_FILE :=$/;"	m
 KERNL_MK_BINF_FILE	script/krnlobjs.S	/^KERNL_MK_BINF_FILE +=KERNL_BINF_FILE$/;"	l
 KERNL_MK_BINF_FILE	script/krnlobjs.S	/^KERNL_MK_BINF_FILE :=$/;"	d
@@ -429,9 +429,9 @@ KRNL_VIRTUAL_ADDRESS_START	initldr/include/ldrtype.h	32;"	d
 KUC_DELFLG	include/halinc/kmsob_t.h	12;"	d
 KUC_DSYFLG	include/halinc/kmsob_t.h	13;"	d
 KUC_NEWFLG	include/halinc/kmsob_t.h	11;"	d
-K_CS_IDX	include/halinc/halgdtidt_t.h	15;"	d
-K_DS_IDX	include/halinc/halgdtidt_t.h	16;"	d
-K_TAR_IDX	include/halinc/halgdtidt_t.h	19;"	d
+K_CS_IDX	include/halinc/halgdtidt_t.h	16;"	d
+K_DS_IDX	include/halinc/halgdtidt_t.h	17;"	d
+K_TAR_IDX	include/halinc/halgdtidt_t.h	20;"	d
 LD	build/krnlbuidcmd.mk	/^LD = ld$/;"	m
 LD	script/krnlbuidcmd.S	/^LD		= ld$/;"	d
 LDFLAGS	build/krnlbuidcmd.mk	/^LDFLAGS = -s -static -T cosmoslink.lds -n -Map cosmos.map$/;"	m
@@ -441,8 +441,8 @@ LDRKRLENTRY_H	initldr/include/ldrkrlentry.h	2;"	d
 LIBSMFLGS	Makefile.x86	/^LIBSMFLGS = -C $(BUILD_PATH) -f lib.mk$/;"	d
 LINEAR_ADDRESS	script/cosmoslink.S	/^LINEAR_ADDRESS = 0x2000000;$/;"	d
 LINKMFLGS	Makefile.x86	/^LINKMFLGS = -C $(BUILD_PATH) -f link.mk$/;"	d
-LINKR_IPUT_FILE	include/script/buildfile.h	19;"	d
-LINKR_OPUT_FILE	include/script/buildfile.h	20;"	d
+LINKR_IPUT_FILE	include/script/buildfile.h	20;"	d
+LINKR_OPUT_FILE	include/script/buildfile.h	21;"	d
 LINK_LINE_ADDR	include/halinc/halplatform_t.h	17;"	d
 LINK_VIRT_ADDR	include/halinc/halplatform_t.h	16;"	d
 LKHEAD_D	include/bastypeinc/bastype_t.h	55;"	d
@@ -505,20 +505,20 @@ MAPONE_SIZE	include/halinc/halmm_t.h	34;"	d
 MAP_FLAGES_VAL	include/halinc/halmm_t.h	35;"	d
 MAX_CHARBITBY	include/halinc/bdvideo_t.h	182;"	d
 MAX_CHARBITBY	initldr/include/ldrtype.h	342;"	d
-MA_HWAD_LEND	include/halinc/memarea_t.h	90;"	d
-MA_HWAD_LSTART	include/halinc/memarea_t.h	88;"	d
-MA_HWAD_LSZ	include/halinc/memarea_t.h	89;"	d
-MA_KRNL_LEND	include/halinc/memarea_t.h	93;"	d
-MA_KRNL_LSTART	include/halinc/memarea_t.h	91;"	d
-MA_KRNL_LSZ	include/halinc/memarea_t.h	92;"	d
-MA_PROC_LEND	include/halinc/memarea_t.h	96;"	d
-MA_PROC_LSTART	include/halinc/memarea_t.h	94;"	d
-MA_PROC_LSZ	include/halinc/memarea_t.h	95;"	d
-MA_TYPE_HWAD	include/halinc/memarea_t.h	83;"	d
-MA_TYPE_INIT	include/halinc/memarea_t.h	82;"	d
-MA_TYPE_KRNL	include/halinc/memarea_t.h	84;"	d
-MA_TYPE_PROC	include/halinc/memarea_t.h	85;"	d
-MA_TYPE_SHAR	include/halinc/memarea_t.h	86;"	d
+MA_HWAD_LEND	include/halinc/memarea_t.h	91;"	d
+MA_HWAD_LSTART	include/halinc/memarea_t.h	89;"	d
+MA_HWAD_LSZ	include/halinc/memarea_t.h	90;"	d
+MA_KRNL_LEND	include/halinc/memarea_t.h	94;"	d
+MA_KRNL_LSTART	include/halinc/memarea_t.h	92;"	d
+MA_KRNL_LSZ	include/halinc/memarea_t.h	93;"	d
+MA_PROC_LEND	include/halinc/memarea_t.h	97;"	d
+MA_PROC_LSTART	include/halinc/memarea_t.h	95;"	d
+MA_PROC_LSZ	include/halinc/memarea_t.h	96;"	d
+MA_TYPE_HWAD	include/halinc/memarea_t.h	84;"	d
+MA_TYPE_INIT	include/halinc/memarea_t.h	83;"	d
+MA_TYPE_KRNL	include/halinc/memarea_t.h	85;"	d
+MA_TYPE_PROC	include/halinc/memarea_t.h	86;"	d
+MA_TYPE_SHAR	include/halinc/memarea_t.h	87;"	d
 MBSPADR	include/halinc/halplatform_t.h	115;"	d
 MBSPADR	initldr/include/ldrtype.h	417;"	d
 MBS_MIGC	include/halinc/halplatform_t.h	51;"	d
@@ -530,10 +530,10 @@ MDC_ENDGIC	include/halinc/halplatform_t.h	129;"	d
 MDC_ENDGIC	initldr/include/ldrtype.h	16;"	d
 MDC_RVGIC	include/halinc/halplatform_t.h	130;"	d
 MDC_RVGIC	initldr/include/ldrtype.h	17;"	d
-MDIVMER_ARR_BMAX	include/halinc/memarea_t.h	66;"	d
-MDIVMER_ARR_LMAX	include/halinc/memarea_t.h	65;"	d
-MDIVMER_ARR_OMAX	include/halinc/memarea_t.h	67;"	d
-MEMAREA_MAX	include/halinc/memarea_t.h	87;"	d
+MDIVMER_ARR_BMAX	include/halinc/memarea_t.h	67;"	d
+MDIVMER_ARR_LMAX	include/halinc/memarea_t.h	66;"	d
+MDIVMER_ARR_OMAX	include/halinc/memarea_t.h	68;"	d
+MEMAREA_MAX	include/halinc/memarea_t.h	88;"	d
 MF_LSTTY_LIST	include/halinc/msadsc_t.h	17;"	d
 MF_MARTY_HWD	include/halinc/msadsc_t.h	25;"	d
 MF_MARTY_INIT	include/halinc/msadsc_t.h	24;"	d
@@ -583,17 +583,17 @@ OJCYFLAGS	script/krnlbuidcmd.S	/^OJCYFLAGS = -S -O binary$/;"	d
 OYFLAGS	build/krnlbuidcmd.mk	/^OYFLAGS = -O binary$/;"	m
 OYFLAGS	script/krnlbuidcmd.S	/^OYFLAGS		= -O binary$/;"	d
 P4K_ALIGN	initldr/include/type.h	59;"	d
-PAF_ALLOC	include/halinc/msadsc_t.h	40;"	d
-PAF_INIT_PADRS	include/halinc/msadsc_t.h	49;"	d
-PAF_NO_ALLOC	include/halinc/msadsc_t.h	39;"	d
-PAF_NO_BUSY	include/halinc/msadsc_t.h	47;"	d
-PAF_NO_CACHE	include/halinc/msadsc_t.h	43;"	d
-PAF_NO_DIRTY	include/halinc/msadsc_t.h	46;"	d
-PAF_NO_KMAP	include/halinc/msadsc_t.h	44;"	d
-PAF_NO_LOCK	include/halinc/msadsc_t.h	45;"	d
-PAF_NO_SHARED	include/halinc/msadsc_t.h	41;"	d
-PAF_NO_SWAP	include/halinc/msadsc_t.h	42;"	d
-PAF_RV2_VAL	include/halinc/msadsc_t.h	48;"	d
+PAF_ALLOC	include/halinc/msadsc_t.h	41;"	d
+PAF_INIT_PADRS	include/halinc/msadsc_t.h	50;"	d
+PAF_NO_ALLOC	include/halinc/msadsc_t.h	40;"	d
+PAF_NO_BUSY	include/halinc/msadsc_t.h	48;"	d
+PAF_NO_CACHE	include/halinc/msadsc_t.h	44;"	d
+PAF_NO_DIRTY	include/halinc/msadsc_t.h	47;"	d
+PAF_NO_KMAP	include/halinc/msadsc_t.h	45;"	d
+PAF_NO_LOCK	include/halinc/msadsc_t.h	46;"	d
+PAF_NO_SHARED	include/halinc/msadsc_t.h	42;"	d
+PAF_NO_SWAP	include/halinc/msadsc_t.h	43;"	d
+PAF_RV2_VAL	include/halinc/msadsc_t.h	49;"	d
 PAGEMAPBASS	include/halinc/pages64_t.h	39;"	d
 PAGESIZE	include/halinc/pages64_t.h	47;"	d
 PAGE_ALIGN	include/halinc/pages64_t.h	52;"	d
@@ -641,9 +641,9 @@ PNTPFUN	include/halinc/pages64_t.h	54;"	d
 PREMENTMFLGS	Makefile.x86	/^PREMENTMFLGS = -C $(BUILD_PATH) -f pretreatment.mkf$/;"	d
 PRINTCSTR	build/krnlbuidrule.mk	/^PRINTCSTR = @echo $(CCSTR)$/;"	m
 PRINTCSTR	script/krnlbuidrule.S	/^PRINTCSTR 	=	@echo $(CCSTR) $/;"	d
-PRIVILEGE_KRNL	include/halinc/halgdtidt_t.h	26;"	d
-PRIVILEGE_TASK	include/halinc/halgdtidt_t.h	27;"	d
-PRIVILEGE_USER	include/halinc/halgdtidt_t.h	28;"	d
+PRIVILEGE_KRNL	include/halinc/halgdtidt_t.h	27;"	d
+PRIVILEGE_TASK	include/halinc/halgdtidt_t.h	28;"	d
+PRIVILEGE_USER	include/halinc/halgdtidt_t.h	29;"	d
 PRMSIZEO	include/halinc/pages64_t.h	48;"	d
 PSHRSIZE	include/halinc/pages64_t.h	40;"	d
 PTENFN	include/halinc/pages64_t.h	56;"	d
@@ -729,11 +729,11 @@ RsvdFieldPosition	initldr/include/ldrtype.h	/^    u8_t  RsvdFieldPosition;$/;"	m
 RsvdMaskSize	include/halinc/bdvideo_t.h	/^    u8_t  RsvdMaskSize;$/;"	m	struct:s_VBEOMINFO
 RsvdMaskSize	initldr/include/ldrtype.h	/^    u8_t  RsvdMaskSize;$/;"	m	struct:s_VBEOMINFO
 SDRAM_MAPVECTPHY_ADDR	include/halinc/halplatform_t.h	13;"	d
-SELECTOR_DUMMY	include/halinc/halgdtidt_t.h	34;"	d
-SELECTOR_FLAT_C	include/halinc/halgdtidt_t.h	35;"	d
-SELECTOR_FLAT_RW	include/halinc/halgdtidt_t.h	36;"	d
-SELECTOR_KERNEL_CS	include/halinc/halgdtidt_t.h	39;"	d
-SELECTOR_KERNEL_DS	include/halinc/halgdtidt_t.h	40;"	d
+SELECTOR_DUMMY	include/halinc/halgdtidt_t.h	35;"	d
+SELECTOR_FLAT_C	include/halinc/halgdtidt_t.h	36;"	d
+SELECTOR_FLAT_RW	include/halinc/halgdtidt_t.h	37;"	d
+SELECTOR_KERNEL_CS	include/halinc/halgdtidt_t.h	40;"	d
+SELECTOR_KERNEL_DS	include/halinc/halgdtidt_t.h	41;"	d
 SEM_FLG_MULTI	include/bastypeinc/sem_t.h	9;"	d
 SEM_FLG_MUTEX	include/bastypeinc/sem_t.h	8;"	d
 SEM_MULTI_LOCK	include/bastypeinc/sem_t.h	11;"	d
@@ -744,7 +744,7 @@ SIOPT	include/halinc/io.h	22;"	d
 SIOPT1	include/halinc/io.h	23;"	d
 SRCFILE	Makefile	/^SRCFILE = $(BOOTEXCIMG) $(KRNLEXCIMG) $(LDEREXCIMG) $(SHELEXCIMG)$/;"	m
 SRCFILE	initldr/Makefile	/^SRCFILE = $(BOOTEXCIMG) $(KRNLEXCIMG) $(LDEREXCIMG) $(SHELEXCIMG)$/;"	m
-STACKMAX	include/halinc/halgdtidt_t.h	12;"	d
+STACKMAX	include/halinc/halgdtidt_t.h	13;"	d
 STI	include/halinc/io.h	60;"	d
 STI_HALT	include/halinc/io.h	69;"	d
 SYSRCALL	include/halinc/io.h	44;"	d
@@ -753,11 +753,11 @@ TIMEJISU	include/halinc/io.h	37;"	d
 TIMEMODE	include/halinc/io.h	36;"	d
 TRUE	include/bastypeinc/bastype_t.h	47;"	d
 TRUE	initldr/include/type.h	53;"	d
-UMOD_EFLAGS	include/halinc/halgdtidt_t.h	20;"	d
+UMOD_EFLAGS	include/halinc/halgdtidt_t.h	21;"	d
 USER_VIRTUAL_ADDRESS_END	include/halinc/halplatform_t.h	42;"	d
 USER_VIRTUAL_ADDRESS_START	include/halinc/halplatform_t.h	41;"	d
-U_CS_IDX	include/halinc/halgdtidt_t.h	17;"	d
-U_DS_IDX	include/halinc/halgdtidt_t.h	18;"	d
+U_CS_IDX	include/halinc/halgdtidt_t.h	18;"	d
+U_DS_IDX	include/halinc/halgdtidt_t.h	19;"	d
 VBEINFO_ADR	initldr/include/realparm.h	14;"	d
 VBEMINFO_ADR	initldr/include/realparm.h	15;"	d
 VBEMODE	include/halinc/bdvideo_t.h	88;"	d
@@ -988,18 +988,19 @@ acpi_get_bios_ebda	initldr/ldrkrl/chkcpmm.c	/^unsigned int acpi_get_bios_ebda()$
 acpi_rsdp_isok	initldr/ldrkrl/chkcpmm.c	/^mrsdp_t *acpi_rsdp_isok(mrsdp_t *rdp)$/;"	f
 adr_t	include/bastypeinc/bastype_t.h	/^typedef unsigned long adr_t;$/;"	t
 adr_t	initldr/include/type.h	/^typedef unsigned long adr_t;$/;"	t
+adrzone_is_ok	hal/x86/halplatform.c	/^int adrzone_is_ok(u64_t sadr, u64_t slen, u64_t kadr, u64_t klen)$/;"	f
 adrzone_is_ok	initldr/ldrkrl/bstartparm.c	/^int adrzone_is_ok(u64_t sadr, u64_t slen, u64_t kadr, u64_t klen)$/;"	f
-af_alcindx	include/halinc/memarea_t.h	/^	uint_t af_alcindx;$/;"	m	struct:s_BAFHLST
-af_alclst	include/halinc/memarea_t.h	/^	list_h_t af_alclst;$/;"	m	struct:s_BAFHLST
-af_fobjnr	include/halinc/memarea_t.h	/^	uint_t af_fobjnr;$/;"	m	struct:s_BAFHLST
-af_freindx	include/halinc/memarea_t.h	/^	uint_t af_freindx;$/;"	m	struct:s_BAFHLST
-af_frelst	include/halinc/memarea_t.h	/^	list_h_t af_frelst;$/;"	m	struct:s_BAFHLST
-af_lock	include/halinc/memarea_t.h	/^	spinlock_t af_lock;$/;"	m	struct:s_BAFHLST
-af_mobjnr	include/halinc/memarea_t.h	/^	uint_t af_mobjnr;$/;"	m	struct:s_BAFHLST
-af_oder	include/halinc/memarea_t.h	/^	uint_t af_oder;$/;"	m	struct:s_BAFHLST
-af_oderpnr	include/halinc/memarea_t.h	/^	uint_t af_oderpnr;$/;"	m	struct:s_BAFHLST
+af_alcindx	include/halinc/memarea_t.h	/^	uint_t af_alcindx; \/\/此结构的分配计数$/;"	m	struct:s_BAFHLST
+af_alclst	include/halinc/memarea_t.h	/^	list_h_t af_alclst; \/\/挂载此结构已经分配的msadsc_t结构$/;"	m	struct:s_BAFHLST
+af_fobjnr	include/halinc/memarea_t.h	/^	uint_t af_fobjnr; \/\/多少个空闲得msadsc_t结构,即空闲页面$/;"	m	struct:s_BAFHLST
+af_freindx	include/halinc/memarea_t.h	/^	uint_t af_freindx;\/\/此结构的释放计数$/;"	m	struct:s_BAFHLST
+af_frelst	include/halinc/memarea_t.h	/^	list_h_t af_frelst; \/\/挂载此结构空闲msadsc_t结构$/;"	m	struct:s_BAFHLST
+af_lock	include/halinc/memarea_t.h	/^	spinlock_t af_lock; \/\/保护自身结构的自旋锁$/;"	m	struct:s_BAFHLST
+af_mobjnr	include/halinc/memarea_t.h	/^	uint_t af_mobjnr; \/\/此结构的msadsc_t结构总数,即此结构总页面$/;"	m	struct:s_BAFHLST
+af_oder	include/halinc/memarea_t.h	/^	uint_t af_oder;\/\/页面数的位移量$/;"	m	struct:s_BAFHLST
+af_oderpnr	include/halinc/memarea_t.h	/^	uint_t af_oderpnr; \/\/oder对应的页面数比如order为2 那就是1<<2 =4$/;"	m	struct:s_BAFHLST
 af_ovelst	include/halinc/memarea_t.h	/^	list_h_t af_ovelst;$/;"	m	struct:s_BAFHLST
-af_stus	include/halinc/memarea_t.h	/^	u32_t af_stus;$/;"	m	struct:s_BAFHLST
+af_stus	include/halinc/memarea_t.h	/^	u32_t af_stus; \/\/状态$/;"	m	struct:s_BAFHLST
 afl_emtplsth	include/halinc/halmm_t.h	/^    list_h_t   afl_emtplsth;$/;"	m	struct:s_ALCFRELST
 afl_fuemlsth	include/halinc/halmm_t.h	/^    list_h_t   afl_fuemlsth;$/;"	m	struct:s_ALCFRELST
 afl_fulllsth	include/halinc/halmm_t.h	/^    list_h_t   afl_fulllsth;$/;"	m	struct:s_ALCFRELST
@@ -1023,10 +1024,12 @@ ap_adrstart	include/halinc/halmm_t.h	/^    adr_t ap_adrstart;$/;"	m	struct:s_PHY
 ap_devtype	include/halinc/halmm_t.h	/^    u32_t ap_devtype;$/;"	m	struct:s_PHYADRSPCE
 ap_flgs	include/halinc/halmm_t.h	/^    u32_t ap_flgs;$/;"	m	struct:s_PHYADRSPCE
 arclst_t	include/halinc/memarea_t.h	/^}arclst_t;$/;"	t	typeref:struct:s_ARCLST
+asm_ret_from_user_mode	hal/x86/kernel.asm	/^asm_ret_from_user_mode:$/;"	l
 atomic_t	include/bastypeinc/sem_t.h	/^}atomic_t;$/;"	t	typeref:struct:s_ATOMIC
 attr	include/halinc/halgdtidt_t.h	/^	u8_t	attr;		\/* P(1) DPL(2) DT(1) TYPE(4) *\/$/;"	m	struct:s_GATE
 attr1	include/halinc/halgdtidt_t.h	/^	u8_t	attr1;			\/* P(1) DPL(2) DT(1) TYPE(4) *\/$/;"	m	struct:s_descriptor
 bafhlst_t	include/halinc/memarea_t.h	/^}bafhlst_t;$/;"	t	typeref:struct:s_BAFHLST
+bafhlst_t_init	hal/x86/memarea.c	/^void bafhlst_t_init(bafhlst_t *initp, u32_t stus, uint_t oder, uint_t oderpnr)$/;"	f
 base_high	include/halinc/halgdtidt_t.h	/^	u8_t	base_high;		\/* Base *\/$/;"	m	struct:s_descriptor
 base_low	include/halinc/halgdtidt_t.h	/^	u16_t	base_low;		\/* Base *\/$/;"	m	struct:s_descriptor
 base_mid	include/halinc/halgdtidt_t.h	/^	u8_t	base_mid;		\/* Base *\/$/;"	m	struct:s_descriptor
@@ -1115,7 +1118,9 @@ cl_r	initldr/include/ldrtype.h	/^    u8_t cl_r;$/;"	m	struct:s_PIXCL
 clear_screen	initldr/ldrkrl/vgastr.c	/^void clear_screen(u16_t srrv)$/;"	f
 cleardisp	initldr/ldrkrl/realintsve.asm	/^cleardisp:$/;"	l
 close_curs	initldr/ldrkrl/vgastr.c	/^void close_curs()$/;"	f
-cosmos_version	hal/x86/bdvideo.c	/^const char *cosmos_version = "Cosmos\\n内核版本:00.01\\n";$/;"	v
+continumsadsc_add_bafhlst	hal/x86/memarea.c	/^bool_t continumsadsc_add_bafhlst(memarea_t *mareap, bafhlst_t *bafhp, msadsc_t *fstat, msadsc_t *fend, uint_t fmnr)$/;"	f
+continumsadsc_mareabafh_core	hal/x86/memarea.c	/^bool_t continumsadsc_mareabafh_core(memarea_t *mareap, msadsc_t **rfstat, msadsc_t **rfend, uint_t *rfmnr)$/;"	f
+cosmos_version	hal/x86/bdvideo.c	/^const char *cosmos_version = "Cosmos\\n内核版本:00.01\\n彭东 @ 构建于 "__DATE__$/;"	v
 cpmty_mode	initldr/ldrkrl/ldrkrl32.asm	/^cpmty_mode:$/;"	l
 cpuflg_t	include/bastypeinc/bastype_t.h	/^typedef u64_t cpuflg_t;$/;"	t
 cpuflg_t	initldr/include/type.h	/^typedef u64_t cpuflg_t;$/;"	t
@@ -1145,18 +1150,20 @@ dgo_set_xy	include/halinc/bdvideo_t.h	/^    sint_t (*dgo_set_xy)(void* ghpdev,ui
 dgo_set_xyoffset	include/halinc/bdvideo_t.h	/^    sint_t (*dgo_set_xyoffset)(void* ghpdev,uint_t xoff,uint_t yoff);$/;"	m	struct:s_DFTGHOPS
 dgo_write	include/halinc/bdvideo_t.h	/^    size_t (*dgo_write)(void* ghpdev,void* inp,size_t wesz);$/;"	m	struct:s_DFTGHOPS
 dgo_writepix	include/halinc/bdvideo_t.h	/^    void   (*dgo_writepix)(void* ghpdev,pixl_t pix,uint_t x,uint_t y);$/;"	m	struct:s_DFTGHOPS
+die	hal/x86/halplatform.c	/^void die(u32_t dt)$/;"	f
 die	initldr/ldrkrl/ldrkrlentry.c	/^void die(u32_t dt)$/;"	f
 disable_nmi	initldr/ldrkrl/realintsve.asm	/^disable_nmi:$/;"	l
 disp_mbsp	initldr/ldrkrl/bstartparm.c	/^void disp_mbsp(machbstart_t *mbsp)$/;"	f
-dm_divnr	include/halinc/memarea_t.h	/^	uint_t dm_divnr;$/;"	m	struct:s_MEMDIVMER
-dm_dmmaxindx	include/halinc/memarea_t.h	/^	uint_t dm_dmmaxindx;$/;"	m	struct:s_MEMDIVMER
-dm_lock	include/halinc/memarea_t.h	/^	spinlock_t dm_lock;$/;"	m	struct:s_MEMDIVMER
-dm_mdmlielst	include/halinc/memarea_t.h	/^	bafhlst_t dm_mdmlielst[MDIVMER_ARR_LMAX];$/;"	m	struct:s_MEMDIVMER
-dm_mernr	include/halinc/memarea_t.h	/^	uint_t dm_mernr;$/;"	m	struct:s_MEMDIVMER
-dm_onemsalst	include/halinc/memarea_t.h	/^	bafhlst_t dm_onemsalst;$/;"	m	struct:s_MEMDIVMER
-dm_phydmindx	include/halinc/memarea_t.h	/^	uint_t dm_phydmindx;$/;"	m	struct:s_MEMDIVMER
+disp_memmgrob	hal/x86/memmgrinit.c	/^void disp_memmgrob()$/;"	f
+dm_divnr	include/halinc/memarea_t.h	/^	uint_t dm_divnr;\/\/内存分配次数$/;"	m	struct:s_MEMDIVMER
+dm_dmmaxindx	include/halinc/memarea_t.h	/^	uint_t dm_dmmaxindx; $/;"	m	struct:s_MEMDIVMER
+dm_lock	include/halinc/memarea_t.h	/^	spinlock_t dm_lock; \/\/保护自身结构的自旋锁$/;"	m	struct:s_MEMDIVMER
+dm_mdmlielst	include/halinc/memarea_t.h	/^	bafhlst_t dm_mdmlielst[MDIVMER_ARR_LMAX]; \/\/bafhlst_t结构数组$/;"	m	struct:s_MEMDIVMER
+dm_mernr	include/halinc/memarea_t.h	/^	uint_t dm_mernr;\/\/内存合并次数$/;"	m	struct:s_MEMDIVMER
+dm_onemsalst	include/halinc/memarea_t.h	/^	bafhlst_t dm_onemsalst; \/\/单个bafhlst_t结构$/;"	m	struct:s_MEMDIVMER
+dm_phydmindx	include/halinc/memarea_t.h	/^	uint_t dm_phydmindx; $/;"	m	struct:s_MEMDIVMER
 dm_predmindx	include/halinc/memarea_t.h	/^	uint_t dm_predmindx;$/;"	m	struct:s_MEMDIVMER
-dm_stus	include/halinc/memarea_t.h	/^	u32_t dm_stus;$/;"	m	struct:s_MEMDIVMER
+dm_stus	include/halinc/memarea_t.h	/^	u32_t dm_stus; \/\/状态$/;"	m	struct:s_MEMDIVMER
 dp_bmgic	initldr/include/ldrtype.h	/^    u8_t dp_bmgic;$/;"	m	struct:s_DPT
 dp_pecyder	initldr/include/ldrtype.h	/^    u8_t dp_pecyder;$/;"	m	struct:s_DPT
 dp_pehead	initldr/include/ldrtype.h	/^    u8_t dp_pehead;$/;"	m	struct:s_DPT
@@ -1196,7 +1203,27 @@ everything	script/lib.S	/^everything :$(BUILD_MK_LIBS_OBJS)$/;"	l
 everything	script/link.S	/^everything :   $/;"	l
 everything	script/task.S	/^everything :$(BUILD_MK_TASK_OBJS)$/;"	l
 ex64_GDT	hal/x86/init_entry.asm	/^ex64_GDT:$/;"	l
+exc_alignment_check	hal/x86/kernel.asm	/^exc_alignment_check:$/;"	l
+exc_bounds_check	hal/x86/kernel.asm	/^exc_bounds_check:$/;"	l
+exc_breakpoint_exception	hal/x86/kernel.asm	/^exc_breakpoint_exception:$/;"	l
+exc_copr_error	hal/x86/kernel.asm	/^exc_copr_error:$/;"	l
+exc_copr_not_available	hal/x86/kernel.asm	/^exc_copr_not_available:$/;"	l
+exc_copr_seg_overrun	hal/x86/kernel.asm	/^exc_copr_seg_overrun:$/;"	l
+exc_divide_error	hal/x86/kernel.asm	/^exc_divide_error:$/;"	l
+exc_double_fault	hal/x86/kernel.asm	/^exc_double_fault:$/;"	l
+exc_general_protection	hal/x86/kernel.asm	/^exc_general_protection:$/;"	l
+exc_inval_opcode	hal/x86/kernel.asm	/^exc_inval_opcode:$/;"	l
+exc_inval_tss	hal/x86/kernel.asm	/^exc_inval_tss:$/;"	l
+exc_machine_check	hal/x86/kernel.asm	/^exc_machine_check:$/;"	l
+exc_nmi	hal/x86/kernel.asm	/^exc_nmi:$/;"	l
+exc_overflow	hal/x86/kernel.asm	/^exc_overflow:$/;"	l
+exc_page_fault	hal/x86/kernel.asm	/^exc_page_fault:$/;"	l
+exc_segment_not_present	hal/x86/kernel.asm	/^exc_segment_not_present:$/;"	l
+exc_simd_fault	hal/x86/kernel.asm	/^exc_simd_fault:$/;"	l
+exc_single_step_exception	hal/x86/kernel.asm	/^exc_single_step_exception:$/;"	l
+exc_stack_exception	hal/x86/kernel.asm	/^exc_stack_exception:$/;"	l
 exception_t	initldr/include/type.h	/^typedef void* exception_t;$/;"	t
+exi_sys_call	hal/x86/kernel.asm	/^exi_sys_call:$/;"	l
 extern	hal/x86/init_entry.asm	/^extern hal_start$/;"	l
 extern	initldr/ldrkrl/imginithead.asm	/^extern inithead_entry$/;"	l
 extern	initldr/ldrkrl/ldrkrl32.asm	/^extern ldrkrl_entry$/;"	l
@@ -1364,12 +1391,68 @@ graph_t	include/halinc/bdvideo_t.h	/^}__attribute__((packed)) graph_t;$/;"	t	typ
 graph_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) graph_t;$/;"	t	typeref:struct:s_GRAPH
 graph_t_init	initldr/ldrkrl/graph.c	/^void graph_t_init(graph_t* initp)$/;"	f
 gstr_write	hal/x86/bdvideo.c	/^void gstr_write(dftgraph_t *kghp, char_t *buf)$/;"	f
+hal_add_ihandle	hal/x86/halintupt.c	/^bool_t hal_add_ihandle(intfltdsc_t *intdscp, intserdsc_t *serdscp)$/;"	f
 hal_background	hal/x86/bdvideo.c	/^void hal_background()$/;"	f
+hal_disable_intline	hal/x86/halintupt.c	/^drvstus_t hal_disable_intline(uint_t ifdnr)$/;"	f
+hal_do_hwint	hal/x86/halintupt.c	/^void hal_do_hwint(uint_t intnumb, void *krnlsframp)$/;"	f
 hal_dspversion	hal/x86/bdvideo.c	/^void hal_dspversion()$/;"	f
+hal_enable_intline	hal/x86/halintupt.c	/^drvstus_t hal_enable_intline(uint_t ifdnr)$/;"	f
+hal_fault_allocator	hal/x86/halintupt.c	/^void hal_fault_allocator(uint_t faultnumb, void *krnlsframp)$/;"	f
+hal_hwint_allocator	hal/x86/halintupt.c	/^void hal_hwint_allocator(uint_t intnumb, void *krnlsframp)$/;"	f
+hal_intflt_default	hal/x86/halintupt.c	/^drvstus_t hal_intflt_default(uint_t ift_nr, void *sframe)$/;"	f
 hal_logo	hal/x86/bdvideo.c	/^void hal_logo()$/;"	f
+hal_memcpy	hal/x86/halcpuctrl.c	/^void hal_memcpy(void *src, void *dst, size_t n)$/;"	f
+hal_memset	hal/x86/halcpuctrl.c	/^void hal_memset(void *setp, size_t n, u8_t setval)$/;"	f
+hal_retn_cpuid	hal/x86/halcpuctrl.c	/^uint_t hal_retn_cpuid()$/;"	f
+hal_retn_intfltdsc	hal/x86/halintupt.c	/^PUBLIC intfltdsc_t *hal_retn_intfltdsc(uint_t irqnr)$/;"	f
+hal_run_intflthandle	hal/x86/halintupt.c	/^void hal_run_intflthandle(uint_t ifdnr, void *sframe)$/;"	f
+hal_spinlock_init	hal/x86/halcpuctrl.c	/^void hal_spinlock_init(spinlock_t *lock)$/;"	f
+hal_spinlock_lock	hal/x86/halcpuctrl.c	/^void hal_spinlock_lock(spinlock_t *lock)$/;"	f
+hal_spinlock_saveflg_cli	hal/x86/halcpuctrl.c	/^void hal_spinlock_saveflg_cli(spinlock_t *lock, cpuflg_t *cpuflg)$/;"	f
+hal_spinlock_unlock	hal/x86/halcpuctrl.c	/^void hal_spinlock_unlock(spinlock_t *lock)$/;"	f
+hal_spinunlock_restflg_sti	hal/x86/halcpuctrl.c	/^void hal_spinunlock_restflg_sti(spinlock_t *lock, cpuflg_t *cpuflg)$/;"	f
 hal_start	hal/x86/hal_start.c	/^void hal_start()$/;"	f
-hal_sysdie	hal/x86/halcpuctrl.c	/^void hal_sysdie(char_t * errmsg)$/;"	f
+hal_syscl_allocator	hal/x86/halintupt.c	/^sysstus_t hal_syscl_allocator(uint_t sys_nr,void* msgp)$/;"	f
+hal_sysdie	hal/x86/halcpuctrl.c	/^void hal_sysdie(char_t *errmsg)$/;"	f
 hand_t	include/bastypeinc/bastype_t.h	/^typedef sint_t hand_t;$/;"	t
+hxi_apic_error	hal/x86/kernel.asm	/^hxi_apic_error:$/;"	l
+hxi_apic_ipi_schedul	hal/x86/kernel.asm	/^hxi_apic_ipi_schedul:$/;"	l
+hxi_apic_lint0	hal/x86/kernel.asm	/^hxi_apic_lint0:$/;"	l
+hxi_apic_lint1	hal/x86/kernel.asm	/^hxi_apic_lint1:$/;"	l
+hxi_apic_performonitor	hal/x86/kernel.asm	/^hxi_apic_performonitor:$/;"	l
+hxi_apic_svr	hal/x86/kernel.asm	/^hxi_apic_svr:$/;"	l
+hxi_apic_thermal	hal/x86/kernel.asm	/^hxi_apic_thermal:$/;"	l
+hxi_apic_timer	hal/x86/kernel.asm	/^hxi_apic_timer:$/;"	l
+hxi_exc_general_intpfault	hal/x86/kernel.asm	/^hxi_exc_general_intpfault:$/;"	l
+hxi_hwint00	hal/x86/kernel.asm	/^hxi_hwint00:$/;"	l
+hxi_hwint01	hal/x86/kernel.asm	/^hxi_hwint01:$/;"	l
+hxi_hwint02	hal/x86/kernel.asm	/^hxi_hwint02:$/;"	l
+hxi_hwint03	hal/x86/kernel.asm	/^hxi_hwint03:$/;"	l
+hxi_hwint04	hal/x86/kernel.asm	/^hxi_hwint04:$/;"	l
+hxi_hwint05	hal/x86/kernel.asm	/^hxi_hwint05:$/;"	l
+hxi_hwint06	hal/x86/kernel.asm	/^hxi_hwint06:$/;"	l
+hxi_hwint07	hal/x86/kernel.asm	/^hxi_hwint07:$/;"	l
+hxi_hwint08	hal/x86/kernel.asm	/^hxi_hwint08:$/;"	l
+hxi_hwint09	hal/x86/kernel.asm	/^hxi_hwint09:$/;"	l
+hxi_hwint10	hal/x86/kernel.asm	/^hxi_hwint10:$/;"	l
+hxi_hwint11	hal/x86/kernel.asm	/^hxi_hwint11:$/;"	l
+hxi_hwint12	hal/x86/kernel.asm	/^hxi_hwint12:$/;"	l
+hxi_hwint13	hal/x86/kernel.asm	/^hxi_hwint13:$/;"	l
+hxi_hwint14	hal/x86/kernel.asm	/^hxi_hwint14:$/;"	l
+hxi_hwint15	hal/x86/kernel.asm	/^hxi_hwint15:$/;"	l
+hxi_hwint16	hal/x86/kernel.asm	/^hxi_hwint16:$/;"	l
+hxi_hwint17	hal/x86/kernel.asm	/^hxi_hwint17:$/;"	l
+hxi_hwint18	hal/x86/kernel.asm	/^hxi_hwint18:$/;"	l
+hxi_hwint19	hal/x86/kernel.asm	/^hxi_hwint19:$/;"	l
+hxi_hwint20	hal/x86/kernel.asm	/^hxi_hwint20:$/;"	l
+hxi_hwint21	hal/x86/kernel.asm	/^hxi_hwint21:$/;"	l
+hxi_hwint22	hal/x86/kernel.asm	/^hxi_hwint22:$/;"	l
+hxi_hwint23	hal/x86/kernel.asm	/^hxi_hwint23:$/;"	l
+i8259_disable_line	hal/x86/i8259.c	/^void i8259_disable_line(u32_t line)$/;"	f
+i8259_enabled_line	hal/x86/i8259.c	/^void i8259_enabled_line(u32_t line)$/;"	f
+i8259_rest_enabledline	hal/x86/i8259.c	/^void i8259_rest_enabledline(u64_t *svline, u32_t line)$/;"	f
+i8259_save_disableline	hal/x86/i8259.c	/^void i8259_save_disableline(u64_t *svline, u32_t line)$/;"	f
+i8259_send_eoi	hal/x86/i8259.c	/^void i8259_send_eoi()$/;"	f
 i_deep	include/halinc/halintupt_t.h	/^    uint_t      i_deep;         \/\/中断嵌套深度$/;"	m	struct:s_INTFLTDSC
 i_extp	include/halinc/halintupt_t.h	/^    void*       i_extp;$/;"	m	struct:s_INTFLTDSC
 i_flg	include/halinc/halintupt_t.h	/^    u32_t       i_flg;$/;"	m	struct:s_INTFLTDSC
@@ -1385,8 +1468,8 @@ i_privp	include/halinc/halintupt_t.h	/^    void*       i_privp;$/;"	m	struct:s_I
 i_rbtreeroot	include/halinc/halintupt_t.h	/^    void*       i_rbtreeroot;   \/\/如果中断线程太多则按优先级组成红黑树$/;"	m	struct:s_INTFLTDSC
 i_serfisrlst	include/halinc/halintupt_t.h	/^    list_h_t    i_serfisrlst;   \/\/也可以使用中断回调函数的方式$/;"	m	struct:s_INTFLTDSC
 i_serfisrnr	include/halinc/halintupt_t.h	/^    uint_t      i_serfisrnr;    \/\/中断回调函数个数$/;"	m	struct:s_INTFLTDSC
-i_serlist	include/halinc/halintupt_t.h	/^    list_h_t    i_serlist;$/;"	m	struct:s_INTFLTDSC
-i_sernr	include/halinc/halintupt_t.h	/^    uint_t      i_sernr;$/;"	m	struct:s_INTFLTDSC
+i_serlist	include/halinc/halintupt_t.h	/^    list_h_t    i_serlist; \/\/可以使用中断回调函数的方式$/;"	m	struct:s_INTFLTDSC
+i_sernr	include/halinc/halintupt_t.h	/^    uint_t      i_sernr; \/\/ 中断回调函数个数$/;"	m	struct:s_INTFLTDSC
 i_serthrdlst	include/halinc/halintupt_t.h	/^    list_h_t    i_serthrdlst;   \/\/中断线程链表头$/;"	m	struct:s_INTFLTDSC
 i_serthrdnr	include/halinc/halintupt_t.h	/^    uint_t      i_serthrdnr;    \/\/中断线程个数$/;"	m	struct:s_INTFLTDSC
 i_stus	include/halinc/halintupt_t.h	/^    u32_t       i_stus;$/;"	m	struct:s_INTFLTDSC
@@ -1435,24 +1518,46 @@ init_chkcpu	initldr/ldrkrl/chkcpmm.c	/^void init_chkcpu(machbstart_t *mbsp)$/;"	
 init_chkmm	initldr/ldrkrl/chkcpmm.c	/^void init_chkmm()$/;"	f
 init_curs	initldr/ldrkrl/vgastr.c	/^void init_curs()$/;"	f
 init_defutfont	initldr/ldrkrl/fs.c	/^void init_defutfont(machbstart_t *mbsp)$/;"	f
-init_dftgraph	hal/x86/bdvideo.c	/^PUBLIC void init_dftgraph()$/;"	f
+init_descriptor	hal/x86/halgdtidt.c	/^PUBLIC LKINIT void init_descriptor()$/;"	f
+init_dftgraph	hal/x86/bdvideo.c	/^PUBLIC LKINIT void init_dftgraph()$/;"	f
 init_graph	initldr/ldrkrl/graph.c	/^void init_graph(machbstart_t* mbsp)$/;"	f
 init_hal	hal/x86/halinit.c	/^void init_hal()$/;"	f
+init_halintupt	hal/x86/halintupt.c	/^PUBLIC void init_halintupt()$/;"	f
+init_halmm	hal/x86/halmm.c	/^void init_halmm()$/;"	f
 init_halplaltform	hal/x86/halplatform.c	/^void init_halplaltform()$/;"	f
+init_i8259	hal/x86/i8259.c	/^void init_i8259()$/;"	f
+init_idt_descriptor	hal/x86/halgdtidt.c	/^PUBLIC LKINIT void init_idt_descriptor()$/;"	f
+init_intfltdsc	hal/x86/halintupt.c	/^void init_intfltdsc()$/;"	f
 init_kinitfvram	initldr/ldrkrl/graph.c	/^void init_kinitfvram(machbstart_t* mbsp)$/;"	f
+init_krl	kernel/krlinit.c	/^void init_krl()$/;"	f
 init_krlfile	initldr/ldrkrl/fs.c	/^void init_krlfile(machbstart_t *mbsp)$/;"	f
 init_krlinitstack	initldr/ldrkrl/chkcpmm.c	/^void init_krlinitstack(machbstart_t *mbsp)$/;"	f
 init_machbstart	hal/x86/halplatform.c	/^void init_machbstart()$/;"	f
 init_mem	initldr/ldrkrl/chkcpmm.c	/^void init_mem(machbstart_t *mbsp)$/;"	f
+init_memarea	hal/x86/memarea.c	/^void init_memarea()$/;"	f
+init_memarea_core	hal/x86/memarea.c	/^bool_t init_memarea_core(machbstart_t *mbsp)$/;"	f
 init_meme820	initldr/ldrkrl/chkcpmm.c	/^void init_meme820(machbstart_t *mbsp)$/;"	f
+init_memmgr	hal/x86/memmgrinit.c	/^void init_memmgr()$/;"	f
+init_memmgrob	hal/x86/memmgrinit.c	/^void init_memmgrob()$/;"	f
+init_merlove_mem	hal/x86/memarea.c	/^void init_merlove_mem()$/;"	f
+init_msadsc	hal/x86/msadsc.c	/^void init_msadsc()$/;"	f
+init_msadsc_core	hal/x86/memmgrinit.c	/^u64_t init_msadsc_core(machbstart_t *mbsp, msadsc_t *msavstart, u64_t msanr)$/;"	f
+init_msadsc_core	hal/x86/msadsc.c	/^u64_t init_msadsc_core(machbstart_t *mbsp, msadsc_t *msavstart, u64_t msanr)$/;"	f
+init_one_pmrge	hal/x86/halmm.c	/^bool_t init_one_pmrge(e820map_t *e8p, phymmarge_t *pmargep)$/;"	f
+init_phymmarge	hal/x86/halmm.c	/^void init_phymmarge()$/;"	f
+init_search_krloccupymm	hal/x86/msadsc.c	/^void init_search_krloccupymm(machbstart_t *mbsp)$/;"	f
 init_vbe	hal/x86/bdvideo.c	/^void init_vbe()$/;"	f
+initchkadr_is_ok	hal/x86/halplatform.c	/^int initchkadr_is_ok(machbstart_t *mbsp, u64_t chkadr, u64_t cksz)$/;"	f
 inithead_entry	initldr/ldrkrl/inithead.c	/^void inithead_entry()$/;"	f
+initpmrge_core	hal/x86/halmm.c	/^u64_t initpmrge_core(e820map_t *e8sp, u64_t e8nr, phymmarge_t *pmargesp)$/;"	f
 int131errmsg	initldr/ldrkrl/realintsve.asm	/^int131errmsg: db     "int 13 read hdsk  error"$/;"	d
 intfltdsc_t	include/halinc/halintupt_t.h	/^}intfltdsc_t;$/;"	t	typeref:struct:s_INTFLTDSC
+intfltdsc_t_init	hal/x86/halintupt.c	/^void intfltdsc_t_init(intfltdsc_t *initp, u32_t flg, u32_t sts, uint_t prity, uint_t irq)$/;"	f
 intflthandle_t	include/bastypeinc/bastype_t.h	/^typedef drvstus_t (*intflthandle_t)(uint_t ift_nr,void* device,void* sframe);$/;"	t
 inthandler_t	include/bastypeinc/bastype_t.h	/^typedef void (*inthandler_t)();$/;"	t
 inthandler_t	initldr/include/type.h	/^typedef void (*inthandler_t)();$/;"	t
 intserdsc_t	include/halinc/halintupt_t.h	/^}intserdsc_t;$/;"	t	typeref:struct:s_INTSERDSC
+intserdsc_t_init	hal/x86/halintupt.c	/^void intserdsc_t_init(intserdsc_t *initp, u32_t flg, intfltdsc_t *intfltp, void *device, intflthandle_t handle)$/;"	f
 intstkregs_t	include/halinc/cpu_t.h	/^}intstkregs_t;$/;"	t	typeref:struct:s_INTSTKREGS
 iobase	include/halinc/halgdtidt_t.h	/^	u16_t iobase;$/;"	m	struct:s_X64TSS
 ist	include/halinc/halgdtidt_t.h	/^	u64_t ist[7];$/;"	m	struct:s_X64TSS
@@ -1492,6 +1597,11 @@ klfocpymblk_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) klfocpymblk_t
 kmbext_t	include/halinc/kmsob_t.h	/^}kmbext_t;$/;"	t	typeref:struct:s_KMBEXT
 kmsob_t	include/halinc/kmsob_t.h	/^}kmsob_t;$/;"	t	typeref:struct:s_KMSOB
 kmsobmgrhed_t	include/halinc/kmsob_t.h	/^}kmsobmgrhed_t;$/;"	t	typeref:struct:s_KMSOBMGRHED
+knl_spinlock_cli	hal/x86/halcpuctrl.c	/^void knl_spinlock_cli(spinlock_t *lock, cpuflg_t *cpuflg)$/;"	f
+knl_spinlock_init	hal/x86/halcpuctrl.c	/^void knl_spinlock_init(spinlock_t *lock)$/;"	f
+knl_spinlock_lock	hal/x86/halcpuctrl.c	/^void knl_spinlock_lock(spinlock_t *lock)$/;"	f
+knl_spinlock_unlock	hal/x86/halcpuctrl.c	/^void knl_spinlock_unlock(spinlock_t *lock)$/;"	f
+knl_spinunlock_sti	hal/x86/halcpuctrl.c	/^void knl_spinunlock_sti(spinlock_t *lock, cpuflg_t *cpuflg)$/;"	f
 knull_dsc	initldr/ldrkrl/imginithead.asm	/^knull_dsc: dq 0$/;"	d
 knull_dsc	initldr/ldrkrl/ldrkrl32.asm	/^knull_dsc: dq 0$/;"	d
 kobcks_t	include/halinc/kmsob_t.h	/^}kobcks_t;$/;"	t	typeref:struct:s_KOBCKS
@@ -1524,6 +1634,9 @@ list_is_empty	include/bastypeinc/list.h	/^KLINE bool_t list_is_empty(const list_
 list_is_empty_careful	include/bastypeinc/list.h	/^KLINE bool_t list_is_empty_careful(const list_h_t *head)$/;"	f
 list_move	include/bastypeinc/list.h	/^KLINE void list_move(list_h_t *list, list_h_t *head)$/;"	f
 list_move_tail	include/bastypeinc/list.h	/^KLINE void list_move_tail(list_h_t *list, list_h_t *head)$/;"	f
+load_x64_gdt	hal/x86/halgdtidt.c	/^PUBLIC LKINIT void load_x64_gdt(igdtr_t *igdtrp)$/;"	f
+load_x64_idt	hal/x86/halgdtidt.c	/^PUBLIC LKINIT void load_x64_idt(iidtr_t *idtptr)$/;"	f
+load_x64_tr	hal/x86/halgdtidt.c	/^PUBLIC LKINIT void load_x64_tr(u16_t trindx)$/;"	f
 lock	include/bastypeinc/spinlock_t.h	/^	 volatile u32_t lock;$/;"	m	struct:__anon1
 logo	initldr/ldrkrl/graph.c	/^void logo(machbstart_t* mbsp)$/;"	f
 loop	initldr/ldrkrl/realintsve.asm	/^loop:$/;"	l
@@ -1533,28 +1646,28 @@ m2mcopy	include/halinc/io.h	/^KLINE sint_t m2mcopy(void *sadr, void *dadr, sint_
 m2mcopy	initldr/include/io.h	/^KLINE sint_t m2mcopy(void* sadr,void* dadr,sint_t len)$/;"	f
 ma_allmsadsclst	include/halinc/memarea_t.h	/^	list_h_t ma_allmsadsclst;$/;"	m	struct:s_MEMAREA
 ma_allmsadscnr	include/halinc/memarea_t.h	/^	uint_t ma_allmsadscnr;$/;"	m	struct:s_MEMAREA
-ma_allocpages	include/halinc/memarea_t.h	/^	uint_t ma_allocpages;$/;"	m	struct:s_MEMAREA
+ma_allocpages	include/halinc/memarea_t.h	/^	uint_t ma_allocpages; \/\/分配的页表数$/;"	m	struct:s_MEMAREA
 ma_arcpglst	include/halinc/memarea_t.h	/^	arclst_t ma_arcpglst;$/;"	m	struct:s_MEMAREA
 ma_effectend	include/halinc/memarea_t.h	/^	adr_t ma_effectend;$/;"	m	struct:s_MEMAREA
 ma_effectstart	include/halinc/memarea_t.h	/^	adr_t ma_effectstart;$/;"	m	struct:s_MEMAREA
 ma_effectsz	include/halinc/memarea_t.h	/^	uint_t ma_effectsz;$/;"	m	struct:s_MEMAREA
-ma_flgs	include/halinc/memarea_t.h	/^	uint_t ma_flgs;$/;"	m	struct:s_MEMAREA
-ma_freepages	include/halinc/memarea_t.h	/^	uint_t ma_freepages;$/;"	m	struct:s_MEMAREA
+ma_flgs	include/halinc/memarea_t.h	/^	uint_t ma_flgs; \/\/内存区的标志$/;"	m	struct:s_MEMAREA
+ma_freepages	include/halinc/memarea_t.h	/^	uint_t ma_freepages; \/\/空闲的页表数j$/;"	m	struct:s_MEMAREA
 ma_funcobj	include/halinc/memarea_t.h	/^	mafuncobjs_t ma_funcobj;$/;"	m	struct:s_MEMAREA
-ma_horizline	include/halinc/memarea_t.h	/^	uint_t ma_horizline;$/;"	m	struct:s_MEMAREA
-ma_list	include/halinc/memarea_t.h	/^	list_h_t ma_list;$/;"	m	struct:s_MEMAREA
-ma_lock	include/halinc/memarea_t.h	/^	spinlock_t ma_lock;$/;"	m	struct:s_MEMAREA
-ma_logicend	include/halinc/memarea_t.h	/^	adr_t ma_logicend;$/;"	m	struct:s_MEMAREA
-ma_logicstart	include/halinc/memarea_t.h	/^	adr_t ma_logicstart;$/;"	m	struct:s_MEMAREA
-ma_logicsz	include/halinc/memarea_t.h	/^	uint_t ma_logicsz;$/;"	m	struct:s_MEMAREA
-ma_maxpages	include/halinc/memarea_t.h	/^	uint_t ma_maxpages;$/;"	m	struct:s_MEMAREA
+ma_horizline	include/halinc/memarea_t.h	/^	uint_t ma_horizline;\/\/分配时的水位数$/;"	m	struct:s_MEMAREA
+ma_list	include/halinc/memarea_t.h	/^	list_h_t ma_list; \/\/内存区自身的链表$/;"	m	struct:s_MEMAREA
+ma_lock	include/halinc/memarea_t.h	/^	spinlock_t ma_lock; \/\/保护内存区的自旋锁$/;"	m	struct:s_MEMAREA
+ma_logicend	include/halinc/memarea_t.h	/^	adr_t ma_logicend; \/\/内存区结束地址$/;"	m	struct:s_MEMAREA
+ma_logicstart	include/halinc/memarea_t.h	/^	adr_t ma_logicstart; \/\/内存区开始地址$/;"	m	struct:s_MEMAREA
+ma_logicsz	include/halinc/memarea_t.h	/^	uint_t ma_logicsz; \/\/内存区大小$/;"	m	struct:s_MEMAREA
+ma_maxpages	include/halinc/memarea_t.h	/^	uint_t ma_maxpages;\/\/总的页表数$/;"	m	struct:s_MEMAREA
 ma_mdmdata	include/halinc/memarea_t.h	/^	memdivmer_t ma_mdmdata;$/;"	m	struct:s_MEMAREA
 ma_privp	include/halinc/memarea_t.h	/^	void* ma_privp;$/;"	m	struct:s_MEMAREA
-ma_resvpages	include/halinc/memarea_t.h	/^	uint_t ma_resvpages;$/;"	m	struct:s_MEMAREA
-ma_sem	include/halinc/memarea_t.h	/^	sem_t ma_sem;$/;"	m	struct:s_MEMAREA
-ma_stus	include/halinc/memarea_t.h	/^	uint_t ma_stus;$/;"	m	struct:s_MEMAREA
-ma_type	include/halinc/memarea_t.h	/^	uint_t ma_type;$/;"	m	struct:s_MEMAREA
-ma_waitlst	include/halinc/memarea_t.h	/^	wait_l_head_t ma_waitlst;$/;"	m	struct:s_MEMAREA
+ma_resvpages	include/halinc/memarea_t.h	/^	uint_t ma_resvpages;\/\/ 保留的页面数$/;"	m	struct:s_MEMAREA
+ma_sem	include/halinc/memarea_t.h	/^	sem_t ma_sem; \/\/信号量$/;"	m	struct:s_MEMAREA
+ma_stus	include/halinc/memarea_t.h	/^	uint_t ma_stus; \/\/内存区的状态$/;"	m	struct:s_MEMAREA
+ma_type	include/halinc/memarea_t.h	/^	uint_t ma_type;\/\/类型$/;"	m	struct:s_MEMAREA
+ma_waitlst	include/halinc/memarea_t.h	/^	wait_l_head_t ma_waitlst; \/\/内存区等待队列$/;"	m	struct:s_MEMAREA
 machbstart_t	include/halinc/halplatform_t.h	/^}__attribute__((packed)) machbstart_t;$/;"	t	typeref:struct:s_MACHBSTART
 machbstart_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) machbstart_t;$/;"	t	typeref:struct:s_MACHBSTART
 machbstart_t_init	hal/x86/halplatform.c	/^void machbstart_t_init(machbstart_t *initp)$/;"	f
@@ -1589,7 +1702,7 @@ mb_cpumode	include/halinc/halplatform_t.h	/^    u64_t   mb_cpumode; \/\/机器CP
 mb_cpumode	initldr/include/ldrtype.h	/^    u64_t   mb_cpumode;$/;"	m	struct:s_MACHBSTART
 mb_e820exnr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820exnr;$/;"	m	struct:s_MACHBSTART
 mb_e820exnr	initldr/include/ldrtype.h	/^    u64_t   mb_e820exnr;$/;"	m	struct:s_MACHBSTART
-mb_e820expadr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820expadr;$/;"	m	struct:s_MACHBSTART
+mb_e820expadr	include/halinc/halplatform_t.h	/^    u64_t   mb_e820expadr; \/\/保存pyhymmareg结构$/;"	m	struct:s_MACHBSTART
 mb_e820expadr	initldr/include/ldrtype.h	/^    u64_t   mb_e820expadr;$/;"	m	struct:s_MACHBSTART
 mb_e820exsz	include/halinc/halplatform_t.h	/^    u64_t   mb_e820exsz;$/;"	m	struct:s_MACHBSTART
 mb_e820exsz	initldr/include/ldrtype.h	/^    u64_t   mb_e820exsz;$/;"	m	struct:s_MACHBSTART
@@ -1682,11 +1795,11 @@ mc_phyadr	include/halinc/memdivmer_t.h	/^	u64_t mc_phyadr;$/;"	m	struct:s_MCHKST
 mc_sz	include/halinc/memdivmer_t.h	/^	u64_t mc_sz;$/;"	m	struct:s_MCHKSTUC
 mc_viradr	include/halinc/memdivmer_t.h	/^	u64_t mc_viradr;$/;"	m	struct:s_MCHKSTUC
 mchkstuc_t	include/halinc/memdivmer_t.h	/^}mchkstuc_t;$/;"	t	typeref:struct:s_MCHKSTUC
-md_indxflgs	include/halinc/msadsc_t.h	/^	msadflgs_t md_indxflgs;\/\/4$/;"	m	struct:s_MSADSC
-md_list	include/halinc/msadsc_t.h	/^	list_h_t md_list;\/\/16$/;"	m	struct:s_MSADSC
-md_lock	include/halinc/msadsc_t.h	/^	spinlock_t md_lock; \/\/4$/;"	m	struct:s_MSADSC
-md_odlink	include/halinc/msadsc_t.h	/^	void* md_odlink;\/\/8$/;"	m	struct:s_MSADSC
-md_phyadrs	include/halinc/msadsc_t.h	/^	phyadrflgs_t md_phyadrs;\/\/8$/;"	m	struct:s_MSADSC
+md_indxflgs	include/halinc/msadsc_t.h	/^	msadflgs_t md_indxflgs;\/\/4 内存空间地址描述标志$/;"	m	struct:s_MSADSC
+md_list	include/halinc/msadsc_t.h	/^	list_h_t md_list;\/\/16  链表$/;"	m	struct:s_MSADSC
+md_lock	include/halinc/msadsc_t.h	/^	spinlock_t md_lock; \/\/4 保存的自旋锁$/;"	m	struct:s_MSADSC
+md_odlink	include/halinc/msadsc_t.h	/^	void* md_odlink;\/\/8 相邻且相同大小msadc的指针$/;"	m	struct:s_MSADSC
+md_phyadrs	include/halinc/msadsc_t.h	/^	phyadrflgs_t md_phyadrs;\/\/8 物理地址和标志$/;"	m	struct:s_MSADSC
 mdc_endgic	include/halinc/halplatform_t.h	/^    u64_t mdc_endgic;$/;"	m	struct:s_mlosrddsc
 mdc_endgic	initldr/include/ldrtype.h	/^    u64_t mdc_endgic;\/\/映像文件结束标识j$/;"	m	struct:s_mlosrddsc
 mdc_fhdbk_e	include/halinc/halplatform_t.h	/^    u64_t mdc_fhdbk_e;$/;"	m	struct:s_mlosrddsc
@@ -1732,16 +1845,23 @@ mdc_sfsoff	initldr/include/ldrtype.h	/^    u64_t mdc_sfsoff;$/;"	m	struct:s_mlos
 mdc_sfsum	include/halinc/halplatform_t.h	/^    u64_t mdc_sfsum;$/;"	m	struct:s_mlosrddsc
 mdc_sfsum	initldr/include/ldrtype.h	/^    u64_t mdc_sfsum; $/;"	m	struct:s_mlosrddsc
 memarea_t	include/halinc/memarea_t.h	/^}memarea_t;$/;"	t	typeref:struct:s_MEMAREA
+memarea_t_init	hal/x86/memarea.c	/^void memarea_t_init(memarea_t *initp)$/;"	f
 memcopy	include/halinc/io.h	/^KLINE void memcopy(void *src, void *dest, uint_t count)$/;"	f
 memdivmer_t	include/halinc/memarea_t.h	/^}memdivmer_t;$/;"	t	typeref:struct:s_MEMDIVMER
+memdivmer_t_init	hal/x86/memarea.c	/^void memdivmer_t_init(memdivmer_t *initp)$/;"	f
 memmgrob_t	include/halinc/memmgrinit_t.h	/^}memmgrob_t;$/;"	t	typeref:struct:s_MEMMGROB
+memmgrob_t_init	hal/x86/memmgrinit.c	/^void memmgrob_t_init(memmgrob_t *initp)$/;"	f
 memset	include/halinc/io.h	/^KLINE void memset(void *s, u8_t c, uint_t count)$/;"	f
 memset	initldr/include/io.h	/^KLINE void memset(void* src,u8_t val,uint_t count)$/;"	f
-mf_lstty	include/halinc/msadsc_t.h	/^	u32_t mf_lstty:1;$/;"	m	struct:s_MSADFLGS
-mf_marty	include/halinc/msadsc_t.h	/^	u32_t mf_marty:3;$/;"	m	struct:s_MSADFLGS
-mf_mocty	include/halinc/msadsc_t.h	/^	u32_t mf_mocty:2;$/;"	m	struct:s_MSADFLGS
-mf_olkty	include/halinc/msadsc_t.h	/^	u32_t mf_olkty:2;$/;"	m	struct:s_MSADFLGS
-mf_uindx	include/halinc/msadsc_t.h	/^	u32_t mf_uindx:24;$/;"	m	struct:s_MSADFLGS
+merlove_continumsadsc_mareabafh	hal/x86/memarea.c	/^bool_t merlove_continumsadsc_mareabafh(memarea_t *mareap, msadsc_t *mstat, msadsc_t *mend, uint_t mnr)$/;"	f
+merlove_mem_core	hal/x86/memarea.c	/^bool_t merlove_mem_core(machbstart_t *mbsp)$/;"	f
+merlove_mem_onmemarea	hal/x86/memarea.c	/^bool_t merlove_mem_onmemarea(memarea_t *mareap, msadsc_t *mstat, uint_t msanr)$/;"	f
+merlove_setallmarflgs_onmemarea	hal/x86/memarea.c	/^uint_t merlove_setallmarflgs_onmemarea(memarea_t *mareap, msadsc_t *mstat, uint_t msanr)$/;"	f
+mf_lstty	include/halinc/msadsc_t.h	/^	u32_t mf_lstty:1; \/\/是否挂入链表$/;"	m	struct:s_MSADFLGS
+mf_marty	include/halinc/msadsc_t.h	/^	u32_t mf_marty:3; \/\/属于那个区$/;"	m	struct:s_MSADFLGS
+mf_mocty	include/halinc/msadsc_t.h	/^	u32_t mf_mocty:2; \/\/分配类型,被谁占用了,内核还是应用或者空闲$/;"	m	struct:s_MSADFLGS
+mf_olkty	include/halinc/msadsc_t.h	/^	u32_t mf_olkty:2; \/\/挂入链表的类型$/;"	m	struct:s_MSADFLGS
+mf_uindx	include/halinc/msadsc_t.h	/^	u32_t mf_uindx:24; \/\/分配计数$/;"	m	struct:s_MSADFLGS
 mhdrend	initldr/ldrkrl/imginithead.asm	/^mhdrend:$/;"	l
 ml_list	include/halinc/kmsob_t.h	/^	list_h_t ml_list;$/;"	m	struct:s_MSCLST
 ml_msanr	include/halinc/kmsob_t.h	/^	uint_t ml_msanr;$/;"	m	struct:s_MSCLST
@@ -1752,26 +1872,26 @@ mmafrets_t	include/halinc/memarea_t.h	/^}__attribute__((packed)) mmafrets_t;$/;"
 mmap	initldr/ldrkrl/chkcpmm.c	/^void mmap(e820map_t **retemp, u32_t *retemnr)$/;"	f
 mmapdsc_t	include/halinc/halmm_t.h	/^}mmapdsc_t;$/;"	t	typeref:struct:s_MMAPDSC
 mmstus_t	include/bastypeinc/bastype_t.h	/^typedef u64_t mmstus_t;$/;"	t
-mo_alocpages	include/halinc/memmgrinit_t.h	/^	u64_t mo_alocpages;$/;"	m	struct:s_MEMMGROB
+mo_alocpages	include/halinc/memmgrinit_t.h	/^	u64_t mo_alocpages; \/\/内存最大分配页面数$/;"	m	struct:s_MEMMGROB
 mo_extp	include/halinc/memmgrinit_t.h	/^	void* mo_extp;$/;"	m	struct:s_MEMMGROB
-mo_flgs	include/halinc/memmgrinit_t.h	/^	uint_t mo_flgs;$/;"	m	struct:s_MEMMGROB
-mo_freepages	include/halinc/memmgrinit_t.h	/^	u64_t mo_freepages;$/;"	m	struct:s_MEMMGROB
+mo_flgs	include/halinc/memmgrinit_t.h	/^	uint_t mo_flgs; \/\/标志$/;"	m	struct:s_MEMMGROB
+mo_freepages	include/halinc/memmgrinit_t.h	/^	u64_t mo_freepages;\/\/内存最大空闲页面数$/;"	m	struct:s_MEMMGROB
 mo_horizline	include/halinc/memmgrinit_t.h	/^	u64_t mo_horizline;$/;"	m	struct:s_MEMMGROB
-mo_kmsobmgr	include/halinc/memmgrinit_t.h	/^	kmsobmgrhed_t mo_kmsobmgr;$/;"	m	struct:s_MEMMGROB
+mo_kmsobmgr	include/halinc/memmgrinit_t.h	/^	kmsobmgrhed_t mo_kmsobmgr; \/\/内存区结构指针$/;"	m	struct:s_MEMMGROB
 mo_list	include/halinc/memmgrinit_t.h	/^	list_h_t mo_list;$/;"	m	struct:s_MEMMGROB
-mo_lock	include/halinc/memmgrinit_t.h	/^	spinlock_t mo_lock;$/;"	m	struct:s_MEMMGROB
+mo_lock	include/halinc/memmgrinit_t.h	/^	spinlock_t mo_lock; \/\/保护自身自旋锁$/;"	m	struct:s_MEMMGROB
 mo_mareanr	include/halinc/memmgrinit_t.h	/^	u64_t mo_mareanr;$/;"	m	struct:s_MEMMGROB
 mo_mareastat	include/halinc/memmgrinit_t.h	/^	memarea_t* mo_mareastat;$/;"	m	struct:s_MEMMGROB
-mo_maxpages	include/halinc/memmgrinit_t.h	/^	u64_t mo_maxpages;$/;"	m	struct:s_MEMMGROB
-mo_memsz	include/halinc/memmgrinit_t.h	/^	u64_t mo_memsz;$/;"	m	struct:s_MEMMGROB
-mo_msadscstat	include/halinc/memmgrinit_t.h	/^	msadsc_t* mo_msadscstat;$/;"	m	struct:s_MEMMGROB
+mo_maxpages	include/halinc/memmgrinit_t.h	/^	u64_t mo_maxpages; \/\/内存最大空虚页面数$/;"	m	struct:s_MEMMGROB
+mo_memsz	include/halinc/memmgrinit_t.h	/^	u64_t mo_memsz; \/\/内存大小$/;"	m	struct:s_MEMMGROB
+mo_msadscstat	include/halinc/memmgrinit_t.h	/^	msadsc_t* mo_msadscstat; \/\/内存页面结构指针$/;"	m	struct:s_MEMMGROB
 mo_msanr	include/halinc/memmgrinit_t.h	/^	u64_t mo_msanr;$/;"	m	struct:s_MEMMGROB
 mo_pmagenr	include/halinc/memmgrinit_t.h	/^	u64_t mo_pmagenr;$/;"	m	struct:s_MEMMGROB
-mo_pmagestat	include/halinc/memmgrinit_t.h	/^	phymmarge_t* mo_pmagestat;$/;"	m	struct:s_MEMMGROB
+mo_pmagestat	include/halinc/memmgrinit_t.h	/^	phymmarge_t* mo_pmagestat; \/\/内存空间不仅结构指针$/;"	m	struct:s_MEMMGROB
 mo_privp	include/halinc/memmgrinit_t.h	/^	void* mo_privp;$/;"	m	struct:s_MEMMGROB
-mo_resvpages	include/halinc/memmgrinit_t.h	/^	u64_t mo_resvpages;$/;"	m	struct:s_MEMMGROB
-mo_sem	include/halinc/memmgrinit_t.h	/^	sem_t mo_sem;$/;"	m	struct:s_MEMMGROB
-mo_stus	include/halinc/memmgrinit_t.h	/^	uint_t mo_stus;$/;"	m	struct:s_MEMMGROB
+mo_resvpages	include/halinc/memmgrinit_t.h	/^	u64_t mo_resvpages; \/\/内存分配水位数$/;"	m	struct:s_MEMMGROB
+mo_sem	include/halinc/memmgrinit_t.h	/^	sem_t mo_sem; $/;"	m	struct:s_MEMMGROB
+mo_stus	include/halinc/memmgrinit_t.h	/^	uint_t mo_stus;\/\/状态$/;"	m	struct:s_MEMMGROB
 move_krlimg	initldr/ldrkrl/fs.c	/^int move_krlimg(machbstart_t *mbsp, u64_t cpyadr, u64_t cpysz)$/;"	f
 mrsdp_t	include/halinc/halplatform_t.h	/^}__attribute__((packed)) mrsdp_t;$/;"	t	typeref:struct:s_MRSDP
 mrsdp_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) mrsdp_t;$/;"	t	typeref:struct:s_MRSDP
@@ -1779,6 +1899,7 @@ mrv_t	include/bastypeinc/bastype_t.h	/^typedef unsigned long mrv_t;$/;"	t
 mrv_t	initldr/include/type.h	/^typedef unsigned long mrv_t;$/;"	t
 msadflgs_t	include/halinc/msadsc_t.h	/^}__attribute__((packed)) msadflgs_t; $/;"	t	typeref:struct:s_MSADFLGS
 msadsc_t	include/halinc/msadsc_t.h	/^}__attribute__((packed)) msadsc_t;\/\/32+24$/;"	t	typeref:struct:s_MSADSC
+msadsc_t_init	hal/x86/msadsc.c	/^void msadsc_t_init(msadsc_t *initp)$/;"	f
 msclst_t	include/halinc/kmsob_t.h	/^}msclst_t;$/;"	t	typeref:struct:s_MSCLST
 msg_op_t	initldr/include/type.h	/^typedef mrv_t (*msg_op_t)();$/;"	t
 msomdc_t	include/halinc/kmsob_t.h	/^}msomdc_t;$/;"	t	typeref:struct:s_MSOMDC
@@ -1824,16 +1945,16 @@ out_u8_p	include/halinc/io.h	/^KLINE void out_u8_p(const u16_t port, const u8_t 
 p_val	include/halinc/pages64_t.h	/^	u64_t p_val;$/;"	m	struct:s_KPDE
 p_val	include/halinc/pages64_t.h	/^	u64_t p_val;$/;"	m	struct:s_KPDPTE
 p_val	include/halinc/pages64_t.h	/^	u64_t p_val;$/;"	m	struct:s_KPML4
-paf_alloc	include/halinc/msadsc_t.h	/^	u64_t paf_alloc:1;$/;"	m	struct:s_PHYADRFLGS
-paf_busy	include/halinc/msadsc_t.h	/^	u64_t paf_busy:1;$/;"	m	struct:s_PHYADRFLGS
-paf_cache	include/halinc/msadsc_t.h	/^	u64_t paf_cache:1;$/;"	m	struct:s_PHYADRFLGS
-paf_dirty	include/halinc/msadsc_t.h	/^	u64_t paf_dirty:1;$/;"	m	struct:s_PHYADRFLGS
-paf_kmap	include/halinc/msadsc_t.h	/^	u64_t paf_kmap:1;$/;"	m	struct:s_PHYADRFLGS
-paf_lock	include/halinc/msadsc_t.h	/^	u64_t paf_lock:1;$/;"	m	struct:s_PHYADRFLGS
-paf_padrs	include/halinc/msadsc_t.h	/^	u64_t paf_padrs:52;$/;"	m	struct:s_PHYADRFLGS
-paf_rv2	include/halinc/msadsc_t.h	/^	u64_t paf_rv2:4;$/;"	m	struct:s_PHYADRFLGS
-paf_shared	include/halinc/msadsc_t.h	/^	u64_t paf_shared:1;$/;"	m	struct:s_PHYADRFLGS
-paf_swap	include/halinc/msadsc_t.h	/^	u64_t paf_swap:1;$/;"	m	struct:s_PHYADRFLGS
+paf_alloc	include/halinc/msadsc_t.h	/^	u64_t paf_alloc:1; \/\/分配位j$/;"	m	struct:s_PHYADRFLGS
+paf_busy	include/halinc/msadsc_t.h	/^	u64_t paf_busy:1; \/\/忙位$/;"	m	struct:s_PHYADRFLGS
+paf_cache	include/halinc/msadsc_t.h	/^	u64_t paf_cache:1; \/\/缓存位$/;"	m	struct:s_PHYADRFLGS
+paf_dirty	include/halinc/msadsc_t.h	/^	u64_t paf_dirty:1;\/\/脏位$/;"	m	struct:s_PHYADRFLGS
+paf_kmap	include/halinc/msadsc_t.h	/^	u64_t paf_kmap:1;\/\/映射位i$/;"	m	struct:s_PHYADRFLGS
+paf_lock	include/halinc/msadsc_t.h	/^	u64_t paf_lock:1;\/\/锁定位$/;"	m	struct:s_PHYADRFLGS
+paf_padrs	include/halinc/msadsc_t.h	/^	u64_t paf_padrs:52; \/\/页物理地址位$/;"	m	struct:s_PHYADRFLGS
+paf_rv2	include/halinc/msadsc_t.h	/^	u64_t paf_rv2:4; \/\/保留位$/;"	m	struct:s_PHYADRFLGS
+paf_shared	include/halinc/msadsc_t.h	/^	u64_t paf_shared:1; \/\/共享位$/;"	m	struct:s_PHYADRFLGS
+paf_swap	include/halinc/msadsc_t.h	/^	u64_t paf_swap:1; \/\/交换位$/;"	m	struct:s_PHYADRFLGS
 parmv1	include/halinc/cpu_t.h	/^    reg_t parmv1;\/\/eax$/;"	m	struct:s_INTSTKREGS
 parmv2	include/halinc/cpu_t.h	/^    reg_t parmv2;\/\/ecx  $/;"	m	struct:s_INTSTKREGS
 parmv3	include/halinc/cpu_t.h	/^    reg_t parmv3;\/\/edx $/;"	m	struct:s_INTSTKREGS
@@ -1845,26 +1966,29 @@ phyadr_to_viradr	hal/x86/halplatform.c	/^adr_t phyadr_to_viradr(adr_t kphyadr)$/
 phyadrflgs_t	include/halinc/msadsc_t.h	/^}__attribute__((packed)) phyadrflgs_t;$/;"	t	typeref:struct:s_PHYADRFLGS
 phyadrspce_t	include/halinc/halmm_t.h	/^}phyadrspce_t;$/;"	t	typeref:struct:s_PHYADRSPCE
 phymem_t	include/halinc/halmm_t.h	/^}phymem_t;$/;"	t	typeref:struct:s_PHYMEM
+phymmarge_sort	hal/x86/halmm.c	/^void phymmarge_sort(phymmarge_t *argp, u64_t nr)$/;"	f
+phymmarge_swap	hal/x86/halmm.c	/^void phymmarge_swap(phymmarge_t *s, phymmarge_t *d) $/;"	f
 phymmarge_t	include/halinc/halmm_t.h	/^}phymmarge_t;$/;"	t	typeref:struct:s_PHYMMARGE
+phymmarge_t_init	hal/x86/halmm.c	/^void phymmarge_t_init(phymmarge_t *initp)$/;"	f
 pixcl_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) pixcl_t;$/;"	t	typeref:struct:s_PIXCL
 pixl_t	include/halinc/bdvideo_t.h	/^typedef u32_t pixl_t;$/;"	t
 pixl_t	initldr/include/ldrtype.h	/^typedef u32_t pixl_t;$/;"	t
 pmm_list	include/halinc/halmm_t.h	/^    list_h_t pmm_list;$/;"	m	struct:s_PHYMEM
 pmm_lock	include/halinc/halmm_t.h	/^    spinlock_t pmm_lock;$/;"	m	struct:s_PHYMEM
 pmm_sz_lsth	include/halinc/halmm_t.h	/^    alcfrelst_t pmm_sz_lsth[BLKSZ_HEAD_MAX];$/;"	m	struct:s_PHYMEM
-pmr_dtype	include/halinc/halmm_t.h	/^    u32_t pmr_dtype;$/;"	m	struct:s_PHYMMARGE
-pmr_end	include/halinc/halmm_t.h	/^    u64_t pmr_end;$/;"	m	struct:s_PHYMMARGE
-pmr_extp	include/halinc/halmm_t.h	/^    void* pmr_extp;$/;"	m	struct:s_PHYMMARGE
-pmr_flgs	include/halinc/halmm_t.h	/^    u32_t pmr_flgs;$/;"	m	struct:s_PHYMMARGE
-pmr_lock	include/halinc/halmm_t.h	/^    spinlock_t pmr_lock;$/;"	m	struct:s_PHYMMARGE
-pmr_lsize	include/halinc/halmm_t.h	/^    u64_t pmr_lsize;$/;"	m	struct:s_PHYMMARGE
-pmr_prip	include/halinc/halmm_t.h	/^    void* pmr_prip;$/;"	m	struct:s_PHYMMARGE
-pmr_rrvmend	include/halinc/halmm_t.h	/^    u64_t pmr_rrvmend;$/;"	m	struct:s_PHYMMARGE
-pmr_rrvmsaddr	include/halinc/halmm_t.h	/^    u64_t pmr_rrvmsaddr;$/;"	m	struct:s_PHYMMARGE
-pmr_saddr	include/halinc/halmm_t.h	/^    u64_t pmr_saddr;$/;"	m	struct:s_PHYMMARGE
+pmr_dtype	include/halinc/halmm_t.h	/^    u32_t pmr_dtype; \/\/内存地址空间的子类型,见上面的宏$/;"	m	struct:s_PHYMMARGE
+pmr_end	include/halinc/halmm_t.h	/^    u64_t pmr_end; \/\/内存空间的结束地址$/;"	m	struct:s_PHYMMARGE
+pmr_extp	include/halinc/halmm_t.h	/^    void* pmr_extp; \/\/接口扩展数据指针$/;"	m	struct:s_PHYMMARGE
+pmr_flgs	include/halinc/halmm_t.h	/^    u32_t pmr_flgs; \/\/结构的标志和状态$/;"	m	struct:s_PHYMMARGE
+pmr_lock	include/halinc/halmm_t.h	/^    spinlock_t pmr_lock; \/\/保护这个结构是自旋锁$/;"	m	struct:s_PHYMMARGE
+pmr_lsize	include/halinc/halmm_t.h	/^    u64_t pmr_lsize; \/\/内存空间的大小$/;"	m	struct:s_PHYMMARGE
+pmr_prip	include/halinc/halmm_t.h	/^    void* pmr_prip; \/\/结构的私有数据指针$/;"	m	struct:s_PHYMMARGE
+pmr_rrvmend	include/halinc/halmm_t.h	/^    u64_t pmr_rrvmend; \/\/内存保留空间的结束地址$/;"	m	struct:s_PHYMMARGE
+pmr_rrvmsaddr	include/halinc/halmm_t.h	/^    u64_t pmr_rrvmsaddr; \/\/内存保留空间的开始地址$/;"	m	struct:s_PHYMMARGE
+pmr_saddr	include/halinc/halmm_t.h	/^    u64_t pmr_saddr; \/\/内存空间的开始地址$/;"	m	struct:s_PHYMMARGE
 pmr_stus	include/halinc/halmm_t.h	/^    u32_t pmr_stus;$/;"	m	struct:s_PHYMMARGE
 pmr_stype	include/halinc/halmm_t.h	/^    u32_t pmr_stype;$/;"	m	struct:s_PHYMMARGE
-pmr_type	include/halinc/halmm_t.h	/^    u32_t pmr_type;$/;"	m	struct:s_PHYMMARGE
+pmr_type	include/halinc/halmm_t.h	/^    u32_t pmr_type; \/\/内存地址空间类型$/;"	m	struct:s_PHYMMARGE
 pop	initldr/ldrkrl/ldrkrl32.asm	/^	pop	ds ;恢复通用寄存器$/;"	d
 pop	initldr/ldrkrl/realintsve.asm	/^	pop ds$/;"	d
 pop	initldr/ldrkrl/realintsve.asm	/^        pop di$/;"	d
@@ -1893,6 +2017,8 @@ reserved	initldr/include/ldrtype.h	/^        u8_t reserved[222];$/;"	m	struct:s_
 restore_flags_sti	include/halinc/io.h	/^KLINE void restore_flags_sti(cpuflg_t *flagsres)$/;"	f
 ret_charsinfo	hal/x86/bdvideo.c	/^u8_t *ret_charsinfo(dftgraph_t *kghp, u32_t unicode, int *retchwx, int *retchhx, int *retlinb)$/;"	f
 ret_imgfilesz	initldr/ldrkrl/fs.c	/^u64_t ret_imgfilesz()$/;"	f
+ret_msadsc_vadrandsz	hal/x86/msadsc.c	/^bool_t ret_msadsc_vadrandsz(machbstart_t *mbsp, msadsc_t **retmasvp, u64_t *retmasnr)$/;"	f
+ret_phymmarge_adrandsz	hal/x86/halmm.c	/^void ret_phymmarge_adrandsz(machbstart_t *mbsp, phymmarge_t **retpmrvadr, u64_t *retpmrsz)$/;"	f
 ret_vramadr_inbnk	hal/x86/bdvideo.c	/^u64_t *ret_vramadr_inbnk(void *ghpdev)$/;"	f
 retn_ifilenm	script/lmkfbuild.c	/^char* retn_ifilenm(int gc,char* argv[])$/;"	f
 retn_ofilenm	script/lmkfbuild.c	/^char* retn_ofilenm(int gc,char * argv[])$/;"	f
@@ -2023,17 +2149,17 @@ s_WAIT_L	include/bastypeinc/sem_t.h	/^typedef struct s_WAIT_L$/;"	s
 s_WAIT_L_HEAD	include/bastypeinc/sem_t.h	/^typedef struct s_WAIT_L_HEAD$/;"	s
 s_X64TSS	include/halinc/halgdtidt_t.h	/^typedef struct s_X64TSS$/;"	s
 s_descriptor	include/halinc/halgdtidt_t.h	/^typedef struct s_descriptor		\/* 共 8 个字节 *\/$/;"	s
-s_device	include/halinc/halintupt_t.h	/^    void*       s_device;$/;"	m	struct:s_INTSERDSC
+s_device	include/halinc/halintupt_t.h	/^    void*       s_device; \/\/指向设备描述符$/;"	m	struct:s_INTSERDSC
 s_e820	include/halinc/halplatform_t.h	/^typedef struct s_e820{$/;"	s
 s_e820	initldr/include/ldrtype.h	/^typedef struct s_e820{$/;"	s
 s_fhdsc	include/halinc/halplatform_t.h	/^typedef struct s_fhdsc$/;"	s
 s_fhdsc	initldr/include/ldrtype.h	/^typedef struct s_fhdsc$/;"	s
 s_flg	include/halinc/halintupt_t.h	/^    u32_t       s_flg;$/;"	m	struct:s_INTSERDSC
-s_handle	include/halinc/halintupt_t.h	/^    intflthandle_t s_handle;$/;"	m	struct:s_INTSERDSC
-s_indevlst	include/halinc/halintupt_t.h	/^    list_h_t    s_indevlst;$/;"	m	struct:s_INTSERDSC
+s_handle	include/halinc/halintupt_t.h	/^    intflthandle_t s_handle; \/\/中断处理的回调函数指针$/;"	m	struct:s_INTSERDSC
+s_indevlst	include/halinc/halintupt_t.h	/^    list_h_t    s_indevlst; \/\/在设备描述描述符中德链表$/;"	m	struct:s_INTSERDSC
 s_indx	include/halinc/halintupt_t.h	/^    uint_t      s_indx;$/;"	m	struct:s_INTSERDSC
-s_intfltp	include/halinc/halintupt_t.h	/^    intfltdsc_t* s_intfltp;$/;"	m	struct:s_INTSERDSC
-s_list	include/halinc/halintupt_t.h	/^    list_h_t    s_list;$/;"	m	struct:s_INTSERDSC
+s_intfltp	include/halinc/halintupt_t.h	/^    intfltdsc_t* s_intfltp; \/\/指向中断异常描述符$/;"	m	struct:s_INTSERDSC
+s_list	include/halinc/halintupt_t.h	/^    list_h_t    s_list; \/\/中断异常描述符表中链表$/;"	m	struct:s_INTSERDSC
 s_mlosrddsc	include/halinc/halplatform_t.h	/^typedef struct s_mlosrddsc$/;"	s
 s_mlosrddsc	initldr/include/ldrtype.h	/^typedef struct s_mlosrddsc$/;"	s
 saddr	include/halinc/halplatform_t.h	/^    u64_t saddr;    \/* start of memory segment8 *\/$/;"	m	struct:s_e820
@@ -2042,6 +2168,8 @@ save_eip_jmp	initldr/ldrkrl/ldrkrl32.asm	/^save_eip_jmp:$/;"	l
 save_flags_cli	include/halinc/io.h	/^KLINE void save_flags_cli(cpuflg_t *flags)$/;"	f
 search_32rlbits	include/halinc/io.h	/^KLINE sint_t search_32rlbits(u32_t val)$/;"	f
 search_64rlbits	include/halinc/io.h	/^KLINE sint_t search_64rlbits(u64_t val)$/;"	f
+search_krloccupymsadsc_core	hal/x86/msadsc.c	/^bool_t search_krloccupymsadsc_core(machbstart_t *mbsp)$/;"	f
+search_segment_occupymsadsc	hal/x86/msadsc.c	/^u64_t search_segment_occupymsadsc(msadsc_t *msastart, u64_t msanr, u64_t ocpystat, u64_t ocpyend)$/;"	f
 selector	include/halinc/halgdtidt_t.h	/^	u16_t	selector;	\/* Selector *\/$/;"	m	struct:s_GATE
 sem_count	include/bastypeinc/sem_t.h	/^	sint_t sem_count;$/;"	m	struct:s_SEM
 sem_flg	include/bastypeinc/sem_t.h	/^	uint_t sem_flg;$/;"	m	struct:s_SEM
@@ -2052,8 +2180,13 @@ set_charsdxwflush	hal/x86/bdvideo.c	/^void set_charsdxwflush(u64_t chardxw, u64_
 set_cr3	include/halinc/io.h	/^KLINE void set_cr3(u64_t pl4adr)$/;"	f
 set_curs	initldr/ldrkrl/vgastr.c	/^void set_curs(u32_t x, u32_t y)$/;"	f
 set_deffontpx	hal/x86/bdvideo.c	/^pixl_t set_deffontpx(pixl_t setpx)$/;"	f
+set_descriptor	hal/x86/halgdtidt.c	/^void set_descriptor(descriptor_t *p_desc, u32_t base, u32_t limit, u16_t attribute)$/;"	f
+set_idt_desc	hal/x86/halgdtidt.c	/^void set_idt_desc(u8_t vector, u8_t desc_type, inthandler_t handler, u8_t privilege)$/;"	f
+set_igdtr	hal/x86/halgdtidt.c	/^void set_igdtr(descriptor_t *gdtptr)$/;"	f
+set_iidtr	hal/x86/halgdtidt.c	/^void set_iidtr(gate_t * idtptr)$/;"	f
 set_ncharsxy	hal/x86/bdvideo.c	/^void set_ncharsxy(u64_t x, u64_t y)$/;"	f
 set_vbemodeinfo	initldr/ldrkrl/graph.c	/^void set_vbemodeinfo()$/;"	f
+set_x64tss_descriptor	hal/x86/halgdtidt.c	/^void set_x64tss_descriptor(descriptor_t *p_desc, u64_t base, u32_t limit, u16_t attribute)$/;"	f
 setvbmodeerrmsg	initldr/ldrkrl/realintsve.asm	/^setvbmodeerrmsg: db     "set vbemode err"$/;"	d
 sint_t	include/bastypeinc/bastype_t.h	/^typedef long sint_t;$/;"	t
 sint_t	initldr/include/type.h	/^typedef long sint_t;$/;"	t
@@ -2088,7 +2221,7 @@ strcopy	initldr/ldrkrl/vgastr.c	/^char_t *strcopy(char_t *buf, char_t *str_s)$/;
 strcopyk	hal/x86/halprint.c	/^char_t *strcopyk(char_t *buf, char_t *str_s)$/;"	f
 syscall_t	initldr/include/type.h	/^typedef void (*syscall_t)();$/;"	t
 sysstus_t	include/bastypeinc/bastype_t.h	/^typedef sint_t sysstus_t;$/;"	t
-systtem_error	hal/x86/halcpuctrl.c	/^void systtem_error(char_t *errmsg)$/;"	f
+system_error	hal/x86/halcpuctrl.c	/^void system_error(char_t *errmsg)$/;"	f
 test_bga	initldr/ldrkrl/graph.c	/^void  test_bga()$/;"	f
 testm2m	initldr/ldrkrl/bstartparm.c	/^void testm2m()$/;"	f
 totalmemory	include/halinc/bdvideo_t.h	/^        u16_t totalmemory;$/;"	m	struct:s_VBEINFO
@@ -2186,6 +2319,8 @@ wlh_privte	include/bastypeinc/sem_t.h	/^	void* wlh_privte;$/;"	m	struct:s_WAIT_L
 wlh_upfun	include/bastypeinc/sem_t.h	/^	bool_t  (*wlh_upfun)(u32_t func,struct s_WAIT_L_HEAD* wlhp);$/;"	m	struct:s_WAIT_L_HEAD
 write_ldrkrlfile	initldr/ldrkrl/inithead.c	/^void write_ldrkrlfile()$/;"	f
 write_msr	include/halinc/io.h	/^KLINE void write_msr(const u32_t reg, const u64_t val)$/;"	f
+write_one_msadsc	hal/x86/memmgrinit.c	/^void write_one_msadsc(msadsc_t *msap, u64_t phyadr) $/;"	f
+write_one_msadsc	hal/x86/msadsc.c	/^void write_one_msadsc(msadsc_t *msap, u64_t phyadr)$/;"	f
 write_pixcolor	hal/x86/bdvideo.c	/^void write_pixcolor(dftgraph_t *kghp, u32_t x, u32_t y, pixl_t pix)$/;"	f
 write_pixcolor	initldr/ldrkrl/graph.c	/^void write_pixcolor(machbstart_t* mbsp,u32_t x,u32_t y,pixl_t pix)$/;"	f
 write_realintsvefile	initldr/ldrkrl/inithead.c	/^void write_realintsvefile()$/;"	f

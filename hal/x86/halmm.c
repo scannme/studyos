@@ -1,14 +1,6 @@
 
 #include "cosmostypes.h"
 #include "cosmosmctrl.h"
-#include "halcpuctrl.h"
-#include "halmm.h"
-#include "halmm_t.h"
-#include "halplatform.h"
-#include "halplatform_t.h"
-#include "io.h"
-#include "pages64_t.h"
-
 void phymmarge_t_init(phymmarge_t *initp)
 {
     if (NULL == initp) {
@@ -123,6 +115,7 @@ void phymmarge_sort(phymmarge_t *argp, u64_t nr)
             }
         }
     }
+    return;
 }
 
 u64_t initpmrge_core(e820map_t *e8sp, u64_t e8nr, phymmarge_t *pmargesp)
@@ -176,16 +169,17 @@ void init_phymmarge()
     //把phymmarge_t 结构的地址大小保存machbstart_t机器信息结构中
     mbsp->mb_e820expadr = tmppmrphyadr;
     mbsp->mb_e820exnr = ipmgnr;
-    mbsp->mb_e820sz = ipmgnr * sizeof(phymmarge_t);
+    mbsp->mb_e820exsz = ipmgnr * sizeof(phymmarge_t);
     mbsp->mb_nextwtpadr = PAGE_ALIGN(mbsp->mb_e820expadr + mbsp->mb_e820exsz);
     //phymmarge结构中的地址从低到高排序
     phymmarge_sort(pmarge_adr, ipmgnr);
+    return;
 }
 
 void init_halmm()
 {
     init_phymmarge();
-    //init_memmgr();
+    init_memmgr();
 
     return;
 }
