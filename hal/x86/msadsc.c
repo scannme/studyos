@@ -26,7 +26,13 @@ void msadsc_t_init(msadsc_t *initp)
 	return;
 }
 
-
+void disp_one_msadsc(msadsc_t *mp)
+{
+	kprint("msadsc_t.md_f:_ux[%x],_my[%x],md_phyadrs:_alc[%x],_shd[%x],_swp[%x],_che[%x],_kmp[%x],_lck[%x],_dty[%x],_bsy[%x],_padrs[%x]\n",
+		   (uint_t)mp->md_indxflgs.mf_uindx, (uint_t)mp->md_indxflgs.mf_mocty, (uint_t)mp->md_phyadrs.paf_alloc, (uint_t)mp->md_phyadrs.paf_shared, (uint_t)mp->md_phyadrs.paf_swap, (uint_t)mp->md_phyadrs.paf_cache, (uint_t)mp->md_phyadrs.paf_kmap, (uint_t)mp->md_phyadrs.paf_lock,
+		   (uint_t)mp->md_phyadrs.paf_dirty, (uint_t)mp->md_phyadrs.paf_busy, (uint_t)(mp->md_phyadrs.paf_padrs << 12));
+	return;
+}
 
 bool_t ret_msadsc_vadrandsz(machbstart_t *mbsp, msadsc_t **retmasvp, u64_t *retmasnr)
 {
@@ -118,6 +124,31 @@ void init_msadsc()
     return;
 }
 
+void disp_phymsadsc()
+{
+	u64_t coremdnr = 0;
+	msadsc_t *msadscvp = NULL;
+	machbstart_t *mbsp = &kmachbsp;
+
+	msadscvp = (msadsc_t *)phyadr_to_viradr((adr_t)mbsp->mb_memmappadr);
+	coremdnr = mbsp->mb_memmapnr;
+
+	for (int i = 0; i < 10; ++i)
+	{
+		disp_one_msadsc(&msadscvp[i]);
+	}
+
+	for (u64_t i = coremdnr / 2; i < coremdnr / 2 + 10; ++i)
+	{
+		disp_one_msadsc(&msadscvp[i]);
+	}
+
+	for (u64_t i = coremdnr - 10; i < coremdnr; ++i)
+	{
+		disp_one_msadsc(&msadscvp[i]);
+	}
+	return;
+}
 //搜索一段内存地址空间所对应的msadsc_t结构
 u64_t search_segment_occupymsadsc(msadsc_t *msastart, u64_t msanr, u64_t ocpystat, u64_t ocpyend)
 {
@@ -171,8 +202,60 @@ step1:
 	return fsmsnr;
 }
 
-  
+void test_schkrloccuymm(machbstart_t *mbsp, u64_t ocpystat, u64_t sz)
+{
+	msadsc_t *msadstat = (msadsc_t *)phyadr_to_viradr((adr_t)mbsp->mb_memmappadr);
+	u64_t msanr = mbsp->mb_memmapnr;
+	u64_t chkmnr = 0;
+	u64_t chkadr = ocpystat;
+	if ((sz & 0xfff) != 0)
+	{
+		chkmnr = (sz >> PSHRSIZE) + 1;
+	}
+	else
+	{
+		chkmnr = sz >> PSHRSIZE;
+	}
+	msadsc_t *fstatmp = NULL;
+	for (u64_t mnr = 0; mnr < msanr; mnr++)
+	{
+		if ((msadstat[mnr].md_phyadrs.paf_padrs << PSHRSIZE) == ocpystat)
+		{
+			fstatmp = &msadstat[mnr];
+			goto step1;
+		}
+	}
+step1:
+	if (fstatmp == NULL)
+	{
+		system_error("fstatmp NULL\n");
+	}
 
+	for (u64_t i = 0; i < chkmnr; i++, chkadr += PAGESIZE)
+	{
+		if (chkadr != fstatmp[i].md_phyadrs.paf_padrs << PSHRSIZE)
+		{
+			system_error("chkadr != err\n");
+		}
+		if (PAF_ALLOC != fstatmp[i].md_phyadrs.paf_alloc)
+		{
+			system_error("PAF_ALLOC err\n");
+		}
+		if (1 != fstatmp[i].md_indxflgs.mf_uindx)
+		{
+			system_error("mf_uindx err\n");
+		}
+		if (MF_MOCTY_KRNL != fstatmp[i].md_indxflgs.mf_mocty)
+		{
+			system_error("mf_olkty err\n");
+		}
+	}
+	if (chkadr != (ocpystat + (chkmnr * PAGESIZE)))
+	{
+		system_error("test_schkrloccuymm err\n");
+	}
+	return;
+}
 
 bool_t search_krloccupymsadsc_core(machbstart_t *mbsp)
 {

@@ -8,6 +8,7 @@ void init_memmgr()
     //初始化内存区结构memarea_t
     init_memarea();
     //处理内存占用
+	init_copy_pagesfvm();
     init_search_krloccupymm(&kmachbsp);
     //合并内存页到内存区中
     init_merlove_mem();
