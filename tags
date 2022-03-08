@@ -971,6 +971,10 @@ __list_add	include/bastypeinc/list.h	/^KLINE void __list_add(list_h_t *new, list
 __list_del	include/bastypeinc/list.h	/^KLINE void __list_del(list_h_t *prev, list_h_t *next)$/;"	f
 __list_del_entry	include/bastypeinc/list.h	/^KLINE void __list_del_entry(list_h_t *entry)$/;"	f
 __start_kernel	script/cosmoslink.S	/^	__start_kernel = . + VIRTUAL_ADDRESS;$/;"	d
+_create_init_kmsob	hal/x86/kmsob.c	/^kmsob_t *_create_init_kmsob(kmsob_t *kmsp, size_t objsz, adr_t cvadrs, adr_t cvadre, msadsc_t *msa, uint_t relpnr) $/;"	f
+_create_kmsob	hal/x86/kmsob.c	/^kmsob_t *_create_kmsob(kmsobmgrhed_t *kmmgrlokp, koblst_t *koblp, size_t objsz)$/;"	f
+_destroy_kmsob	hal/x86/kmsob.c	/^bool_t _destroy_kmsob(kmsobmgrhed_t *kmobmgrp, koblst_t *koblp, kmsob_t *kmsp)$/;"	f
+_destroy_kmsob_core	hal/x86/kmsob.c	/^bool_t _destroy_kmsob_core(kmsobmgrhed_t *kmobmgrp, koblst_t *koblp, kmsob_t *kmsp)$/;"	f
 _entry	initldr/ldrkrl/imginithead.asm	/^_entry:$/;"	l
 _entry	initldr/ldrkrl/ldrkrl32.asm	/^_entry:$/;"	l
 _getmmap	initldr/ldrkrl/realintsve.asm	/^_getmmap:$/;"	l
@@ -1024,6 +1028,7 @@ ap_adrstart	include/halinc/halmm_t.h	/^    adr_t ap_adrstart;$/;"	m	struct:s_PHY
 ap_devtype	include/halinc/halmm_t.h	/^    u32_t ap_devtype;$/;"	m	struct:s_PHYADRSPCE
 ap_flgs	include/halinc/halmm_t.h	/^    u32_t ap_flgs;$/;"	m	struct:s_PHYADRSPCE
 arclst_t	include/halinc/memarea_t.h	/^}arclst_t;$/;"	t	typeref:struct:s_ARCLST
+arclst_t_init	hal/x86/memarea.c	/^void arclst_t_init(arclst_t *initp)$/;"	f
 asm_ret_from_user_mode	hal/x86/kernel.asm	/^asm_ret_from_user_mode:$/;"	l
 atomic_t	include/bastypeinc/sem_t.h	/^}atomic_t;$/;"	t	typeref:struct:s_ATOMIC
 attr	include/halinc/halgdtidt_t.h	/^	u8_t	attr;		\/* P(1) DPL(2) DT(1) TYPE(4) *\/$/;"	m	struct:s_GATE
@@ -1106,6 +1111,22 @@ capabilities	include/halinc/bdvideo_t.h	/^        u32_t capabilities;$/;"	m	stru
 capabilities	initldr/include/ldrtype.h	/^        u32_t capabilities;$/;"	m	struct:s_VBEINFO
 char_t	include/bastypeinc/bastype_t.h	/^typedef char char_t;$/;"	t
 char_t	initldr/include/type.h	/^typedef char char_t;$/;"	t
+check_continumsadsc	hal/x86/memarea.c	/^uint_t check_continumsadsc(memarea_t *mareap, msadsc_t *stat, msadsc_t *end, uint_t fmnr)$/;"	f
+check_multi_msadsc	hal/x86/memarea.c	/^uint_t check_multi_msadsc(msadsc_t *mstat, bafhlst_t *bafhp, memarea_t *mareap)$/;"	f
+check_one_bafhlst	hal/x86/memarea.c	/^bool_t check_one_bafhlst(bafhlst_t *bafhp, memarea_t *mareap)$/;"	f
+check_one_memarea	hal/x86/memarea.c	/^bool_t check_one_memarea(memarea_t *mareap)$/;"	f
+chek_all_kmsobstruc	hal/x86/kmsob.c	/^void chek_all_kmsobstruc()$/;"	f
+chek_all_kobcks	hal/x86/kmsob.c	/^void chek_all_kobcks()$/;"	f
+chek_all_mchkstuc	hal/x86/memdivmer.c	/^void chek_all_mchkstuc()$/;"	f
+chek_all_one_mchkstuc	hal/x86/memdivmer.c	/^void chek_all_one_mchkstuc(mchkstuc_t *mchs)$/;"	f
+chek_cl2molkflg	hal/x86/memdivmer.c	/^bool_t chek_cl2molkflg(bafhlst_t *bafh, msadsc_t *_1ms, msadsc_t *_1me, msadsc_t *_2ms, msadsc_t *_2me)$/;"	f
+chek_divlenmsa	hal/x86/memdivmer.c	/^uint_t chek_divlenmsa(msadsc_t *msastat, msadsc_t *msaend, uint_t mnr)$/;"	f
+chek_kmbext_findmsa	hal/x86/kmsob.c	/^bool_t chek_kmbext_findmsa(kmsob_t *kmsp, kmbext_t *cpbexp)$/;"	f
+chek_one_kmbext	hal/x86/kmsob.c	/^bool_t chek_one_kmbext(kmsob_t *kmsp, kmbext_t *cpbexp)$/;"	f
+chek_one_kmsob	hal/x86/kmsob.c	/^void chek_one_kmsob(kmsob_t *kmsp, size_t objsz)$/;"	f
+chek_one_kobcks	hal/x86/kmsob.c	/^void chek_one_kobcks(kobcks_t *kkp)$/;"	f
+chek_one_mchks	hal/x86/memdivmer.c	/^bool_t chek_one_mchks(mchkstuc_t *mchs)$/;"	f
+chek_onekmsob_mbext	hal/x86/kmsob.c	/^bool_t chek_onekmsob_mbext(kmsob_t *kmsp)$/;"	f
 chk_bgamaxver	initldr/ldrkrl/graph.c	/^u32_t chk_bgamaxver()$/;"	f
 chk_cpu_longmode	initldr/ldrkrl/chkcpmm.c	/^int chk_cpu_longmode()$/;"	f
 chk_cpuid	initldr/ldrkrl/chkcpmm.c	/^int chk_cpuid()$/;"	f
@@ -1118,7 +1139,10 @@ cl_r	initldr/include/ldrtype.h	/^    u8_t cl_r;$/;"	m	struct:s_PIXCL
 clear_screen	initldr/ldrkrl/vgastr.c	/^void clear_screen(u16_t srrv)$/;"	f
 cleardisp	initldr/ldrkrl/realintsve.asm	/^cleardisp:$/;"	l
 close_curs	initldr/ldrkrl/vgastr.c	/^void close_curs()$/;"	f
+cmp_mchkstuc	hal/x86/memdivmer.c	/^void cmp_mchkstuc(mchkstuc_t *smchs, mchkstuc_t *dmchs)$/;"	f
 continumsadsc_add_bafhlst	hal/x86/memarea.c	/^bool_t continumsadsc_add_bafhlst(memarea_t *mareap, bafhlst_t *bafhp, msadsc_t *fstat, msadsc_t *fend, uint_t fmnr)$/;"	f
+continumsadsc_add_procmareabafh	hal/x86/memarea.c	/^bool_t continumsadsc_add_procmareabafh(memarea_t *mareap, bafhlst_t *bafhp, msadsc_t *fstat, msadsc_t *fend, uint_t fmnr)$/;"	f
+continumsadsc_is_ok	hal/x86/memarea.c	/^uint_t continumsadsc_is_ok(msadsc_t *prevmsa, msadsc_t *nextmsa, msadflgs_t *cmpmdfp)$/;"	f
 continumsadsc_mareabafh_core	hal/x86/memarea.c	/^bool_t continumsadsc_mareabafh_core(memarea_t *mareap, msadsc_t **rfstat, msadsc_t **rfend, uint_t *rfmnr)$/;"	f
 cosmos_version	hal/x86/bdvideo.c	/^const char *cosmos_version = "Cosmos\\n内核版本:00.01\\n彭东 @ 构建于 "__DATE__$/;"	v
 cpmty_mode	initldr/ldrkrl/ldrkrl32.asm	/^cpmty_mode:$/;"	l
@@ -1153,8 +1177,15 @@ dgo_writepix	include/halinc/bdvideo_t.h	/^    void   (*dgo_writepix)(void* ghpde
 die	hal/x86/halplatform.c	/^void die(u32_t dt)$/;"	f
 die	initldr/ldrkrl/ldrkrlentry.c	/^void die(u32_t dt)$/;"	f
 disable_nmi	initldr/ldrkrl/realintsve.asm	/^disable_nmi:$/;"	l
+disp_bafhlst	hal/x86/memarea.c	/^void disp_bafhlst(bafhlst_t *bafhp)$/;"	f
+disp_kmsob	hal/x86/kmsob.c	/^void disp_kmsob(kmsob_t *kmsp)$/;"	f
+disp_kmsobmgr	hal/x86/kmsob.c	/^void disp_kmsobmgr()$/;"	f
 disp_mbsp	initldr/ldrkrl/bstartparm.c	/^void disp_mbsp(machbstart_t *mbsp)$/;"	f
+disp_memarea	hal/x86/memarea.c	/^void disp_memarea(machbstart_t *mbsp)$/;"	f
 disp_memmgrob	hal/x86/memmgrinit.c	/^void disp_memmgrob()$/;"	f
+disp_one_msadsc	hal/x86/msadsc.c	/^void disp_one_msadsc(msadsc_t *mp)$/;"	f
+disp_phymsadsc	hal/x86/msadsc.c	/^void disp_phymsadsc()$/;"	f
+divpages_procmarea_core	hal/x86/memdivmer.c	/^msadsc_t *divpages_procmarea_core(memmgrob_t *mmobjp, uint_t pages, uint_t *retrealpnr)$/;"	f
 dm_divnr	include/halinc/memarea_t.h	/^	uint_t dm_divnr;\/\/内存分配次数$/;"	m	struct:s_MEMDIVMER
 dm_dmmaxindx	include/halinc/memarea_t.h	/^	uint_t dm_dmmaxindx; $/;"	m	struct:s_MEMDIVMER
 dm_lock	include/halinc/memarea_t.h	/^	spinlock_t dm_lock; \/\/保护自身结构的自旋锁$/;"	m	struct:s_MEMDIVMER
@@ -1267,7 +1298,9 @@ fill_fullbitmap	hal/x86/bdvideo.c	/^void fill_fullbitmap(char_t *bmfname)$/;"	f
 fill_graph	hal/x86/bdvideo.c	/^void fill_graph(dftgraph_t *kghp, pixl_t pix)$/;"	f
 fill_rect	hal/x86/bdvideo.c	/^void fill_rect(pixl_t pix, uint_t x, uint_t y, uint_t tx, uint_t ty)$/;"	f
 find_acpi_rsdp	initldr/ldrkrl/chkcpmm.c	/^PUBLIC mrsdp_t *find_acpi_rsdp()$/;"	f
+find_continumsa_inbafhlst	hal/x86/memarea.c	/^bafhlst_t *find_continumsa_inbafhlst(memarea_t *mareap, uint_t fmnr)$/;"	f
 find_file	initldr/ldrkrl/inithead.c	/^fhdsc_t *find_file(char_t *fname)$/;"	f
+find_inmarea_msadscsegmant	hal/x86/memarea.c	/^bool_t find_inmarea_msadscsegmant(memarea_t *mareap, msadsc_t *fmstat, uint_t fmsanr, msadsc_t **retmsastatp,$/;"	f
 findacpi_rsdp_core	initldr/ldrkrl/chkcpmm.c	/^mrsdp_t *findacpi_rsdp_core(void *findstart, u32_t findlen)$/;"	f
 flush_videoram	hal/x86/bdvideo.c	/^void flush_videoram(dftgraph_t *kghp)$/;"	f
 fntchmap	include/halinc/bdvideo_t.h	/^    u8_t fntchmap[MAX_CHARBITBY];$/;"	m	struct:s_FNTDATA
@@ -1282,8 +1315,13 @@ fntwxbyte	include/halinc/bdvideo_t.h	/^    u8_t fntwxbyte;$/;"	m	struct:s_FNTDAT
 fntwxbyte	initldr/include/ldrtype.h	/^    u8_t fntwxbyte;$/;"	m	struct:s_FNTDATA
 fontfhder_t	include/halinc/bdvideo_t.h	/^}__attribute__((packed)) fontfhder_t;$/;"	t	typeref:struct:s_FONTFHDER
 fontfhder_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) fontfhder_t;$/;"	t	typeref:struct:s_FONTFHDER
+free_all_kobcks	hal/x86/kmsob.c	/^void free_all_kobcks()$/;"	f
+free_all_mchkstuc	hal/x86/memdivmer.c	/^void free_all_mchkstuc()$/;"	f
+free_one_kobcks	hal/x86/kmsob.c	/^void free_one_kobcks(kobcks_t *kkp)$/;"	f
+free_one_mchkstuc	hal/x86/memdivmer.c	/^void free_one_mchkstuc(mchkstuc_t *mchs)$/;"	f
 freeblks	include/halinc/halmm_t.h	/^    uint_t freeblks;$/;"	m	struct:s_PHYMEM
 freobjh_t	include/halinc/kmsob_t.h	/^}freobjh_t;$/;"	t	typeref:struct:s_FREOBJH
+freobjh_t_init	hal/x86/kmsob.c	/^void freobjh_t_init(freobjh_t *initp, uint_t stus, void *stat)$/;"	f
 fs_entry	initldr/ldrkrl/fs.c	/^void fs_entry()$/;"	f
 fsf_fistuc	include/halinc/bdvideo_t.h	/^    u16_t fsf_fistuc;$/;"	m	struct:s_FTSECTIF
 fsf_fistuc	initldr/include/ldrtype.h	/^    u16_t fsf_fistuc;$/;"	m	struct:s_FTSECTIF
@@ -1529,12 +1567,13 @@ init_i8259	hal/x86/i8259.c	/^void init_i8259()$/;"	f
 init_idt_descriptor	hal/x86/halgdtidt.c	/^PUBLIC LKINIT void init_idt_descriptor()$/;"	f
 init_intfltdsc	hal/x86/halintupt.c	/^void init_intfltdsc()$/;"	f
 init_kinitfvram	initldr/ldrkrl/graph.c	/^void init_kinitfvram(machbstart_t* mbsp)$/;"	f
+init_kmsob	hal/x86/kmsob.c	/^void init_kmsob()$/;"	f
 init_krl	kernel/krlinit.c	/^void init_krl()$/;"	f
 init_krlfile	initldr/ldrkrl/fs.c	/^void init_krlfile(machbstart_t *mbsp)$/;"	f
 init_krlinitstack	initldr/ldrkrl/chkcpmm.c	/^void init_krlinitstack(machbstart_t *mbsp)$/;"	f
 init_machbstart	hal/x86/halplatform.c	/^void init_machbstart()$/;"	f
 init_mem	initldr/ldrkrl/chkcpmm.c	/^void init_mem(machbstart_t *mbsp)$/;"	f
-init_memarea	hal/x86/memarea.c	/^void init_memarea()$/;"	f
+init_memarea	hal/x86/memarea.c	/^LKINIT void init_memarea()$/;"	f
 init_memarea_core	hal/x86/memarea.c	/^bool_t init_memarea_core(machbstart_t *mbsp)$/;"	f
 init_meme820	initldr/ldrkrl/chkcpmm.c	/^void init_meme820(machbstart_t *mbsp)$/;"	f
 init_memmgr	hal/x86/memmgrinit.c	/^void init_memmgr()$/;"	f
@@ -1595,8 +1634,22 @@ kk_sz	include/halinc/kmsob_t.h	/^	size_t kk_sz;$/;"	m	struct:s_KOBCKS
 kk_vadr	include/halinc/kmsob_t.h	/^	void* kk_vadr;$/;"	m	struct:s_KOBCKS
 klfocpymblk_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) klfocpymblk_t;$/;"	t	typeref:struct:s_KLFOCPYMBLK
 kmbext_t	include/halinc/kmsob_t.h	/^}kmbext_t;$/;"	t	typeref:struct:s_KMBEXT
+kmbext_t_init	hal/x86/kmsob.c	/^void kmbext_t_init(kmbext_t *initp, adr_t vstat, adr_t vend, kmsob_t *kmsp)$/;"	f
+kmsob_add_koblst	hal/x86/kmsob.c	/^bool_t kmsob_add_koblst(koblst_t *koblp, kmsob_t *kmsp)$/;"	f
+kmsob_del_opkmsob	hal/x86/kmsob.c	/^bool_t kmsob_del_opkmsob(kmsob_t *kmsp, void *fadrs, size_t fsz)$/;"	f
+kmsob_delete	hal/x86/kmsob.c	/^bool_t kmsob_delete(void *fadrs, size_t fsz)$/;"	f
+kmsob_delete_core	hal/x86/kmsob.c	/^bool_t kmsob_delete_core(void *fadrs, size_t fsz)$/;"	f
+kmsob_delete_onkmsob	hal/x86/kmsob.c	/^bool_t kmsob_delete_onkmsob(kmsob_t *kmsp, void *fadrs, size_t fsz)$/;"	f
+kmsob_extn_pages	hal/x86/kmsob.c	/^bool_t kmsob_extn_pages(kmsob_t *kmsp)$/;"	f
+kmsob_new	hal/x86/kmsob.c	/^void *kmsob_new(size_t msz)$/;"	f
+kmsob_new_core	hal/x86/kmsob.c	/^void *kmsob_new_core(size_t msz)$/;"	f
+kmsob_new_onkmsob	hal/x86/kmsob.c	/^void *kmsob_new_onkmsob(kmsob_t *kmsp, size_t msz)$/;"	f
+kmsob_new_opkmsob	hal/x86/kmsob.c	/^void *kmsob_new_opkmsob(kmsob_t *kmsp, size_t msz)$/;"	f
 kmsob_t	include/halinc/kmsob_t.h	/^}kmsob_t;$/;"	t	typeref:struct:s_KMSOB
+kmsob_t_init	hal/x86/kmsob.c	/^void kmsob_t_init(kmsob_t *initp)$/;"	f
+kmsob_updata_cache	hal/x86/kmsob.c	/^void kmsob_updata_cache(kmsobmgrhed_t *kmobmgrp, koblst_t *koblp, kmsob_t *kmsp, uint_t flgs)$/;"	f
 kmsobmgrhed_t	include/halinc/kmsob_t.h	/^}kmsobmgrhed_t;$/;"	t	typeref:struct:s_KMSOBMGRHED
+kmsobmgrhed_t_init	hal/x86/kmsob.c	/^void kmsobmgrhed_t_init(kmsobmgrhed_t *initp)$/;"	f
 knl_spinlock_cli	hal/x86/halcpuctrl.c	/^void knl_spinlock_cli(spinlock_t *lock, cpuflg_t *cpuflg)$/;"	f
 knl_spinlock_init	hal/x86/halcpuctrl.c	/^void knl_spinlock_init(spinlock_t *lock)$/;"	f
 knl_spinlock_lock	hal/x86/halcpuctrl.c	/^void knl_spinlock_lock(spinlock_t *lock)$/;"	f
@@ -1604,18 +1657,20 @@ knl_spinlock_unlock	hal/x86/halcpuctrl.c	/^void knl_spinlock_unlock(spinlock_t *
 knl_spinunlock_sti	hal/x86/halcpuctrl.c	/^void knl_spinunlock_sti(spinlock_t *lock, cpuflg_t *cpuflg)$/;"	f
 knull_dsc	initldr/ldrkrl/imginithead.asm	/^knull_dsc: dq 0$/;"	d
 knull_dsc	initldr/ldrkrl/ldrkrl32.asm	/^knull_dsc: dq 0$/;"	d
+kobcks_init	hal/x86/kmsob.c	/^void kobcks_init(kobcks_t *initp, void *vadr, size_t sz)$/;"	f
 kobcks_t	include/halinc/kmsob_t.h	/^}kobcks_t;$/;"	t	typeref:struct:s_KOBCKS
 koblst_t	include/halinc/kmsob_t.h	/^}koblst_t;$/;"	t	typeref:struct:s_KOBLST
+koblst_t_init	hal/x86/kmsob.c	/^void koblst_t_init(koblst_t *initp, size_t koblsz)$/;"	f
 kpde_t	include/halinc/pages64_t.h	/^}__attribute__((packed)) kpde_t;$/;"	t	typeref:struct:s_KPDE
 kpdpte_t	include/halinc/pages64_t.h	/^}__attribute__((packed)) kpdpte_t;$/;"	t	typeref:struct:s_KPDPTE
 kpml4_t	include/halinc/pages64_t.h	/^}__attribute__((packed)) kpml4_t;$/;"	t	typeref:struct:s_KPML4
 kprint	hal/x86/halprint.c	/^void kprint(const char_t *fmt, ...)$/;"	f
 kprint	initldr/ldrkrl/vgastr.c	/^void kprint(const char_t *fmt, ...)$/;"	f
-ks_lock	include/halinc/kmsob_t.h	/^	spinlock_t ks_lock;$/;"	m	struct:s_KMSOBMGRHED
-ks_msobche	include/halinc/kmsob_t.h	/^	kmsob_t* ks_msobche;$/;"	m	struct:s_KMSOBMGRHED
-ks_msoblst	include/halinc/kmsob_t.h	/^	koblst_t ks_msoblst[KOBLST_MAX];$/;"	m	struct:s_KMSOBMGRHED
-ks_msobnr	include/halinc/kmsob_t.h	/^	uint_t ks_msobnr;$/;"	m	struct:s_KMSOBMGRHED
-ks_tclst	include/halinc/kmsob_t.h	/^	list_h_t ks_tclst;$/;"	m	struct:s_KMSOBMGRHED
+ks_lock	include/halinc/kmsob_t.h	/^	spinlock_t ks_lock; \/\/保护自身的自旋锁$/;"	m	struct:s_KMSOBMGRHED
+ks_msobche	include/halinc/kmsob_t.h	/^	kmsob_t* ks_msobche; \/\/最近分配内存对象的kmsob_t结构$/;"	m	struct:s_KMSOBMGRHED
+ks_msoblst	include/halinc/kmsob_t.h	/^	koblst_t ks_msoblst[KOBLST_MAX]; \/\/koblst_t结构数组$/;"	m	struct:s_KMSOBMGRHED
+ks_msobnr	include/halinc/kmsob_t.h	/^	uint_t ks_msobnr; \/\/总共多少个kmsob_t结构$/;"	m	struct:s_KMSOBMGRHED
+ks_tclst	include/halinc/kmsob_t.h	/^	list_h_t ks_tclst;\/\/链表$/;"	m	struct:s_KMSOBMGRHED
 ks_tcnr	include/halinc/kmsob_t.h	/^	uint_t ks_tcnr;$/;"	m	struct:s_KMSOBMGRHED
 kwlst_t	include/bastypeinc/sem_t.h	/^}kwlst_t;$/;"	t	typeref:struct:s_KWLST
 ldr_createpage_and_open	initldr/ldrkrl/chkcpmm.c	/^void ldr_createpage_and_open()$/;"	f
@@ -1673,11 +1728,15 @@ machbstart_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) machbstart_t;$
 machbstart_t_init	hal/x86/halplatform.c	/^void machbstart_t_init(machbstart_t *initp)$/;"	f
 machbstart_t_init	initldr/ldrkrl/bstartparm.c	/^void machbstart_t_init(machbstart_t *initp)$/;"	f
 mafo_aloc	include/halinc/memarea_t.h	/^	mmstus_t (*mafo_aloc)(struct s_MEMAREA* memarea,mmafrets_t* mafrspack,void* valp,uint_t val);$/;"	m	struct:s_MAFUNCOBJS
+mafo_deft_afry	hal/x86/memarea.c	/^mmstus_t mafo_deft_afry(struct s_MEMAREA *memarea, mmafrets_t *mafrspack, void *valp, uint_t val)$/;"	f
+mafo_deft_exit	hal/x86/memarea.c	/^mmstus_t mafo_deft_exit(struct s_MEMAREA *memarea)$/;"	f
+mafo_deft_init	hal/x86/memarea.c	/^mmstus_t mafo_deft_init(struct s_MEMAREA *memarea, void *valp, uint_t val)$/;"	f
 mafo_exit	include/halinc/memarea_t.h	/^	mmstus_t (*mafo_exit)(struct s_MEMAREA* memarea);$/;"	m	struct:s_MAFUNCOBJS
 mafo_free	include/halinc/memarea_t.h	/^	mmstus_t (*mafo_free)(struct s_MEMAREA* memarea,mmafrets_t* mafrspack,void* valp,uint_t val);$/;"	m	struct:s_MAFUNCOBJS
 mafo_init	include/halinc/memarea_t.h	/^	mmstus_t (*mafo_init)(struct s_MEMAREA* memarea,void* valp,uint_t val);$/;"	m	struct:s_MAFUNCOBJS
 mafo_recy	include/halinc/memarea_t.h	/^	mmstus_t (*mafo_recy)(struct s_MEMAREA* memarea,mmafrets_t* mafrspack,void* valp,uint_t val);$/;"	m	struct:s_MAFUNCOBJS
 mafuncobjs_t	include/halinc/memarea_t.h	/^}mafuncobjs_t;$/;"	t	typeref:struct:s_MAFUNCOBJS
+mafuncobjs_t_init	hal/x86/memarea.c	/^void mafuncobjs_t_init(mafuncobjs_t *initp)$/;"	f
 main	script/lmkfbuild.c	/^int main(int argc, char *argv[])$/;"	f
 map_allcount	include/halinc/halmm_t.h	/^    u32_t     map_allcount;$/;"	m	struct:s_MMAPDSC
 map_flg	include/halinc/halmm_t.h	/^    u32_t     map_flg;$/;"	m	struct:s_MMAPDSC
@@ -1790,11 +1849,12 @@ mc_list	include/halinc/kmsob_t.h	/^	list_h_t mc_list;$/;"	m	struct:s_MSOMDC
 mc_list	include/halinc/memdivmer_t.h	/^	list_h_t mc_list;$/;"	m	struct:s_MCHKSTUC
 mc_lst	include/halinc/kmsob_t.h	/^	msclst_t mc_lst[MSCLST_MAX];$/;"	m	struct:s_MSOMDC
 mc_msa	include/halinc/memdivmer_t.h	/^	msadsc_t* mc_msa; $/;"	m	struct:s_MCHKSTUC
-mc_msanr	include/halinc/kmsob_t.h	/^	uint_t mc_msanr;$/;"	m	struct:s_MSOMDC
+mc_msanr	include/halinc/kmsob_t.h	/^	uint_t mc_msanr; \/\/总共多少个msadsc_t结构$/;"	m	struct:s_MSOMDC
 mc_phyadr	include/halinc/memdivmer_t.h	/^	u64_t mc_phyadr;$/;"	m	struct:s_MCHKSTUC
 mc_sz	include/halinc/memdivmer_t.h	/^	u64_t mc_sz;$/;"	m	struct:s_MCHKSTUC
 mc_viradr	include/halinc/memdivmer_t.h	/^	u64_t mc_viradr;$/;"	m	struct:s_MCHKSTUC
 mchkstuc_t	include/halinc/memdivmer_t.h	/^}mchkstuc_t;$/;"	t	typeref:struct:s_MCHKSTUC
+mchkstuc_t_init	hal/x86/memdivmer.c	/^void mchkstuc_t_init(mchkstuc_t *initp)$/;"	f
 md_indxflgs	include/halinc/msadsc_t.h	/^	msadflgs_t md_indxflgs;\/\/4 内存空间地址描述标志$/;"	m	struct:s_MSADSC
 md_list	include/halinc/msadsc_t.h	/^	list_h_t md_list;\/\/16  链表$/;"	m	struct:s_MSADSC
 md_lock	include/halinc/msadsc_t.h	/^	spinlock_t md_lock; \/\/4 保存的自旋锁$/;"	m	struct:s_MSADSC
@@ -1844,6 +1904,7 @@ mdc_sfsoff	include/halinc/halplatform_t.h	/^    u64_t mdc_sfsoff;$/;"	m	struct:s
 mdc_sfsoff	initldr/include/ldrtype.h	/^    u64_t mdc_sfsoff;$/;"	m	struct:s_mlosrddsc
 mdc_sfsum	include/halinc/halplatform_t.h	/^    u64_t mdc_sfsum;$/;"	m	struct:s_mlosrddsc
 mdc_sfsum	initldr/include/ldrtype.h	/^    u64_t mdc_sfsum; $/;"	m	struct:s_mlosrddsc
+mem_check_mareadata	hal/x86/memarea.c	/^void mem_check_mareadata(machbstart_t *mbsp)$/;"	f
 memarea_t	include/halinc/memarea_t.h	/^}memarea_t;$/;"	t	typeref:struct:s_MEMAREA
 memarea_t_init	hal/x86/memarea.c	/^void memarea_t_init(memarea_t *initp)$/;"	f
 memcopy	include/halinc/io.h	/^KLINE void memcopy(void *src, void *dest, uint_t count)$/;"	f
@@ -1856,6 +1917,7 @@ memset	initldr/include/io.h	/^KLINE void memset(void* src,u8_t val,uint_t count)
 merlove_continumsadsc_mareabafh	hal/x86/memarea.c	/^bool_t merlove_continumsadsc_mareabafh(memarea_t *mareap, msadsc_t *mstat, msadsc_t *mend, uint_t mnr)$/;"	f
 merlove_mem_core	hal/x86/memarea.c	/^bool_t merlove_mem_core(machbstart_t *mbsp)$/;"	f
 merlove_mem_onmemarea	hal/x86/memarea.c	/^bool_t merlove_mem_onmemarea(memarea_t *mareap, msadsc_t *mstat, uint_t msanr)$/;"	f
+merlove_scan_continumsadsc	hal/x86/memarea.c	/^bool_t merlove_scan_continumsadsc(memarea_t *mareap, msadsc_t *fmstat, uint_t *fntmsanr, uint_t fmsanr,$/;"	f
 merlove_setallmarflgs_onmemarea	hal/x86/memarea.c	/^uint_t merlove_setallmarflgs_onmemarea(memarea_t *mareap, msadsc_t *mstat, uint_t msanr)$/;"	f
 mf_lstty	include/halinc/msadsc_t.h	/^	u32_t mf_lstty:1; \/\/是否挂入链表$/;"	m	struct:s_MSADFLGS
 mf_marty	include/halinc/msadsc_t.h	/^	u32_t mf_marty:3; \/\/属于那个区$/;"	m	struct:s_MSADFLGS
@@ -1863,11 +1925,34 @@ mf_mocty	include/halinc/msadsc_t.h	/^	u32_t mf_mocty:2; \/\/分配类型,被谁�
 mf_olkty	include/halinc/msadsc_t.h	/^	u32_t mf_olkty:2; \/\/挂入链表的类型$/;"	m	struct:s_MSADFLGS
 mf_uindx	include/halinc/msadsc_t.h	/^	u32_t mf_uindx:24; \/\/分配计数$/;"	m	struct:s_MSADFLGS
 mhdrend	initldr/ldrkrl/imginithead.asm	/^mhdrend:$/;"	l
-ml_list	include/halinc/kmsob_t.h	/^	list_h_t ml_list;$/;"	m	struct:s_MSCLST
-ml_msanr	include/halinc/kmsob_t.h	/^	uint_t ml_msanr;$/;"	m	struct:s_MSCLST
-ml_ompnr	include/halinc/kmsob_t.h	/^	uint_t ml_ompnr;$/;"	m	struct:s_MSCLST
+ml_list	include/halinc/kmsob_t.h	/^	list_h_t ml_list; \/\/挂载msadsc_t的链表$/;"	m	struct:s_MSCLST
+ml_msanr	include/halinc/kmsob_t.h	/^	uint_t ml_msanr; \/\/多少个msadsc_t$/;"	m	struct:s_MSCLST
+ml_ompnr	include/halinc/kmsob_t.h	/^	uint_t ml_ompnr; \/\/一个msadsc_t对应连续的物理内存页面数$/;"	m	struct:s_MSCLST
 mlosrddsc_t	include/halinc/halplatform_t.h	/^}mlosrddsc_t;$/;"	t	typeref:struct:s_mlosrddsc
 mlosrddsc_t	initldr/include/ldrtype.h	/^}mlosrddsc_t;$/;"	t	typeref:struct:s_mlosrddsc
+mm_clear_2msaolflg	hal/x86/memdivmer.c	/^bool_t mm_clear_2msaolflg(bafhlst_t *bafh, msadsc_t *_1ms, msadsc_t *_1me, msadsc_t *_2ms, msadsc_t *_2me)$/;"	f
+mm_cmsa1blk_isok	hal/x86/memdivmer.c	/^sint_t mm_cmsa1blk_isok(bafhlst_t *bafh, msadsc_t *_1ms, msadsc_t *_1me)$/;"	f
+mm_cmsa2blk_isok	hal/x86/memdivmer.c	/^sint_t mm_cmsa2blk_isok(bafhlst_t *bafh, msadsc_t *_1ms, msadsc_t *_1me, msadsc_t *_2ms, msadsc_t *_2me)$/;"	f
+mm_divipages_onbafhlst	hal/x86/memdivmer.c	/^msadsc_t *mm_divipages_onbafhlst(bafhlst_t *bafhp)$/;"	f
+mm_division_pages	hal/x86/memdivmer.c	/^msadsc_t *mm_division_pages(memmgrob_t *mmobjp, uint_t pages, uint_t *retrealpnr, uint_t mrtype, uint_t flgs)$/;"	f
+mm_divpages_core	hal/x86/memdivmer.c	/^msadsc_t *mm_divpages_core(memarea_t *mareap, uint_t pages, uint_t *retrealpnr, uint_t flgs)$/;"	f
+mm_divpages_fmwk	hal/x86/memdivmer.c	/^msadsc_t *mm_divpages_fmwk(memmgrob_t *mmobjp, uint_t pages, uint_t *retrelpnr, uint_t mrtype, uint_t flgs)$/;"	f
+mm_divpages_opmsadsc	hal/x86/memdivmer.c	/^msadsc_t *mm_divpages_opmsadsc(msadsc_t *msastat, uint_t mnr)$/;"	f
+mm_divpages_procmarea	hal/x86/memdivmer.c	/^msadsc_t *mm_divpages_procmarea(memmgrob_t *mmobjp, uint_t pages, uint_t *retrealpnr)$/;"	f
+mm_find_cmsa2blk	hal/x86/memdivmer.c	/^sint_t mm_find_cmsa2blk(bafhlst_t *fbafh, msadsc_t **rfnms, msadsc_t **rfnme)$/;"	f
+mm_maxdivpages_onmarea	hal/x86/memdivmer.c	/^msadsc_t *mm_maxdivpages_onmarea(memarea_t *malckp, uint_t *retrelpnr)$/;"	f
+mm_merge_pages	hal/x86/memdivmer.c	/^bool_t mm_merge_pages(memmgrob_t *mmobjp, msadsc_t *freemsa, uint_t freepgs)$/;"	f
+mm_merpages_core	hal/x86/memdivmer.c	/^bool_t mm_merpages_core(memarea_t *marea, msadsc_t *freemsa, uint_t freepgs)$/;"	f
+mm_merpages_fmwk	hal/x86/memdivmer.c	/^bool_t mm_merpages_fmwk(memmgrob_t *mmobjp, msadsc_t *freemsa, uint_t freepgs)$/;"	f
+mm_merpages_onbafhlst	hal/x86/memdivmer.c	/^bool_t mm_merpages_onbafhlst(msadsc_t *freemsa, uint_t freepgs, bafhlst_t *relbf, bafhlst_t *merbf)$/;"	f
+mm_merpages_onmarea	hal/x86/memdivmer.c	/^bool_t mm_merpages_onmarea(memarea_t *malckp, msadsc_t *freemsa, uint_t freepgs)$/;"	f
+mm_merpages_opmsadsc	hal/x86/memdivmer.c	/^sint_t mm_merpages_opmsadsc(bafhlst_t *bafh, msadsc_t *freemsa, uint_t freepgs)$/;"	f
+mm_prcdivpages_onmarea	hal/x86/memdivmer.c	/^msadsc_t *mm_prcdivpages_onmarea(memarea_t *malckp, uint_t pages, uint_t *retrelpnr)$/;"	f
+mm_reldivpages_onmarea	hal/x86/memdivmer.c	/^msadsc_t *mm_reldivpages_onmarea(memarea_t *malckp, uint_t pages, uint_t *retrelpnr)$/;"	f
+mm_reldpgsdivmsa_bafhl	hal/x86/memdivmer.c	/^msadsc_t *mm_reldpgsdivmsa_bafhl(memarea_t *malckp, uint_t pages, uint_t *retrelpnr, bafhlst_t *relbfl, bafhlst_t *divbfl)$/;"	f
+mm_retnmsaob_onbafhlst	hal/x86/memdivmer.c	/^bool_t mm_retnmsaob_onbafhlst(bafhlst_t *bafhp, msadsc_t **retmstat, msadsc_t **retmend)$/;"	f
+mm_update_memarea	hal/x86/memdivmer.c	/^void mm_update_memarea(memarea_t *malokp, uint_t pgnr, uint_t flgs)$/;"	f
+mm_update_memmgrob	hal/x86/memdivmer.c	/^void mm_update_memmgrob(uint_t realpnr, uint_t flgs)$/;"	f
 mmafrets_t	include/halinc/memarea_t.h	/^}__attribute__((packed)) mmafrets_t;$/;"	t	typeref:struct:s_MMAFRETS
 mmap	initldr/ldrkrl/chkcpmm.c	/^void mmap(e820map_t **retemp, u32_t *retemnr)$/;"	f
 mmapdsc_t	include/halinc/halmm_t.h	/^}mmapdsc_t;$/;"	t	typeref:struct:s_MMAPDSC
@@ -1893,6 +1978,8 @@ mo_resvpages	include/halinc/memmgrinit_t.h	/^	u64_t mo_resvpages; \/\/内存分�
 mo_sem	include/halinc/memmgrinit_t.h	/^	sem_t mo_sem; $/;"	m	struct:s_MEMMGROB
 mo_stus	include/halinc/memmgrinit_t.h	/^	uint_t mo_stus;\/\/状态$/;"	m	struct:s_MEMMGROB
 move_krlimg	initldr/ldrkrl/fs.c	/^int move_krlimg(machbstart_t *mbsp, u64_t cpyadr, u64_t cpysz)$/;"	f
+mpobf_add_msadsc	hal/x86/memdivmer.c	/^bool_t mpobf_add_msadsc(bafhlst_t *bafhp, msadsc_t *freemstat, msadsc_t *freemend)$/;"	f
+mrdmb_add_msa_bafh	hal/x86/memdivmer.c	/^bool_t mrdmb_add_msa_bafh(bafhlst_t *bafhp, msadsc_t *msastat, msadsc_t *msaend)$/;"	f
 mrsdp_t	include/halinc/halplatform_t.h	/^}__attribute__((packed)) mrsdp_t;$/;"	t	typeref:struct:s_MRSDP
 mrsdp_t	initldr/include/ldrtype.h	/^}__attribute__((packed)) mrsdp_t;$/;"	t	typeref:struct:s_MRSDP
 mrv_t	include/bastypeinc/bastype_t.h	/^typedef unsigned long mrv_t;$/;"	t
@@ -1901,13 +1988,15 @@ msadflgs_t	include/halinc/msadsc_t.h	/^}__attribute__((packed)) msadflgs_t; $/;"
 msadsc_t	include/halinc/msadsc_t.h	/^}__attribute__((packed)) msadsc_t;\/\/32+24$/;"	t	typeref:struct:s_MSADSC
 msadsc_t_init	hal/x86/msadsc.c	/^void msadsc_t_init(msadsc_t *initp)$/;"	f
 msclst_t	include/halinc/kmsob_t.h	/^}msclst_t;$/;"	t	typeref:struct:s_MSCLST
+msclst_t_init	hal/x86/kmsob.c	/^void msclst_t_init(msclst_t *initp, uint_t pnr)$/;"	f
 msg_op_t	initldr/include/type.h	/^typedef mrv_t (*msg_op_t)();$/;"	t
 msomdc_t	include/halinc/kmsob_t.h	/^}msomdc_t;$/;"	t	typeref:struct:s_MSOMDC
-mt_kmsb	include/halinc/kmsob_t.h	/^	kmsob_t* mt_kmsb;$/;"	m	struct:s_KMBEXT
-mt_list	include/halinc/kmsob_t.h	/^	list_h_t mt_list;$/;"	m	struct:s_KMBEXT
-mt_mobjnr	include/halinc/kmsob_t.h	/^	uint_t mt_mobjnr;	$/;"	m	struct:s_KMBEXT
-mt_vend	include/halinc/kmsob_t.h	/^	adr_t mt_vend;$/;"	m	struct:s_KMBEXT
-mt_vstat	include/halinc/kmsob_t.h	/^	adr_t mt_vstat;$/;"	m	struct:s_KMBEXT
+msomdc_t_init	hal/x86/kmsob.c	/^void msomdc_t_init(msomdc_t *initp)$/;"	f
+mt_kmsb	include/halinc/kmsob_t.h	/^	kmsob_t* mt_kmsb; \/\/指向内存容器结构$/;"	m	struct:s_KMBEXT
+mt_list	include/halinc/kmsob_t.h	/^	list_h_t mt_list; \/\/链表$/;"	m	struct:s_KMBEXT
+mt_mobjnr	include/halinc/kmsob_t.h	/^	uint_t mt_mobjnr; \/\/内存对象容器扩展容量内存中有多少对象$/;"	m	struct:s_KMBEXT
+mt_vend	include/halinc/kmsob_t.h	/^	adr_t mt_vend; \/\/内存对象容器扩展容量结束$/;"	m	struct:s_KMBEXT
+mt_vstat	include/halinc/kmsob_t.h	/^	adr_t mt_vstat; \/\/内存对象容器扩展容量开始地址$/;"	m	struct:s_KMBEXT
 next	include/bastypeinc/list_t.h	/^       struct s_LIST_H *prev,*next;$/;"	m	struct:s_LIST_H	typeref:struct:s_LIST_H::
 numberk	hal/x86/halprint.c	/^char_t *numberk(char_t *str, uint_t n, sint_t base)$/;"	f
 numberk	initldr/ldrkrl/vgastr.c	/^char_t *numberk(char_t *str, uint_t n, sint_t base)$/;"	f
@@ -1928,13 +2017,21 @@ offset_high	include/halinc/halgdtidt_t.h	/^	u16_t	offset_high;	\/* Offset High *
 offset_high_h	include/halinc/halgdtidt_t.h	/^	u32_t   offset_high_h;$/;"	m	struct:s_GATE
 offset_low	include/halinc/halgdtidt_t.h	/^	u16_t	offset_low;	\/* Offset Low *\/$/;"	m	struct:s_GATE
 offset_resv	include/halinc/halgdtidt_t.h	/^	u32_t	offset_resv;$/;"	m	struct:s_GATE
-oh_list	include/halinc/kmsob_t.h	/^	list_h_t oh_list;$/;"	m	struct:s_FREOBJH
-oh_stat	include/halinc/kmsob_t.h	/^	void* oh_stat;$/;"	m	struct:s_FREOBJH
-oh_stus	include/halinc/kmsob_t.h	/^	uint_t oh_stus;$/;"	m	struct:s_FREOBJH
-ol_cahe	include/halinc/kmsob_t.h	/^	kmsob_t* ol_cahe;$/;"	m	struct:s_KOBLST
-ol_emnr	include/halinc/kmsob_t.h	/^	uint_t ol_emnr;$/;"	m	struct:s_KOBLST
-ol_emplst	include/halinc/kmsob_t.h	/^	list_h_t ol_emplst;$/;"	m	struct:s_KOBLST
-ol_sz	include/halinc/kmsob_t.h	/^	size_t ol_sz;$/;"	m	struct:s_KOBLST
+oh_list	include/halinc/kmsob_t.h	/^	list_h_t oh_list; \/\/链表$/;"	m	struct:s_FREOBJH
+oh_stat	include/halinc/kmsob_t.h	/^	void* oh_stat; \/\/ 对象的开始地址$/;"	m	struct:s_FREOBJH
+oh_stus	include/halinc/kmsob_t.h	/^	uint_t oh_stus; \/\/对象状态$/;"	m	struct:s_FREOBJH
+ol_cahe	include/halinc/kmsob_t.h	/^	kmsob_t* ol_cahe; \/\/最近一次查找的kmsob_t结构$/;"	m	struct:s_KOBLST
+ol_emnr	include/halinc/kmsob_t.h	/^	uint_t ol_emnr; \/\/挂载kmsob_t结构的数量$/;"	m	struct:s_KOBLST
+ol_emplst	include/halinc/kmsob_t.h	/^	list_h_t ol_emplst; \/\/挂载kmsob_t结构的链表$/;"	m	struct:s_KOBLST
+ol_sz	include/halinc/kmsob_t.h	/^	size_t ol_sz; \/\/kmsob_t结构中内存对象的大小$/;"	m	struct:s_KOBLST
+onfpgs_retn_bafhlst	hal/x86/memdivmer.c	/^bool_t onfpgs_retn_bafhlst(memarea_t *malckp, uint_t freepgs, bafhlst_t **retrelbf, bafhlst_t **retmerbf)$/;"	f
+onfrmsa_retn_marea	hal/x86/memdivmer.c	/^memarea_t *onfrmsa_retn_marea(memmgrob_t *mmobjp, msadsc_t *freemsa, uint_t freepgs)$/;"	f
+onkoblst_retn_delkmsob	hal/x86/kmsob.c	/^kmsob_t *onkoblst_retn_delkmsob(koblst_t *koblp, void *fadrs, size_t fsz)$/;"	f
+onkoblst_retn_newkmsob	hal/x86/kmsob.c	/^kmsob_t *onkoblst_retn_newkmsob(koblst_t *koblp, size_t msz)$/;"	f
+onma_retn_maxbafhlst	hal/x86/memdivmer.c	/^bafhlst_t *onma_retn_maxbafhlst(memarea_t *malckp)$/;"	f
+onmpgs_retn_bafhlst	hal/x86/memdivmer.c	/^bool_t onmpgs_retn_bafhlst(memarea_t *malckp, uint_t pages, bafhlst_t **retrelbafh, bafhlst_t **retdivbafh)$/;"	f
+onmrtype_retn_marea	hal/x86/memdivmer.c	/^memarea_t *onmrtype_retn_marea(memmgrob_t *mmobjp, uint_t mrtype)$/;"	f
+onmsz_retn_koblst	hal/x86/kmsob.c	/^koblst_t *onmsz_retn_koblst(kmsobmgrhed_t *kmmgrhlokp, size_t msz)$/;"	f
 out_char	initldr/ldrkrl/chkcpmm.c	/^void out_char(char *c)$/;"	f
 out_u16	include/halinc/io.h	/^KLINE void out_u16(const u16_t port, const u16_t val)$/;"	f
 out_u16	initldr/include/io.h	/^KLINE void out_u16(const u16_t port, const u16_t val)$/;"	f
@@ -2020,8 +2117,12 @@ ret_imgfilesz	initldr/ldrkrl/fs.c	/^u64_t ret_imgfilesz()$/;"	f
 ret_msadsc_vadrandsz	hal/x86/msadsc.c	/^bool_t ret_msadsc_vadrandsz(machbstart_t *mbsp, msadsc_t **retmasvp, u64_t *retmasnr)$/;"	f
 ret_phymmarge_adrandsz	hal/x86/halmm.c	/^void ret_phymmarge_adrandsz(machbstart_t *mbsp, phymmarge_t **retpmrvadr, u64_t *retpmrsz)$/;"	f
 ret_vramadr_inbnk	hal/x86/bdvideo.c	/^u64_t *ret_vramadr_inbnk(void *ghpdev)$/;"	f
+retn_divoder	hal/x86/memdivmer.c	/^KLINE sint_t retn_divoder(uint_t pages)$/;"	f
 retn_ifilenm	script/lmkfbuild.c	/^char* retn_ifilenm(int gc,char* argv[])$/;"	f
+retn_mscidx	hal/x86/kmsob.c	/^KLINE sint_t retn_mscidx(uint_t pages)$/;"	f
 retn_ofilenm	script/lmkfbuild.c	/^char* retn_ofilenm(int gc,char * argv[])$/;"	f
+retn_procmarea	hal/x86/memdivmer.c	/^memarea_t *retn_procmarea(memmgrob_t *mmobjp)$/;"	f
+retn_test_sec	hal/x86/memdivmer.c	/^uint_t retn_test_sec()$/;"	f
 rp_chksum	include/halinc/halplatform_t.h	/^    u8_t rp_chksum;$/;"	m	struct:s_MRSDP
 rp_chksum	initldr/include/ldrtype.h	/^    u8_t rp_chksum;$/;"	m	struct:s_MRSDP
 rp_echksum	include/halinc/halplatform_t.h	/^    u8_t rp_echksum;$/;"	m	struct:s_MRSDP
@@ -2166,6 +2267,16 @@ saddr	include/halinc/halplatform_t.h	/^    u64_t saddr;    \/* start of memory s
 saddr	initldr/include/ldrtype.h	/^    u64_t saddr;    \/* start of memory segment8 *\/$/;"	m	struct:s_e820
 save_eip_jmp	initldr/ldrkrl/ldrkrl32.asm	/^save_eip_jmp:$/;"	l
 save_flags_cli	include/halinc/io.h	/^KLINE void save_flags_cli(cpuflg_t *flags)$/;"	f
+scan_delkmsob_isok	hal/x86/kmsob.c	/^kmsob_t *scan_delkmsob_isok(kmsob_t *kmsp, void *fadrs, size_t fsz)$/;"	f
+scan_dfszkmsob_isok	hal/x86/kmsob.c	/^bool_t scan_dfszkmsob_isok(kmsob_t *kmsp, void *fadrs, size_t fsz)$/;"	f
+scan_fadrskmsob_isok	hal/x86/kmsob.c	/^bool_t scan_fadrskmsob_isok(adr_t fostat, adr_t vend, void *fadrs, size_t objsz)$/;"	f
+scan_freekmsob_isok	hal/x86/kmsob.c	/^uint_t scan_freekmsob_isok(kmsob_t *kmsp)$/;"	f
+scan_freemsa_isok	hal/x86/memdivmer.c	/^bool_t scan_freemsa_isok(msadsc_t *freemsa, uint_t freepgs)$/;"	f
+scan_kmsob_objnr	hal/x86/kmsob.c	/^uint_t scan_kmsob_objnr(kmsob_t *kmsp)$/;"	f
+scan_len_msadsc	hal/x86/memarea.c	/^bool_t scan_len_msadsc(msadsc_t *mstat, msadflgs_t *cmpmdfp, uint_t mnr, uint_t *retmnr)$/;"	f
+scan_mapgsalloc_ok	hal/x86/memdivmer.c	/^bool_t scan_mapgsalloc_ok(memarea_t *malckp, uint_t pages)$/;"	f
+scan_newkmsob_isok	hal/x86/kmsob.c	/^kmsob_t *scan_newkmsob_isok(kmsob_t *kmsp, size_t msz)$/;"	f
+scan_nmszkmsob_isok	hal/x86/kmsob.c	/^bool_t scan_nmszkmsob_isok(kmsob_t *kmsp, size_t msz)$/;"	f
 search_32rlbits	include/halinc/io.h	/^KLINE sint_t search_32rlbits(u32_t val)$/;"	f
 search_64rlbits	include/halinc/io.h	/^KLINE sint_t search_64rlbits(u64_t val)$/;"	f
 search_krloccupymsadsc_core	hal/x86/msadsc.c	/^bool_t search_krloccupymsadsc_core(machbstart_t *mbsp)$/;"	f
@@ -2193,23 +2304,23 @@ sint_t	initldr/include/type.h	/^typedef long sint_t;$/;"	t
 size_t	include/bastypeinc/bastype_t.h	/^typedef unsigned long size_t;$/;"	t
 size_t	initldr/include/type.h	/^typedef unsigned long size_t;$/;"	t
 slou_sreen	hal/x86/bdvideo.c	/^void slou_sreen(uint_t hy)$/;"	f
-so_alclst	include/halinc/kmsob_t.h	/^	list_h_t so_alclst;$/;"	m	struct:s_KMSOB
-so_extdp	include/halinc/kmsob_t.h	/^	void* so_extdp;$/;"	m	struct:s_KMSOB
+so_alclst	include/halinc/kmsob_t.h	/^	list_h_t so_alclst; \/\/内存对象容器中分配的对象链表头$/;"	m	struct:s_KMSOB
+so_extdp	include/halinc/kmsob_t.h	/^	void* so_extdp; \/\/本结构扩展数据指针$/;"	m	struct:s_KMSOB
 so_flgs	include/halinc/kmsob_t.h	/^	uint_t so_flgs;$/;"	m	struct:s_KMSOB
-so_fobjnr	include/halinc/kmsob_t.h	/^	uint_t so_fobjnr;$/;"	m	struct:s_KMSOB
-so_frelst	include/halinc/kmsob_t.h	/^	list_h_t so_frelst;$/;"	m	struct:s_KMSOB
-so_list	include/halinc/kmsob_t.h	/^	list_h_t so_list;$/;"	m	struct:s_KMSOB
-so_lock	include/halinc/kmsob_t.h	/^	spinlock_t so_lock;$/;"	m	struct:s_KMSOB
-so_mc	include/halinc/kmsob_t.h	/^	msomdc_t so_mc;$/;"	m	struct:s_KMSOB
-so_mextlst	include/halinc/kmsob_t.h	/^	list_h_t so_mextlst;$/;"	m	struct:s_KMSOB
-so_mextnr	include/halinc/kmsob_t.h	/^	uint_t so_mextnr; $/;"	m	struct:s_KMSOB
-so_mobjnr	include/halinc/kmsob_t.h	/^	uint_t so_mobjnr;$/;"	m	struct:s_KMSOB
-so_objrelsz	include/halinc/kmsob_t.h	/^	size_t so_objrelsz;$/;"	m	struct:s_KMSOB
-so_objsz	include/halinc/kmsob_t.h	/^	size_t so_objsz;$/;"	m	struct:s_KMSOB
-so_privp	include/halinc/kmsob_t.h	/^	void* so_privp;$/;"	m	struct:s_KMSOB
-so_stus	include/halinc/kmsob_t.h	/^	uint_t so_stus;$/;"	m	struct:s_KMSOB
-so_vend	include/halinc/kmsob_t.h	/^	adr_t so_vend;$/;"	m	struct:s_KMSOB
-so_vstat	include/halinc/kmsob_t.h	/^	adr_t so_vstat;$/;"	m	struct:s_KMSOB
+so_fobjnr	include/halinc/kmsob_t.h	/^	uint_t so_fobjnr; \/\/内存对象容器中空闲的对象个数$/;"	m	struct:s_KMSOB
+so_frelst	include/halinc/kmsob_t.h	/^	list_h_t so_frelst; \/\/内存对象容器中空闲的对象链表头$/;"	m	struct:s_KMSOB
+so_list	include/halinc/kmsob_t.h	/^	list_h_t so_list; \/\/链表$/;"	m	struct:s_KMSOB
+so_lock	include/halinc/kmsob_t.h	/^	spinlock_t so_lock; \/\/保护结构自身的自旋锁$/;"	m	struct:s_KMSOB
+so_mc	include/halinc/kmsob_t.h	/^	msomdc_t so_mc; \/\/内存对象容器占用内存页面管理结构$/;"	m	struct:s_KMSOB
+so_mextlst	include/halinc/kmsob_t.h	/^	list_h_t so_mextlst; \/\/内存对象容器扩展kmbext_t结构链表头$/;"	m	struct:s_KMSOB
+so_mextnr	include/halinc/kmsob_t.h	/^	uint_t so_mextnr; \/\/内存对象容器扩展kmbext_T结构个数$/;"	m	struct:s_KMSOB
+so_mobjnr	include/halinc/kmsob_t.h	/^	uint_t so_mobjnr; \/\/内存对象容器中总共的对象个数$/;"	m	struct:s_KMSOB
+so_objrelsz	include/halinc/kmsob_t.h	/^	size_t so_objrelsz; \/\/内存对象实际大小$/;"	m	struct:s_KMSOB
+so_objsz	include/halinc/kmsob_t.h	/^	size_t so_objsz; \/\/内存对象大小$/;"	m	struct:s_KMSOB
+so_privp	include/halinc/kmsob_t.h	/^	void* so_privp; \/\/本结构私有数据指针$/;"	m	struct:s_KMSOB
+so_stus	include/halinc/kmsob_t.h	/^	uint_t so_stus; \/\/状态与标志$/;"	m	struct:s_KMSOB
+so_vend	include/halinc/kmsob_t.h	/^	adr_t so_vend; \/\/内存对象容器的结束地址$/;"	m	struct:s_KMSOB
+so_vstat	include/halinc/kmsob_t.h	/^	adr_t so_vstat; \/\/内存对象容器的开始地址$/;"	m	struct:s_KMSOB
 sphyadr	initldr/include/ldrtype.h	/^    u64_t sphyadr;$/;"	m	struct:s_KLFOCPYMBLK
 spinlock_t	include/bastypeinc/spinlock_t.h	/^} spinlock_t;$/;"	t	typeref:struct:__anon1
 str_t	include/bastypeinc/bastype_t.h	/^typedef const char* str_t;$/;"	t
@@ -2223,6 +2334,14 @@ syscall_t	initldr/include/type.h	/^typedef void (*syscall_t)();$/;"	t
 sysstus_t	include/bastypeinc/bastype_t.h	/^typedef sint_t sysstus_t;$/;"	t
 system_error	hal/x86/halcpuctrl.c	/^void system_error(char_t *errmsg)$/;"	f
 test_bga	initldr/ldrkrl/graph.c	/^void  test_bga()$/;"	f
+test_divsion_pages	hal/x86/memdivmer.c	/^void test_divsion_pages()$/;"	f
+test_kmsob	hal/x86/kmsob.c	/^void test_kmsob()$/;"	f
+test_maxdiv_all	hal/x86/memdivmer.c	/^void test_maxdiv_all()$/;"	f
+test_maxone_marea	hal/x86/memdivmer.c	/^void test_maxone_marea(memarea_t *mr)$/;"	f
+test_onedivmer_all	hal/x86/memdivmer.c	/^void test_onedivmer_all(memarea_t *ma)$/;"	f
+test_proc_marea	hal/x86/memdivmer.c	/^void test_proc_marea(memarea_t *mr)$/;"	f
+test_schkrloccuymm	hal/x86/msadsc.c	/^void test_schkrloccuymm(machbstart_t *mbsp, u64_t ocpystat, u64_t sz)$/;"	f
+test_setflgs	hal/x86/memarea.c	/^uint_t test_setflgs(memarea_t *mareap, msadsc_t *mstat, uint_t msanr)$/;"	f
 testm2m	initldr/ldrkrl/bstartparm.c	/^void testm2m()$/;"	f
 totalmemory	include/halinc/bdvideo_t.h	/^        u16_t totalmemory;$/;"	m	struct:s_VBEINFO
 totalmemory	initldr/include/ldrtype.h	/^        u16_t totalmemory;$/;"	m	struct:s_VBEINFO
@@ -2317,8 +2436,10 @@ wlh_llist	include/bastypeinc/sem_t.h	/^	list_h_t wlh_llist;$/;"	m	struct:s_WAIT_
 wlh_lock	include/bastypeinc/sem_t.h	/^	spinlock_t wlh_lock;$/;"	m	struct:s_WAIT_L_HEAD
 wlh_privte	include/bastypeinc/sem_t.h	/^	void* wlh_privte;$/;"	m	struct:s_WAIT_L_HEAD
 wlh_upfun	include/bastypeinc/sem_t.h	/^	bool_t  (*wlh_upfun)(u32_t func,struct s_WAIT_L_HEAD* wlhp);$/;"	m	struct:s_WAIT_L_HEAD
+write_kobcks	hal/x86/kmsob.c	/^void write_kobcks(kmsobmgrhed_t *kmmgrp, void *ptr, size_t sz)$/;"	f
 write_ldrkrlfile	initldr/ldrkrl/inithead.c	/^void write_ldrkrlfile()$/;"	f
 write_msr	include/halinc/io.h	/^KLINE void write_msr(const u32_t reg, const u64_t val)$/;"	f
+write_one_mchkstuc	hal/x86/memdivmer.c	/^void write_one_mchkstuc(msadsc_t *msa, uint_t pnr)$/;"	f
 write_one_msadsc	hal/x86/memmgrinit.c	/^void write_one_msadsc(msadsc_t *msap, u64_t phyadr) $/;"	f
 write_one_msadsc	hal/x86/msadsc.c	/^void write_one_msadsc(msadsc_t *msap, u64_t phyadr)$/;"	f
 write_pixcolor	hal/x86/bdvideo.c	/^void write_pixcolor(dftgraph_t *kghp, u32_t x, u32_t y, pixl_t pix)$/;"	f
