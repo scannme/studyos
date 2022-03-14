@@ -41,16 +41,15 @@ mbhdr:
 mhdrend:
 
 _entry:
-	cli  ;关中断
+	cli
 
 	in al, 0x70
 	or al, 0x80	
-	out 0x70,al ;关掉不可屏蔽中断
+	out 0x70,al
 
-	lgdt [GDT_PTR] ;加载GDT到GDTR寄存器
-	jmp dword 0x8 :_32bits_mode; 长跳转刷新CS影子寄存器
+	lgdt [GDT_PTR]
+	jmp dword 0x8 :_32bits_mode
 
-;初始化段寄存器和通用寄存器,为调用inithead_entry函数做准备
 _32bits_mode:
 	mov ax, 0x10
 	mov ds, ax
@@ -71,7 +70,7 @@ _32bits_mode:
 	jmp 0x200000
 
 
-;GDT 全局段描述附表
+
 GDT_START:
 knull_dsc: dq 0
 kcode_dsc: dq 0x00cf9e000000ffff

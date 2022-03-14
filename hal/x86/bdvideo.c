@@ -1,3 +1,8 @@
+/**********************************************************
+        引导调式屏幕上显示输出文件bdvideo.c
+***********************************************************
+                彭东
+**********************************************************/
 #include "cosmostypes.h"
 #include "cosmosmctrl.h"
 
@@ -10,7 +15,6 @@ PUBLIC LKINIT void init_dftgraph()
     dftgraph_t *kghp = &kdftgh;
     machbstart_t *kmbsp = &kmachbsp;
     memset(kghp, 0, sizeof(dftgraph_t));
-
     kghp->gh_mode = kmbsp->mb_ghparm.gh_mode;
     kghp->gh_x = kmbsp->mb_ghparm.gh_x;
     kghp->gh_y = kmbsp->mb_ghparm.gh_y;
@@ -30,9 +34,9 @@ PUBLIC LKINIT void init_dftgraph()
     kghp->gh_fnthight = 16;
     kghp->gh_linesz = 16 + 4;
     kghp->gh_deffontpx = BGRA(0xff, 0xff, 0xff);
-
     return;
 }
+
 pixl_t set_deffontpx(pixl_t setpx)
 {
     dftgraph_t *kghp = &kdftgh;
@@ -180,15 +184,10 @@ PUBLIC LKINIT void init_bdvideo()
 {
     dftgraph_t *kghp = &kdftgh;
 
-    //初始化图形数据结构,里面方有图形模式,分别率,图形驱动函数指针
     init_dftgraph();
-    //初始化bga图形显卡的函数指针
     init_bga();
-    //初始化vbe图形显卡的函数指针
     init_vbe();
-    //清空屏幕为黑色
     fill_graph(kghp, BGRA(0, 0, 0));
-    //显示背景图片
     set_charsdxwflush(0, 0);
     hal_background();
     
@@ -587,10 +586,10 @@ void bga_flush(void *ghpdev)
     dftgraph_t *kghp = (dftgraph_t *)ghpdev;
 
     u64_t *s = (u64_t *)((uint_t)kghp->gh_fvrmphyadr);
-    u64_t *d = ret_vramadr_inbnk(kghp);
+    u64_t *d = ret_vramadr_inbnk(kghp); //(u64_t*)kghp->gh_framphyadr;
     u64_t i = 0, j = 0;
     u64_t e = kghp->gh_x * kghp->gh_y * kghp->gh_onepixbyte;
-
+    //u64_t k=e/8;
     for (; i < e; i += 8)
     {
         d[j] = s[j];
@@ -807,4 +806,3 @@ sint_t vbe_get_xyoffset(void *ghpdev, uint_t *rxoff, uint_t *ryoff)
 
     return -1;
 }
-

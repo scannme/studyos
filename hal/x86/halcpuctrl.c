@@ -1,3 +1,9 @@
+/**********************************************************
+        cpuæ§åˆ¶æ–‡ä»¶cpuctrl.c
+***********************************************************
+                å½­ä¸œ 
+**********************************************************/
+
 #include "cosmostypes.h"
 #include "cosmosmctrl.h"
 
@@ -16,11 +22,11 @@ void hal_spinlock_lock(spinlock_t *lock)
         "jnz    2f      \n"
         ".section .spinlock.text,"
         "\"ax\""
-        "\n"                    // ÖØĞÂ¶¨ÒåÒ»¸ö´úÂë¶ÎËùÒÔjnz 2fÏÂÃæ²¢²»ÊÇ
-        "2:         \n"         //cmpl $0,%1 ÊÂÊµÉÏÏÂÃæµÄ´úÂë²»»á³£³£Ö´ĞĞ,
-        "cmpl   $0, %1      \n" //ÕâÊÇÎªÁË²»ÔÚcpuÖ¸Áî¸ßËÙ»º´æÖĞÌî³äÎŞÓÃ´úÂë
-        "jne    2b      \n"     //ÒªÖªµÀÄÇ¿ÉÊÇÓÃÃ¿Î»6¿Å¾§Ìå¹Ü×öµÄË«¼«ĞÔ¾²Ì¬
-        "jmp    1b      \n"     //´¢´æÆ÷,±ÈÄÚ´æÌõ¿ì¼¸Ç§¸öÊıÁ¿¼¶
+        "\n"                    // é‡æ–°å®šä¹‰ä¸€ä¸ªä»£ç æ®µæ‰€ä»¥jnz 2fä¸‹é¢å¹¶ä¸æ˜¯
+        "2:         \n"         //cmpl $0,%1 äº‹å®ä¸Šä¸‹é¢çš„ä»£ç ä¸ä¼šå¸¸å¸¸æ‰§è¡Œ,
+        "cmpl   $0, %1      \n" //è¿™æ˜¯ä¸ºäº†ä¸åœ¨cpuæŒ‡ä»¤é«˜é€Ÿç¼“å­˜ä¸­å¡«å……æ— ç”¨ä»£ç 
+        "jne    2b      \n"     //è¦çŸ¥é“é‚£å¯æ˜¯ç”¨æ¯ä½6é¢—æ™¶ä½“ç®¡åšçš„åŒææ€§é™æ€
+        "jmp    1b      \n"     //å‚¨å­˜å™¨,æ¯”å†…å­˜æ¡å¿«å‡ åƒä¸ªæ•°é‡çº§
         ".previous      \n"
         :
         : "r"(1), "m"(*lock));
@@ -49,9 +55,9 @@ void hal_spinlock_saveflg_cli(spinlock_t *lock, cpuflg_t *cpuflg)
         "jnz    2f          \n\t"
         ".section .spinlock.text,"
         "\"ax\""
-        "\n\t"                    //ÖØĞÂ¶¨ÒåÒ»¸ö´úÂë¶ÎËùÒÔjnz 2fÏÂÃæ²¢²»ÊÇ
-        "2:                 \n\t" //cmpl $0,%1 ÊÂÊµÉÏÏÂÃæµÄ´úÂë²»»á³£³£Ö´ĞĞ,
-        "cmpl   $0,%2       \n\t" //ÕâÊÇÎªÁË²»ÔÚcpuÖ¸Áî¸ßËÙ»º´æÖĞÌî³äÎŞÓÃ´úÂë
+        "\n\t"                    //é‡æ–°å®šä¹‰ä¸€ä¸ªä»£ç æ®µæ‰€ä»¥jnz 2fä¸‹é¢å¹¶ä¸æ˜¯
+        "2:                 \n\t" //cmpl $0,%1 äº‹å®ä¸Šä¸‹é¢çš„ä»£ç ä¸ä¼šå¸¸å¸¸æ‰§è¡Œ,
+        "cmpl   $0,%2       \n\t" //è¿™æ˜¯ä¸ºäº†ä¸åœ¨cpuæŒ‡ä»¤é«˜é€Ÿç¼“å­˜ä¸­å¡«å……æ— ç”¨ä»£ç 
         "jne    2b          \n\t"
         "jmp    1b          \n\t"
         ".previous          \n\t"
@@ -59,6 +65,17 @@ void hal_spinlock_saveflg_cli(spinlock_t *lock, cpuflg_t *cpuflg)
         : "r"(1), "m"(*lock));
     return;
 }
+void knl_spinlock(spinlock_t * lock)
+{
+	hal_spinlock_lock(lock);
+	return;
+}
+void knl_spinunlock(spinlock_t * lock)
+{
+	hal_spinlock_unlock(lock);
+	return;
+}
+
 
 void hal_spinunlock_restflg_sti(spinlock_t *lock, cpuflg_t *cpuflg)
 {
@@ -86,11 +103,11 @@ void knl_spinlock_lock(spinlock_t *lock)
         "jnz    2f      \n"
         ".section .spinlock.text,"
         "\"ax\""
-        "\n"                    // ÖØĞÂ¶¨ÒåÒ»¸ö´úÂë¶ÎËùÒÔjnz 2fÏÂÃæ²¢²»ÊÇ
-        "2:         \n"         //cmpl $0,%1 ÊÂÊµÉÏÏÂÃæµÄ´úÂë²»»á³£³£Ö´ĞĞ,
-        "cmpl   $0, %1      \n" //ÕâÊÇÎªÁË²»ÔÚcpuÖ¸Áî¸ßËÙ»º´æÖĞÌî³äÎŞÓÃ´úÂë
-        "jne    2b      \n"     //ÒªÖªµÀÄÇ¿ÉÊÇÓÃÃ¿Î»6¿Å¾§Ìå¹Ü×öµÄË«¼«ĞÔ¾²Ì¬
-        "jmp    1b      \n"     //´¢´æÆ÷,±ÈÄÚ´æÌõ¿ì¼¸Ç§¸öÊıÁ¿¼¶
+        "\n"                    // é‡æ–°å®šä¹‰ä¸€ä¸ªä»£ç æ®µæ‰€ä»¥jnz 2fä¸‹é¢å¹¶ä¸æ˜¯
+        "2:         \n"         //cmpl $0,%1 äº‹å®ä¸Šä¸‹é¢çš„ä»£ç ä¸ä¼šå¸¸å¸¸æ‰§è¡Œ,
+        "cmpl   $0, %1      \n" //è¿™æ˜¯ä¸ºäº†ä¸åœ¨cpuæŒ‡ä»¤é«˜é€Ÿç¼“å­˜ä¸­å¡«å……æ— ç”¨ä»£ç 
+        "jne    2b      \n"     //è¦çŸ¥é“é‚£å¯æ˜¯ç”¨æ¯ä½6é¢—æ™¶ä½“ç®¡åšçš„åŒææ€§é™æ€
+        "jmp    1b      \n"     //å‚¨å­˜å™¨,æ¯”å†…å­˜æ¡å¿«å‡ åƒä¸ªæ•°é‡çº§
         ".previous      \n"
         :
         : "r"(1), "m"(*lock));
@@ -119,9 +136,9 @@ void knl_spinlock_cli(spinlock_t *lock, cpuflg_t *cpuflg)
         "jnz    2f          \n\t"
         ".section .spinlock.text,"
         "\"ax\""
-        "\n\t"                    //ÖØĞÂ¶¨ÒåÒ»¸ö´úÂë¶ÎËùÒÔjnz 2fÏÂÃæ²¢²»ÊÇ
-        "2:                 \n\t" //cmpl $0,%1 ÊÂÊµÉÏÏÂÃæµÄ´úÂë²»»á³£³£Ö´ĞĞ,
-        "cmpl   $0,%2       \n\t" //ÕâÊÇÎªÁË²»ÔÚcpuÖ¸Áî¸ßËÙ»º´æÖĞÌî³äÎŞÓÃ´úÂë
+        "\n\t"                    //é‡æ–°å®šä¹‰ä¸€ä¸ªä»£ç æ®µæ‰€ä»¥jnz 2fä¸‹é¢å¹¶ä¸æ˜¯
+        "2:                 \n\t" //cmpl $0,%1 äº‹å®ä¸Šä¸‹é¢çš„ä»£ç ä¸ä¼šå¸¸å¸¸æ‰§è¡Œ,
+        "cmpl   $0,%2       \n\t" //è¿™æ˜¯ä¸ºäº†ä¸åœ¨cpuæŒ‡ä»¤é«˜é€Ÿç¼“å­˜ä¸­å¡«å……æ— ç”¨ä»£ç 
         "jne    2b          \n\t"
         "jmp    1b          \n\t"
         ".previous          \n\t"
@@ -141,7 +158,7 @@ void knl_spinunlock_sti(spinlock_t *lock, cpuflg_t *cpuflg)
     return;
 }
 
-void hal_memset(void *setp, size_t n, u8_t setval)
+void hal_memset(void *setp, u8_t setval, size_t n)
 {
     u8_t *_p = (u8_t *)setp;
     for (uint_t i = 0; i < n; i++)

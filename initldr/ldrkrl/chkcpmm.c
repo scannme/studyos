@@ -100,7 +100,6 @@ PUBLIC void init_acpi(machbstart_t *mbsp)
     return;
 }
 
-//初始化内存,从bios中断中获取内存数组
 void init_mem(machbstart_t *mbsp)
 {
     e820map_t *retemp;
@@ -111,15 +110,14 @@ void init_mem(machbstart_t *mbsp)
     {
         kerror("no e820map\n");
     }
-    //根据e820map_t 结构数据检查内存大小
     if (chk_memsize(retemp, retemnr, 0x100000, 0x8000000) == NULL)
     {
         kerror("Your computer is low on memory, the memory cannot be less than 128MB!");
     }
-    mbsp->mb_e820padr = (u64_t)((u32_t)(retemp)); //把e820map_t结构数组的首地址传给mbsp->mb_e820padr
-    mbsp->mb_e820nr = (u64_t)retemnr; //把e820map_t结构数组个数传给mbsp->mb_e820nr
+    mbsp->mb_e820padr = (u64_t)((u32_t)(retemp));
+    mbsp->mb_e820nr = (u64_t)retemnr;
     mbsp->mb_e820sz = retemnr * (sizeof(e820map_t));
-    mbsp->mb_memsz = get_memsize(retemp, retemnr); //根据e820map_t结构计算内存大小
+    mbsp->mb_memsz = get_memsize(retemp, retemnr);
     init_acpi(mbsp);
     return;
 }
@@ -136,10 +134,9 @@ void init_chkcpu(machbstart_t *mbsp)
         kerror("Your CPU is not support 64bits mode sys is die!");
         CLI_HALT();
     }
-    mbsp->mb_cpumode = 0x40; //如果成功,则设置机器信息的结构的cpu模式位64位
+    mbsp->mb_cpumode = 0x40;
     return;
 }
-//初始化内核栈
 void init_krlinitstack(machbstart_t *mbsp)
 {
     if (1 > move_krlimg(mbsp, (u64_t)(0x8f000), 0x1001))
@@ -151,17 +148,12 @@ void init_krlinitstack(machbstart_t *mbsp)
     return;
 }
 
-/*建立mmu数据*/
 void init_bstartpages(machbstart_t *mbsp)
 {
-    //顶级页目录
     u64_t *p = (u64_t *)(KINITPAGE_PHYADR);
-    //页目录指针
     u64_t *pdpte = (u64_t *)(KINITPAGE_PHYADR + 0x1000);
-    //页目录
     u64_t *pde = (u64_t *)(KINITPAGE_PHYADR + 0x2000);
 
-    //物理地址从0开始
     u64_t adr = 0;
     
     if (1 > move_krlimg(mbsp, (u64_t)(KINITPAGE_PHYADR), (0x1000 * 16 + 0x2000)))
@@ -169,13 +161,11 @@ void init_bstartpages(machbstart_t *mbsp)
         kerror("move_krlimg err");
     }
     
-    //将顶级页目录、页目录指针清0
     for (uint_t mi = 0; mi < PGENTY_SIZE; mi++)
     {
         p[mi] = 0;
         pdpte[mi] = 0;
     }
-    //映射 外层目录16项
     for (uint_t pdei = 0; pdei < 16; pdei++)
     {
         pdpte[pdei] = (u64_t)((u32_t)pde | KPDPTE_RW | KPDPTE_P);
@@ -186,10 +176,8 @@ void init_bstartpages(machbstart_t *mbsp)
         }
         pde = (u64_t *)((u32_t)pde + 0x1000);
     }
-    //让顶级页目录中第0项和第()执行同一个页目录指针
     p[((KRNL_VIRTUAL_ADDRESS_START) >> KPML4_SHIFT) & 0x1ff] = (u64_t)((u32_t)pdpte | KPML4_RW | KPML4_P);
     p[0] = (u64_t)((u32_t)pdpte | KPML4_RW | KPML4_P);
-    //把页表首地址保存在机器信息结构中
     mbsp->mb_pml4padr = (u64_t)(KINITPAGE_PHYADR);
     mbsp->mb_subpageslen = (u64_t)(0x1000 * 16 + 0x2000);
     mbsp->mb_kpmapphymemsz = (u64_t)(0x400000000);
@@ -258,7 +246,6 @@ u64_t get_memsize(e820map_t *e8p, u32_t enr)
     return len;
 }
 
-//通拓改写Eflags寄存器的第21位,观察其位的变化判断是否支持CPUID
 int chk_cpuid()
 {
     int rets = 0;
@@ -288,9 +275,9 @@ int chk_cpu_longmode()
     int rets = 0;
     __asm__ __volatile__(
         "movl $0x80000000,%%eax \n\t"
-        "cpuid \n\t"  //把eax中放入0x800000000调用CPUID指令
-        "cmpl $0x80000001,%%eax \n\t" //看eax返回的结果
-        "setnb %%al \n\t" //不为0x80000001,则不支持0x80000001号功能
+        "cpuid \n\t"
+        "cmpl $0x80000001,%%eax \n\t"
+        "setnb %%al \n\t"
         "jb 1f \n\t"
         "movl $0x80000001,%%eax \n\t"
         "cpuid \n\t"

@@ -1,12 +1,12 @@
+/**********************************************************
+        设置全局／中断描述符文件halgdtidt.c
+***********************************************************
+                彭东
+**********************************************************/
 
 #include "cosmostypes.h"
 #include "cosmosmctrl.h"
 
-
-//vector 向量也是中断号
-//desc_type 中断类型,中断门,陷阱门,
-//handler 中断处理程序的入口地址
-//privilege 中断门的权限级别
 void set_idt_desc(u8_t vector, u8_t desc_type, inthandler_t handler, u8_t privilege)
 {
     gate_t *p_gate = &x64_idt[vector];
@@ -23,22 +23,31 @@ void set_idt_desc(u8_t vector, u8_t desc_type, inthandler_t handler, u8_t privil
 
 void set_igdtr(descriptor_t *gdtptr)
 {
+
+    //x64_igdt_reg.gdtbass=(u64_t)(gdtptr);
+    //x64_igdt_reg.gdtLen=sizeof(x64_gdt)-1;
+
+    //iGDT.gdtbass = (u32_t)gdtptr;
+    //  iGDT.gdtLen = sizeof(GDT)-1;
     return;
 }
 
-void set_iidtr(gate_t * idtptr)
+void set_iidtr(gate_t *idtptr)
 {
+
     x64_iidt_reg.idtbass = (u64_t)idtptr;
     x64_iidt_reg.idtLen = sizeof(x64_idt) - 1;
+
+
     return;
 }
 
 void set_descriptor(descriptor_t *p_desc, u32_t base, u32_t limit, u16_t attribute)
 {
-    p_desc->limit_low = limit & 0x0FFFF; //段界限1(2字节)
-    p_desc->base_low = base &0x0FFFF; //段基址 1(2 字节)
-    p_desc->base_mid = (base >> 16) & 0x0FF; //段基址2 (1字节)
-    p_desc->attr1 = (u8_t)(attribute & 0xFF); //属性 1
+    p_desc->limit_low = limit & 0x0FFFF;                                                   // 段界限 1(2 字节)
+    p_desc->base_low = base & 0x0FFFF;                                                     // 段基址 1(2 字节)
+    p_desc->base_mid = (base >> 16) & 0x0FF;                                               // 段基址 2(1 字节)
+    p_desc->attr1 = (u8_t)(attribute & 0xFF);                                              // 属性 1
     p_desc->limit_high_attr2 = (u8_t)(((limit >> 16) & 0x0F) | ((attribute >> 8) & 0xF0)); // 段界限 2 + 属性 2
     p_desc->base_high = (u8_t)((base >> 24) & 0x0FF);                                      // 段基址 3\(1 字节)
     return;
@@ -67,8 +76,11 @@ PUBLIC LKINIT void load_x64_gdt(igdtr_t *igdtrp)
 
         "cli \n\t"
         "pushq %%rax \n\t"
+        //"movq %0,%%rax \n\t"
         "lgdt (%0) \n\t"
+
         "movabsq $1f,%%rax \n\t"
+        //"pushq   $0  \n\t"             $x64_igdt_reg//# fake return address to stop unwinder
         "pushq   $8 \n\t"
         "pushq   %%rax    \n\t"
         "lretq \n\t"
@@ -90,6 +102,7 @@ PUBLIC LKINIT void load_x64_idt(iidtr_t *idtptr)
 {
     __asm__ __volatile__(
         "lidt (%0) \n\t"
+
         :
         : "r"(idtptr)
         : "memory");
@@ -114,7 +127,7 @@ PUBLIC LKINIT void init_descriptor()
         set_descriptor(&x64_gdt[gdtindx][0], 0, 0, 0);
         set_descriptor(&x64_gdt[gdtindx][1], 0, 0, DA_CR | DA_64 | 0);
         set_descriptor(&x64_gdt[gdtindx][2], 0, 0, DA_DRW | DA_64 | 0);
-        set_descriptor(&x64_gdt[gdtindx][3], 0, 0, DA_CR | DA_64 | DA_DPL3 | 0); 
+        set_descriptor(&x64_gdt[gdtindx][3], 0, 0, DA_CR | DA_64 | DA_DPL3 | 0); //0,0xffffffff,DA_DRW | DA_32|DA_LIMIT_4K);
         set_descriptor(&x64_gdt[gdtindx][4], 0, 0, DA_DRW | DA_64 | DA_DPL3 | 0);
         set_x64tss_descriptor(&x64_gdt[gdtindx][6], (u64_t)&x64tss[gdtindx], sizeof(x64tss[gdtindx]) - 1, DA_386TSS);
 
@@ -135,9 +148,10 @@ PUBLIC LKINIT void init_idt_descriptor()
     {
         set_idt_desc((u8_t)intindx, DA_386IGate, hxi_exc_general_intpfault, PRIVILEGE_KRNL);
     }
-
     set_idt_desc(INT_VECTOR_DIVIDE, DA_386IGate, exc_divide_error, PRIVILEGE_KRNL);
+
     set_idt_desc(INT_VECTOR_DEBUG, DA_386IGate, exc_single_step_exception, PRIVILEGE_KRNL);
+
     set_idt_desc(INT_VECTOR_NMI, DA_386IGate, exc_nmi, PRIVILEGE_KRNL);
 
     set_idt_desc(INT_VECTOR_BREAKPOINT, DA_386IGate, exc_breakpoint_exception, PRIVILEGE_USER);
@@ -244,3 +258,4 @@ PUBLIC LKINIT void init_idt_descriptor()
     load_x64_idt(&x64_iidt_reg);
     return;
 }
+

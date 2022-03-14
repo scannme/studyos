@@ -4,11 +4,12 @@
 ;*****************************************************************************
 %define MBSP_ADR 0x100000
 %define IA32_EFER 0C0000080H
-%define PML4T_BADR 0x1000000  
+%define PML4T_BADR 0x1000000      ;0x20000;0x5000
 %define KRLVIRADR 0xffff800000000000
 %define KINITSTACK_OFF 16
 global _start
 global x64_GDT
+global kernel_pml4
 extern hal_start
 
 [section .start.text]
@@ -38,8 +39,8 @@ _start:
     bts eax, 0                      ; CR0.PE =1
     bts eax, 31
 ;开启 CACHE       
-    btr eax,29						; CR0.NW=0
-    btr eax,30						; CR0.CD=0  CACHE
+    btr eax,29		;CR0.NW=0
+    btr eax,30		;CR0.CD=0  CACHE
         
     mov cr0, eax                    ; IA32_EFER.LMA = 1
     jmp 08:entry64
@@ -75,9 +76,9 @@ entry64:
 	mov rsp,rax
 	push 0
 	push 0x8
-    mov rax,hal_start   			; 调用内核主函数
+    mov rax,hal_start   ;调用内核主函数
 	push rax
-    dw 0xcb48						; iret返回指令
+    dw 0xcb48
     jmp $
 
 		
@@ -94,3 +95,10 @@ eGdtLen			equ	$ - enull_x64_dsc			; GDT长度
 eGdtPtr:		dw eGdtLen - 1					; GDT界限
 				dq ex64_GDT
 
+[section .start.data.pml4]
+
+stack:
+	times 1024 dq 0
+
+kernel_pml4:	
+	times 512*10 dq 0

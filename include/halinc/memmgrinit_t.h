@@ -9,23 +9,23 @@
 typedef struct s_MEMMGROB
 {
 	list_h_t mo_list;
-	spinlock_t mo_lock; //保护自身自旋锁
-	uint_t mo_stus;//状态
-	uint_t mo_flgs; //标志
-	sem_t mo_sem; 
-	u64_t mo_memsz; //内存大小
-	u64_t mo_maxpages; //内存最大空虚页面数
-	u64_t mo_freepages;//内存最大空闲页面数
-	u64_t mo_alocpages; //内存最大分配页面数
-	u64_t mo_resvpages; //内存分配水位数
+	spinlock_t mo_lock;
+	uint_t mo_stus;
+	uint_t mo_flgs;
+	sem_t mo_sem;
+	u64_t mo_memsz;
+	u64_t mo_maxpages;
+	u64_t mo_freepages;
+	u64_t mo_alocpages;
+	u64_t mo_resvpages;
 	u64_t mo_horizline;
-	phymmarge_t* mo_pmagestat; //内存空间不仅结构指针
+	phymmarge_t* mo_pmagestat;
 	u64_t mo_pmagenr;
-	msadsc_t* mo_msadscstat; //内存页面结构指针
+	msadsc_t* mo_msadscstat;
 	u64_t mo_msanr;
 	memarea_t* mo_mareastat;
 	u64_t mo_mareanr;
-	kmsobmgrhed_t mo_kmsobmgr; //内存区结构指针
+	kmsobmgrhed_t mo_kmsobmgr;
 	void* mo_privp;
 	void* mo_extp;
 }memmgrob_t;

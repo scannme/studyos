@@ -1,3 +1,8 @@
+/**********************************************************
+        内核内存空间对象分配释放文件kmsob.c
+***********************************************************
+                彭东
+**********************************************************/
 #include "cosmostypes.h"
 #include "cosmosmctrl.h"
 
@@ -42,24 +47,23 @@ void freobjh_t_init(freobjh_t *initp, uint_t stus, void *stat)
 
 void kmsob_t_init(kmsob_t *initp)
 {
-    list_init(&initp->so_list);
-    knl_spinlock_init(&initp->so_lock);
-    initp->so_stus = 0;
-    initp->so_flgs = 0;
-    initp->so_vstat = NULL;
-    initp->so_vend = NULL;
-    initp->so_objsz = 0;
-    initp->so_objrelsz = 0;
-    initp->so_mobjnr = 0;
-    initp->so_fobjnr = 0;
-    list_init(&initp->so_frelst);
-    list_init(&initp->so_alclst);
-    list_init(&initp->so_mextlst);
-    initp->so_mextnr = 0;
-    msomdc_t_init(&initp->so_mc);
-
-    initp->so_privp = NULL;
-    initp->so_extdp = NULL;
+	list_init(&initp->so_list);
+	knl_spinlock_init(&initp->so_lock);
+	initp->so_stus = 0;
+	initp->so_flgs = 0;
+	initp->so_vstat = NULL;
+	initp->so_vend = NULL;
+	initp->so_objsz = 0;
+	initp->so_objrelsz = 0;
+	initp->so_mobjnr = 0;
+	initp->so_fobjnr = 0;
+	list_init(&initp->so_frelst);
+	list_init(&initp->so_alclst);
+	list_init(&initp->so_mextlst);
+	initp->so_mextnr = 0;
+	msomdc_t_init(&initp->so_mc);
+	initp->so_privp = NULL;
+	initp->so_extdp = NULL;
 	return;
 }
 
@@ -375,7 +379,6 @@ koblst_t *onmsz_retn_koblst(kmsobmgrhed_t *kmmgrhlokp, size_t msz)
 	return NULL;
 }
 
-//把内存对象数据结构,挂载到对应的koblst_t结构中区
 bool_t kmsob_add_koblst(koblst_t *koblp, kmsob_t *kmsp)
 {
 	if (NULL == koblp || NULL == kmsp)
@@ -386,13 +389,12 @@ bool_t kmsob_add_koblst(koblst_t *koblp, kmsob_t *kmsp)
 	{
 		return FALSE;
 	}
-    list_add(&kmsp->so_list, &koblp->ol_emplst);
-    koblp->ol_emnr++;
-    return TRUE;
+	list_add(&kmsp->so_list, &koblp->ol_emplst);
+	koblp->ol_emnr++;
+	return TRUE;
 }
 
-//初始化内对象容器
-kmsob_t *_create_init_kmsob(kmsob_t *kmsp, size_t objsz, adr_t cvadrs, adr_t cvadre, msadsc_t *msa, uint_t relpnr) 
+kmsob_t *_create_init_kmsob(kmsob_t *kmsp, size_t objsz, adr_t cvadrs, adr_t cvadre, msadsc_t *msa, uint_t relpnr)
 {
 	if (NULL == kmsp || 1 > objsz || NULL == cvadrs || NULL == cvadre || NULL == msa || 1 > relpnr)
 	{
@@ -410,78 +412,68 @@ kmsob_t *_create_init_kmsob(kmsob_t *kmsp, size_t objsz, adr_t cvadrs, adr_t cva
 	{
 		return NULL;
 	}
-    //初始化kmsob结构体
-    kmsob_t_init(kmsp);
-    //设置内存对象容器的开始,结束地址,内存对象大小
-    kmsp->so_vstat = cvadrs;
-    kmsp->so_vend = cvadre;
-    kmsp->so_objsz = objsz;
-    //把物理内存页面对应的msadsc_t结构加入到kmsob_t中的so_mc.mc_kmobinlst链表上
-    list_add(&msa->md_list, &kmsp->so_mc.mc_kmobinlst);
-    kmsp->so_mc.mc_kmobinpnr = (uint_t)relpnr;
-    //设置内存对象的开始地址为kmsob_t结构之后,结束地址为内存对象容器的结束地址
-    freobjh_t *fohstat = (freobjh_t *)(kmsp + 1) , *fohend = (freobjh_t *)cvadre;
 
- 
+	kmsob_t_init(kmsp);
+
+	kmsp->so_vstat = cvadrs;
+	kmsp->so_vend = cvadre;
+	kmsp->so_objsz = objsz;
+
+	list_add(&msa->md_list, &kmsp->so_mc.mc_kmobinlst);
+	kmsp->so_mc.mc_kmobinpnr = (uint_t)relpnr;
+
+	freobjh_t *fohstat = (freobjh_t *)(kmsp + 1), *fohend = (freobjh_t *)cvadre;
+
 	uint_t ap = (uint_t)((uint_t)fohstat);
 	freobjh_t *tmpfoh = (freobjh_t *)((uint_t)ap);
-
-    for (; tmpfoh < fohend;)
-    {//相当于在kmsob_t结构体之后建立一个freobjh_t结构体数组
-        if ((ap + (uint_t)kmsp->so_objsz) <= (uint_t)cvadre) 
-        {
-            //初始化每个freobjh_t结构体
-            freobjh_t_init(tmpfoh, 0, (void *)tmpfoh);
-            //把每个freobjh_t结构体加入到kmsob_t结构体中的so_frelst中
-            list_add(&tmpfoh->oh_list, &kmsp->so_frelst);
-            kmsp->so_mobjnr++;
-            kmsp->so_fobjnr++;
-        }
-        ap += (uint_t)kmsp->so_objsz;
-        tmpfoh = (freobjh_t *)((uint_t)ap);
-    }
-
-    return kmsp;
+	for (; tmpfoh < fohend;)
+	{
+		if ((ap + (uint_t)kmsp->so_objsz) <= (uint_t)cvadre)
+		{
+			freobjh_t_init(tmpfoh, 0, (void *)tmpfoh);
+			list_add(&tmpfoh->oh_list, &kmsp->so_frelst);
+			kmsp->so_mobjnr++;
+			kmsp->so_fobjnr++;
+		}
+		ap += (uint_t)kmsp->so_objsz;
+		tmpfoh = (freobjh_t *)((uint_t)ap);
+	}
+	return kmsp;
 }
 
-//创建一个内存对象容器
 kmsob_t *_create_kmsob(kmsobmgrhed_t *kmmgrlokp, koblst_t *koblp, size_t objsz)
 {
 	if (NULL == kmmgrlokp || NULL == koblp || 1 > objsz)
 	{
 		return NULL;
 	}
-    kmsob_t *kmsp = NULL;
-    msadsc_t *msa = NULL;
-    uint_t relpnr = 0;
-    uint_t pages = 1;
-
-    if (128 < objsz) {
-        pages = 2;
-    }
-
-    if (512 < objsz) {
-        pages = 4;
-    }
-
-    //为内存对象容器分配物理内存空间,这是我们之前实现的页面管理器
-    msa = mm_division_pages(&memmgrob, pages, &relpnr, MA_TYPE_KRNL, DMF_RELDIV);
-    if (NULL == msa) {
-        return NULL;
-    }
+	kmsob_t *kmsp = NULL;
+	msadsc_t *msa = NULL;
+	uint_t relpnr = 0;
+	uint_t pages = 1;
+	if (128 < objsz)
+	{
+		pages = 2;
+	}
+	if (512 < objsz)
+	{
+		pages = 4;
+	}
+	msa = mm_division_pages(&memmgrob, pages, &relpnr, MA_TYPE_KRNL, DMF_RELDIV);
+	if (NULL == msa)
+	{
+		return NULL;
+	}
 	if (NULL != msa && 0 == relpnr)
 	{
 		system_error("_create_kmsob mm_division_pages fail\n");
 		return NULL;
 	}
-    u64_t phyadr = msa->md_phyadrs.paf_padrs << PSHRSIZE;
-    u64_t phyade = phyadr + (relpnr << PSHRSIZE) - 1;
-
-    //计算虚地址
-    adr_t vadrs = phyadr_to_viradr((adr_t)phyadr);
-    adr_t vadre = phyadr_to_viradr((adr_t)phyade);
-    //初始化kmsob_t并建立内存对象
-    kmsp = _create_init_kmsob((kmsob_t *)vadrs, koblp->ol_sz, vadrs, vadre, msa, relpnr);
+	u64_t phyadr = msa->md_phyadrs.paf_padrs << PSHRSIZE;
+	u64_t phyade = phyadr + (relpnr << PSHRSIZE) - 1;
+	adr_t vadrs = phyadr_to_viradr((adr_t)phyadr);
+	adr_t vadre = phyadr_to_viradr((adr_t)phyade);
+	kmsp = _create_init_kmsob((kmsob_t *)vadrs, koblp->ol_sz, vadrs, vadre, msa, relpnr);
 	if (NULL == kmsp)
 	{
 		if (mm_merge_pages(&memmgrob, msa, relpnr) == FALSE)
@@ -490,20 +482,16 @@ kmsob_t *_create_kmsob(kmsobmgrhed_t *kmmgrlokp, koblst_t *koblp, size_t objsz)
 		}
 		return NULL;
 	}
-    //初始化kmsob_t并建立内存对象
-    if (kmsob_add_koblst(koblp, kmsp) == FALSE) {
-        system_error("_create kmsob false\n");
-    }
-    kmmgrlokp->ks_msobnr++;
-
-    return kmsp;
+	if (kmsob_add_koblst(koblp, kmsp) == FALSE)
+	{
+		system_error(" _create_kmsob kmsob_add_koblst FALSE\n");
+	}
+	kmmgrlokp->ks_msobnr++;
+	return kmsp;
 }
-
-
 
 void *kmsob_new_opkmsob(kmsob_t *kmsp, size_t msz)
 {
-    //获取kmsob_t中的so_frelst链表头的第一个空闲内存对象
 	if (NULL == kmsp || 1 > msz)
 	{
 		return NULL;
@@ -512,13 +500,10 @@ void *kmsob_new_opkmsob(kmsob_t *kmsp, size_t msz)
 	{
 		return NULL;
 	}
-    freobjh_t *fobh = list_entry(kmsp->so_frelst.next, freobjh_t, oh_list);
-    //从链表中拖链
-    list_del(&fobh->oh_list);
-
-    kmsp->so_fobjnr--;
-    //返回内存对象首地址
-    return (void *)(fobh);
+	freobjh_t *fobh = list_entry(kmsp->so_frelst.next, freobjh_t, oh_list);
+	list_del(&fobh->oh_list);
+	kmsp->so_fobjnr--;
+	return (void *)(fobh);
 }
 
 bool_t kmsob_extn_pages(kmsob_t *kmsp)
@@ -593,30 +578,30 @@ bool_t kmsob_extn_pages(kmsob_t *kmsp)
 	kmsp->so_mextnr++;
 	return TRUE;
 }
+
 void *kmsob_new_onkmsob(kmsob_t *kmsp, size_t msz)
 {
 	if (NULL == kmsp || 1 > msz)
 	{
 		return NULL;
 	}
-    void *retptr = NULL;
-    cpuflg_t cpuflg;
-    knl_spinlock_cli(&kmsp->so_lock, &cpuflg);
-    //如果内存对象容器没有空闲对象就需要扩展内存对象容器的内存了
-    if (scan_kmsob_objnr(kmsp) < 1) {
-        if (kmsob_extn_pages(kmsp) == FALSE) {
-            retptr = NULL;
-            goto ret_step;
-        }
-    }
-
-    retptr = kmsob_new_opkmsob(kmsp, msz);
-
+	void *retptr = NULL;
+	cpuflg_t cpuflg;
+	knl_spinlock_cli(&kmsp->so_lock, &cpuflg);
+	if (scan_kmsob_objnr(kmsp) < 1)
+	{
+		if (kmsob_extn_pages(kmsp) == FALSE)
+		{
+			retptr = NULL;
+			goto ret_step;
+		}
+	}
+	retptr = kmsob_new_opkmsob(kmsp, msz);
 ret_step:
-    knl_spinunlock_sti(&kmsp->so_lock, &cpuflg);
-
-    return retptr;
+	knl_spinunlock_sti(&kmsp->so_lock, &cpuflg);
+	return retptr;
 }
+
 void *kmsob_new_core(size_t msz)
 {
 	kmsobmgrhed_t *kmobmgrp = &memmgrob.mo_kmsobmgr;

@@ -1,7 +1,7 @@
 /****************************************************************
         HAL内存初始化头文件halmm_t.h
 *****************************************************************
-                彭东
+                彭东 
 ****************************************************************/
 #ifndef _HALMM_T_H
 #define _HALMM_T_H
@@ -78,11 +78,11 @@
 #define VGAADRS 0xa0000ULL
 #define VGAADRD 0xc0000ULL
 
-#define RAM_USABLE 1 //可用内存
-#define RAM_RESERV 2 //保存内存不可用
-#define RAM_ACPIREC 3 //ACPI表相关的
-#define RAM_ACPINVS 4 //ACPI NVS空间
-#define RAM_AREACON 5 //包含坏内存
+#define RAM_USABLE 1
+#define RAM_RESERV 2
+#define RAM_ACPIREC 3
+#define RAM_ACPINVS 4
+#define RAM_AREACON 5
 
 #define PMR_T_OSAPUSERRAM 1
 #define PMR_T_RESERVRAM 2
@@ -98,19 +98,19 @@
 
 typedef struct s_PHYMMARGE
 {
-    spinlock_t pmr_lock; //保护这个结构是自旋锁
-    u32_t pmr_type; //内存地址空间类型
+    spinlock_t pmr_lock;
+    u32_t pmr_type;
     u32_t pmr_stype;
-    u32_t pmr_dtype; //内存地址空间的子类型,见上面的宏
-    u32_t pmr_flgs; //结构的标志和状态
+    u32_t pmr_dtype;
+    u32_t pmr_flgs;
     u32_t pmr_stus;
-    u64_t pmr_saddr; //内存空间的开始地址
-    u64_t pmr_lsize; //内存空间的大小
-    u64_t pmr_end; //内存空间的结束地址
-    u64_t pmr_rrvmsaddr; //内存保留空间的开始地址
-    u64_t pmr_rrvmend; //内存保留空间的结束地址
-    void* pmr_prip; //结构的私有数据指针
-    void* pmr_extp; //接口扩展数据指针
+    u64_t pmr_saddr;
+    u64_t pmr_lsize;
+    u64_t pmr_end;
+    u64_t pmr_rrvmsaddr;
+    u64_t pmr_rrvmend;
+    void* pmr_prip;
+    void* pmr_extp;
 }phymmarge_t;
 
 

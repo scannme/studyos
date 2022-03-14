@@ -1,6 +1,8 @@
-/*
-
-*/
+/****************************************************************
+        LMOSEM HAL全局数据结构文件halglobal.c
+*****************************************************************
+                彭东
+****************************************************************/
 #define HALGOBAL_HEAD
 #include "cosmostypes.h"
 #include "cosmosmctrl.h"
@@ -13,7 +15,7 @@ HAL_DEFGLOB_VARIABLE(igdtr_t,x64_igdt_reg)[CPUCORE_MAX];
 HAL_DEFGLOB_VARIABLE(iidtr_t,x64_iidt_reg);
 HAL_DEFGLOB_VARIABLE(machbstart_t, kmachbsp);
 HAL_DEFGLOB_VARIABLE(dftgraph_t, kdftgh);
-
-//定义intfltdsc_t 结构数组大小为256
+HAL_DEFGLOB_VARIABLE(memmgrob_t, memmgrob);
 HAL_DEFGLOB_VARIABLE(intfltdsc_t, machintflt)[IDTMAX];
 #endif
+

@@ -1,20 +1,27 @@
+/**********************************************************
+        物理内存管理器初始化文件memmgrinit.c
+***********************************************************
+                彭东
+**********************************************************/
 #include "cosmostypes.h"
 #include "cosmosmctrl.h"
 
 void init_memmgr()
 {
-    //初始化内存页结构msadsc_t
-    init_msadsc();
-    //初始化内存区结构memarea_t
-    init_memarea();
-    //处理内存占用
+	init_msadsc();
+	init_memarea();
 	init_copy_pagesfvm();
-    init_search_krloccupymm(&kmachbsp);
-    //合并内存页到内存区中
-    init_merlove_mem();
-    //初始化kmsob
-    init_memmgrob();
-    return;
+	init_search_krloccupymm(&kmachbsp);
+	init_merlove_mem();
+	init_memmgrob();
+	init_kmsob();
+	//test_divsion_pages();
+	//test_kmsob();
+	//free_all_mchkstuc();
+	//free_all_kobcks();
+	//disp_memmgrob();
+	//kprint("init_memmgr OK!\n");
+	return;
 }
 
 void disp_memmgrob()
@@ -70,6 +77,7 @@ void memmgrob_t_init(memmgrob_t *initp)
 	knl_spinlock_init(&initp->mo_lock);
 	initp->mo_stus = 0;
 	initp->mo_flgs = 0;
+	//knl_sem_init(&initp->mo_sem,SEM_MUTEX_ONE_LOCK,SEM_FLG_MUTEX);
 	initp->mo_memsz = 0;
 	initp->mo_maxpages = 0;
 	initp->mo_freepages = 0;
@@ -86,38 +94,81 @@ void memmgrob_t_init(memmgrob_t *initp)
 	initp->mo_extp = NULL;
 	return;
 }
-u64_t init_msadsc_core(machbstart_t *mbsp, msadsc_t *msavstart, u64_t msanr)
+
+bool_t copy_pages_data(machbstart_t *mbsp)
 {
-    //获取phymmarge_t结构数组开始地址
-    phymmarge_t *pmagep = (phymmarge_t *)phyadr_to_viradr((adr_t)mbsp->mb_e820expadr);
-    u64_t mdindx = 0;
-    //扫描Phymmarge_t结构数组
-    for (u64_t i =0; i < mbsp->mb_e820exnr; i++) {
-        //判断phymmarge_+t结构的类型是不是可用的内存
-        if (PMR_T_OSAPUSERRAM == pmagep[i].pmr_dtype) {
-            //遍历phymmarge_t结构的地址区间
-            for (u64_t start = pmagep[i].pmr_saddr; start < pmagep[i].pmr_end; start += 4096) {
-                //每次加上4kb-1比较是否等于phymarge_t结构的结束地址
-                if ((start + 4096 -1) <= pmagep[i].pmr_end) {
-                    //与当前地址为参数写入第mdinx个msadsc结构
-                    write_one_msadsc(&msavstart[mdindx], start);
-                    mdindx++;
-                }
-            }
-        }
 
-    }
+	uint_t topgadr = mbsp->mb_nextwtpadr;
+	if (initchkadr_is_ok(mbsp, topgadr, mbsp->mb_subpageslen) != 0)
+	{
+		return FALSE;
+	}
 
-    return mdindx;
+	uint_t *p = (uint_t *)phyadr_to_viradr((adr_t)topgadr);
+	uint_t *pdpte = (uint_t *)(((uint_t)p) + 0x1000);
+	uint_t *pde = (uint_t *)(((uint_t)p) + 0x2000);
+	for (uint_t mi = 0; mi < PGENTY_SIZE; mi++)
+	{
+		p[mi] = 0;
+		pdpte[mi] = 0;
+	}
+	uint_t adr = 0;
+	uint_t pdepd = 0;
+	for (uint_t pdei = 0; pdei < 16; pdei++)
+	{
+		pdepd = (uint_t)viradr_to_phyadr((adr_t)pde);
+		pdpte[pdei] = (uint_t)(pdepd | KPDPTE_RW | KPDPTE_P);
+		for (uint_t pdeii = 0; pdeii < PGENTY_SIZE; pdeii++)
+		{
+			pde[pdeii] = 0 | adr | KPDE_PS | KPDE_RW | KPDE_P;
+			adr += 0x200000;
+		}
+		pde = (uint_t *)((uint_t)pde + 0x1000);
+	}
+	uint_t pdptepd = (uint_t)viradr_to_phyadr((adr_t)pdpte);
+	p[((KRNL_VIRTUAL_ADDRESS_START) >> KPML4_SHIFT) & 0x1ff] = (uint_t)(pdptepd | KPML4_RW | KPML4_P);
+
+	mbsp->mb_pml4padr = topgadr;
+	mbsp->mb_subpageslen = (uint_t)(0x1000 * 16 + 0x2000);
+	mbsp->mb_kpmapphymemsz = (uint_t)(0x400000000);
+	mbsp->mb_nextwtpadr = PAGE_ALIGN(mbsp->mb_pml4padr + mbsp->mb_subpageslen);
+	return TRUE;
 }
-void write_one_msadsc(msadsc_t *msap, u64_t phyadr) 
+
+bool_t copy_fvm_data(machbstart_t *mbsp, dftgraph_t *dgp)
 {
-    //对msadsc_t结构做基本的初始化,比如链表,锁，标志位
-    msadsc_t_init(msap);
-    //把64位的变量地址
-    phyadrflgs_t *tmp =(phyadrflgs_t *)(&phyadr);
-    //把页的物理地址写入到msadsc_t结构中
-    msap->md_phyadrs.paf_padrs = tmp->paf_padrs;
-    return;
+	u64_t tofvadr = mbsp->mb_nextwtpadr;
+	if (initchkadr_is_ok(mbsp, tofvadr, dgp->gh_fvrmsz) != 0)
+	{
+		return FALSE;
+	}
+	sint_t retcl = m2mcopy((void *)((uint_t)dgp->gh_fvrmphyadr), (void *)phyadr_to_viradr((adr_t)(tofvadr)), (sint_t)dgp->gh_fvrmsz);
+	if (retcl != (sint_t)dgp->gh_fvrmsz)
+	{
+		return FALSE;
+	}
+	dgp->gh_fvrmphyadr = phyadr_to_viradr((adr_t)tofvadr);
+	mbsp->mb_fvrmphyadr = tofvadr;
+	mbsp->mb_nextwtpadr = PAGE_ALIGN(tofvadr + dgp->gh_fvrmsz);
+	return TRUE;
 }
 
+void memi_set_mmutabl(uint_t tblpadr, void *edatap)
+{
+	set_cr3(tblpadr);
+	return;
+}
+
+void init_copy_pagesfvm()
+{
+	if (copy_pages_data(&kmachbsp) == FALSE)
+	{
+		system_error("copy_pages_data fail");
+	}
+	if (copy_fvm_data(&kmachbsp, &kdftgh) == FALSE)
+	{
+		system_error("copy_fvm_data fail");
+	}
+	memi_set_mmutabl(kmachbsp.mb_pml4padr, NULL);
+	return;
+}

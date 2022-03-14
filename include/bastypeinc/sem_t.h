@@ -9,10 +9,6 @@
 #define SEM_FLG_MULTI 1
 #define SEM_MUTEX_ONE_LOCK 1
 #define SEM_MULTI_LOCK 0
-typedef struct s_ATOMIC{
-	volatile s32_t a_count;
-}atomic_t;
-
 
 typedef struct s_KWLST
 {   
@@ -34,7 +30,7 @@ typedef struct s_WAIT_L_HEAD
 	spinlock_t wlh_lock;
 	atomic_t wlh_count;
 	void* wlh_privte;
-	bool_t  (*wlh_upfun)(u32_t func,struct s_WAIT_L_HEAD* wlhp);
+	bool_t  (*wlh_upfun)(u32_t func,struct s_WAIT_L_HEAD* wlhp);//lh_upfun_t wlh_upfun; //void (*wlh_upfun)();wait_l_head_t
 }wait_l_head_t;
 
 typedef struct s_WAIT_L

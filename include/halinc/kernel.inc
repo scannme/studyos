@@ -74,7 +74,6 @@ global  asm_ret_from_user_mode
 %define _NOERRO_CODE 0xffffffffffffffff
 
 
-;保存中断寄存器
 %macro	SAVEALL	0
 
 	push rax
@@ -112,7 +111,7 @@ global  asm_ret_from_user_mode
 	
 %endmacro
 
-;恢复异常寄存器
+
 %macro	RESTOREALL	0
    	;pop	gs
 	;pop	fs
@@ -147,7 +146,7 @@ global  asm_ret_from_user_mode
 	
 	iretq
 %endmacro
-;保存异常寄存器
+
 %macro	SAVEALLFAULT 0
 	push rax
 	push rbx
@@ -174,13 +173,20 @@ global  asm_ret_from_user_mode
 	push r14
 	mov r14w,gs
 	push r14
-
+	
+	;push    ds
+	;push    es
+	;push    fs
+	;push    gs
 	
 %endmacro
 
-;恢复异常寄存器
 %macro	RESTOREALLFAULT	0
-
+   	;pop	gs
+	;pop	fs
+	;pop	es
+	;pop	ds
+	
 	pop r14
 	mov gs,r14w
 	pop r14 
@@ -210,7 +216,7 @@ global  asm_ret_from_user_mode
 	add rsp,8
 	iretq
 %endmacro
-;没有错误码的CPU异常
+
 %macro	SRFTFAULT 1
 	push	  _NOERRO_CODE
 	SAVEALLFAULT
@@ -225,7 +231,7 @@ global  asm_ret_from_user_mode
 	call 	hal_fault_allocator
 	RESTOREALLFAULT
 %endmacro
-;CPU异常
+
 %macro	SRFTFAULT_ECODE 1
 	SAVEALLFAULT
 	mov r14w,0x10
@@ -240,7 +246,7 @@ global  asm_ret_from_user_mode
 	RESTOREALLFAULT
 %endmacro
 
-;硬件中断
+
 %macro	HARWINT	1
 	SAVEALL
 	

@@ -16,9 +16,7 @@ ADRSPCE_ROM	include/halinc/halmm_t.h	15;"	d
 ADRSPCE_SDRAM	include/halinc/halmm_t.h	13;"	d
 ALIGN	include/bastypeinc/bastype_t.h	52;"	d
 ALIGN	initldr/include/type.h	56;"	d
-ASM	build/krnlbuidcmd.mk	/^ASM = nasm$/;"	m
 ASM	script/krnlbuidcmd.S	/^ASM 	= nasm$/;"	d
-ASMFLGS	build/krnlbuidcmd.mk	/^ASMFLGS = $(HEADFILE_PATH) -f elf64$/;"	m
 ASMFLGS	script/krnlbuidcmd.S	/^ASMFLGS		= $(HEADFILE_PATH)  -f elf64$/;"	d
 BAFH_STUS_DIVM	include/halinc/memarea_t.h	48;"	d
 BAFH_STUS_DIVP	include/halinc/memarea_t.h	47;"	d
@@ -82,31 +80,22 @@ BUILD_KRNL_OBJS	include/script/buildfile.h	9;"	d
 BUILD_LIBS_OBJS	include/script/buildfile.h	13;"	d
 BUILD_LINK_OBJS	include/script/buildfile.h	16;"	d
 BUILD_MEMY_OBJS	include/script/buildfile.h	10;"	d
-BUILD_MK_BOOT_OBJS	build/krnlobjs.mk	/^BUILD_MK_BOOT_OBJS :=$/;"	m
 BUILD_MK_BOOT_OBJS	script/krnlobjs.S	/^BUILD_MK_BOOT_OBJS +=BUILD_BOOT_OBJS$/;"	l
 BUILD_MK_BOOT_OBJS	script/krnlobjs.S	/^BUILD_MK_BOOT_OBJS :=$/;"	d
-BUILD_MK_DRIV_OBJS	build/krnlobjs.mk	/^BUILD_MK_DRIV_OBJS :=$/;"	m
 BUILD_MK_DRIV_OBJS	script/krnlobjs.S	/^BUILD_MK_DRIV_OBJS +=BUILD_DRIV_OBJS$/;"	l
 BUILD_MK_DRIV_OBJS	script/krnlobjs.S	/^BUILD_MK_DRIV_OBJS :=$/;"	d
-BUILD_MK_FSYS_OBJS	build/krnlobjs.mk	/^BUILD_MK_FSYS_OBJS :=$/;"	m
 BUILD_MK_FSYS_OBJS	script/krnlobjs.S	/^BUILD_MK_FSYS_OBJS +=BUILD_FSYS_OBJS$/;"	l
 BUILD_MK_FSYS_OBJS	script/krnlobjs.S	/^BUILD_MK_FSYS_OBJS :=$/;"	d
-BUILD_MK_HALY_OBJS	build/krnlobjs.mk	/^BUILD_MK_HALY_OBJS :=$/;"	m
 BUILD_MK_HALY_OBJS	script/krnlobjs.S	/^BUILD_MK_HALY_OBJS +=BUILD_HALY_OBJS$/;"	l
 BUILD_MK_HALY_OBJS	script/krnlobjs.S	/^BUILD_MK_HALY_OBJS :=$/;"	d
-BUILD_MK_KRNL_OBJS	build/krnlobjs.mk	/^BUILD_MK_KRNL_OBJS :=$/;"	m
 BUILD_MK_KRNL_OBJS	script/krnlobjs.S	/^BUILD_MK_KRNL_OBJS +=BUILD_KRNL_OBJS$/;"	l
 BUILD_MK_KRNL_OBJS	script/krnlobjs.S	/^BUILD_MK_KRNL_OBJS :=$/;"	d
-BUILD_MK_LIBS_OBJS	build/krnlobjs.mk	/^BUILD_MK_LIBS_OBJS :=$/;"	m
 BUILD_MK_LIBS_OBJS	script/krnlobjs.S	/^BUILD_MK_LIBS_OBJS +=BUILD_LIBS_OBJS$/;"	l
 BUILD_MK_LIBS_OBJS	script/krnlobjs.S	/^BUILD_MK_LIBS_OBJS :=$/;"	d
-BUILD_MK_LINK_OBJS	build/krnlobjs.mk	/^BUILD_MK_LINK_OBJS :=$/;"	m
 BUILD_MK_LINK_OBJS	script/krnlobjs.S	/^BUILD_MK_LINK_OBJS +=BUILD_LINK_OBJS$/;"	l
 BUILD_MK_LINK_OBJS	script/krnlobjs.S	/^BUILD_MK_LINK_OBJS :=$/;"	d
-BUILD_MK_MEMY_OBJS	build/krnlobjs.mk	/^BUILD_MK_MEMY_OBJS :=$/;"	m
 BUILD_MK_MEMY_OBJS	script/krnlobjs.S	/^BUILD_MK_MEMY_OBJS +=BUILD_MEMY_OBJS$/;"	l
 BUILD_MK_MEMY_OBJS	script/krnlobjs.S	/^BUILD_MK_MEMY_OBJS :=$/;"	d
-BUILD_MK_TASK_OBJS	build/krnlobjs.mk	/^BUILD_MK_TASK_OBJS :=$/;"	m
 BUILD_MK_TASK_OBJS	script/krnlobjs.S	/^BUILD_MK_TASK_OBJS +=BUILD_TASK_OBJS$/;"	l
 BUILD_MK_TASK_OBJS	script/krnlobjs.S	/^BUILD_MK_TASK_OBJS :=$/;"	d
 BUILD_PATH	Makefile	/^BUILD_PATH = .\/build$/;"	m
@@ -125,27 +114,19 @@ BnkNumberOfImagePages	include/halinc/bdvideo_t.h	/^    u8_t  BnkNumberOfImagePag
 BnkNumberOfImagePages	initldr/include/ldrtype.h	/^    u8_t  BnkNumberOfImagePages;$/;"	m	struct:s_VBEOMINFO
 BytesPerScanLine	include/halinc/bdvideo_t.h	/^    u16_t BytesPerScanLine;$/;"	m	struct:s_VBEOMINFO
 BytesPerScanLine	initldr/include/ldrtype.h	/^    u16_t BytesPerScanLine;$/;"	m	struct:s_VBEOMINFO
-CC	build/krnlbuidcmd.mk	/^CC = gcc$/;"	m
 CC	script/krnlbuidcmd.S	/^CC		= gcc$/;"	d
-CCBUILDPATH	build/drv.mk	/^CCBUILDPATH = $(KERNELCE_PATH)$/;"	m
-CCBUILDPATH	build/hal.mk	/^CCBUILDPATH = $(KERNELCE_PATH)$/;"	m
-CCBUILDPATH	build/krl.mk	/^CCBUILDPATH = $(KERNELCE_PATH)$/;"	m
-CCBUILDPATH	build/lib.mk	/^CCBUILDPATH = $(KERNELCE_PATH)$/;"	m
-CCBUILDPATH	build/task.mk	/^CCBUILDPATH = $(KERNELCE_PATH)$/;"	m
 CCBUILDPATH	initldr/build/initldr.mk	/^CCBUILDPATH	= $(KRNLBOOT_PATH)$/;"	m
 CCBUILDPATH	script/drv.S	/^CCBUILDPATH	= $(KERNELCE_PATH)$/;"	d
 CCBUILDPATH	script/hal.S	/^CCBUILDPATH	= $(KERNELCE_PATH)$/;"	d
 CCBUILDPATH	script/krl.S	/^CCBUILDPATH	= $(KERNELCE_PATH)$/;"	d
 CCBUILDPATH	script/lib.S	/^CCBUILDPATH	= $(KERNELCE_PATH)$/;"	d
 CCBUILDPATH	script/task.S	/^CCBUILDPATH	= $(KERNELCE_PATH)$/;"	d
-CCSTR	build/krnlbuidrule.mk	/^CCSTR = 'CC -	M] 正在构建... '$<$/;"	m
 CCSTR	script/krnlbuidrule.S	/^CCSTR		= 	'CC -[M] 正在构建... '$<$/;"	d
 CD	Makefile	/^CD = cd$/;"	m
 CD	Makefile.x86	/^CD = cd$/;"	d
 CD	initldr/Makefile	/^CD = cd$/;"	m
 CFG_X86_PLATFORM	include/config.h	9;"	d
 CFIQ	include/halinc/halcpuctrl_t.h	17;"	d
-CFLAGS	build/krnlbuidcmd.mk	/^CFLAGS = $(HEADFILE_PATH) -c -O2 -m64 -mtune=generic -mcmodel=large -mno-red-zone -std=c99 -fexec-charset=UTF-8 -Wall -Wshadow -W -Wconversion -Wno-sign-conversion -fno-stack-protector -fno-zero-initialized-in-bss -fomit-frame-pointer -fno-builtin -fno-common -fno-ident -ffreestanding -Wno-unused-parameter -Wunused-variable #-save-temps -fdata-sections -gstabs+$/;"	m
 CFLAGS	script/krnlbuidcmd.S	/^CFLAGS      = $(HEADFILE_PATH) -c -O2 -m64 -mtune=generic -mcmodel=large -mno-red-zone -std=c99 -fexec-charset=UTF-8 -Wall -Wshadow  -W -Wconversion -Wno-sign-conversion -fno-stack-protector -fno-zero-initialized-in-bss -fomit-frame-pointer -fno-builtin -fno-common  -fno-ident -ffreestanding  -Wno-unused-parameter -Wunused-variable #-save-temps -fdata-sections -gstabs+$/;"	d
 CIRQ	include/halinc/halcpuctrl_t.h	18;"	d
 CIRQFIQ	include/halinc/halcpuctrl_t.h	19;"	d
@@ -160,7 +141,6 @@ CP15_C5R	include/halinc/halmmu_t.h	9;"	d
 CP15_C6R	include/halinc/halmmu_t.h	10;"	d
 CPLILDRSRC	Makefile	/^CPLILDRSRC= $(INITLDR_BUILD_PATH)$(INITLDRSVE) $(INITLDR_BUILD_PATH)$(INITLDRKRL) $(INITLDR_BUILD_PATH)$(INITLDRIMH)$/;"	m
 CPLILDR_PATH	Makefile	/^CPLILDR_PATH =.\/release\/$/;"	m
-CPPFLGSLDS	build/krnlbuidcmd.mk	/^CPPFLGSLDS = $(HEADFILE_PATH) -E -P$/;"	m
 CPPFLGSLDS	script/krnlbuidcmd.S	/^CPPFLGSLDS	= $(HEADFILE_PATH) -E -P $/;"	d
 CPUCORE_MAX	include/halinc/halplatform_t.h	12;"	d
 CPU_ABT_MODE	include/halinc/halcpuctrl_t.h	13;"	d
@@ -195,7 +175,6 @@ DA_TaskGate	include/halinc/halgdtidt_t.h	62;"	d
 DBUGVM	Makefile	/^DBUGVM = bochs -q$/;"	m
 DD	Makefile	/^DD = dd$/;"	m
 DD	Makefile.x86	/^DD = dd$/;"	d
-DD	build/krnlbuidcmd.mk	/^DD = dd$/;"	m
 DD	initldr/Makefile	/^DD = dd$/;"	m
 DD	script/krnlbuidcmd.S	/^DD		= dd$/;"	d
 DEVCLASSMAX	include/halinc/halgdtidt_t.h	10;"	d
@@ -256,11 +235,6 @@ HALGOBAL_HEAD	hal/x86/halglobal.c	4;"	d	file:
 HALT	include/halinc/io.h	65;"	d
 HALYMFLGS	Makefile.x86	/^HALYMFLGS = -C $(BUILD_PATH) -f hal.mk$/;"	d
 HAL_DEFGLOB_VARIABLE	include/halinc/halglobal_t.h	9;"	d
-HEADFILE_PATH	build/drv.mk	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	m
-HEADFILE_PATH	build/hal.mk	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	m
-HEADFILE_PATH	build/krl.mk	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	m
-HEADFILE_PATH	build/lib.mk	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	m
-HEADFILE_PATH	build/task.mk	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	m
 HEADFILE_PATH	initldr/build/initldr.mk	/^HEADFILE_PATH = ..\/include\/$/;"	m
 HEADFILE_PATH	script/drv.S	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc\\$/;"	d
 HEADFILE_PATH	script/hal.S	/^HEADFILE_PATH = -I ..\/include -I ..\/include\/bastypeinc -I ..\/include\/halinc -I ..\/include\/knlinc -I ..\/include\/libinc -I ..\/include\/drvinc$/;"	d
@@ -332,11 +306,6 @@ INT_VECTOR_SEG_NOT	include/halinc/halgdtidt_t.h	80;"	d
 INT_VECTOR_SIMD_FAULT	include/halinc/halgdtidt_t.h	87;"	d
 INT_VECTOR_STACK_FAULT	include/halinc/halgdtidt_t.h	81;"	d
 INT_VECTOR_SYSCALL	include/halinc/halgdtidt_t.h	102;"	d
-KERNELCE_PATH	build/drv.mk	/^KERNELCE_PATH = ..\/drivers\/$/;"	m
-KERNELCE_PATH	build/hal.mk	/^KERNELCE_PATH = ..\/hal\/x86\/$/;"	m
-KERNELCE_PATH	build/krl.mk	/^KERNELCE_PATH = ..\/kernel\/$/;"	m
-KERNELCE_PATH	build/lib.mk	/^KERNELCE_PATH = ..\/lib\/$/;"	m
-KERNELCE_PATH	build/task.mk	/^KERNELCE_PATH = ..\/task\/$/;"	m
 KERNELCE_PATH	script/drv.S	/^KERNELCE_PATH	= ..\/drivers\/$/;"	d
 KERNELCE_PATH	script/hal.S	/^KERNELCE_PATH	= ..\/hal\/s3c2440\/$/;"	d
 KERNELCE_PATH	script/hal.S	/^KERNELCE_PATH	= ..\/hal\/stm32f0xx\/$/;"	d
@@ -348,10 +317,8 @@ KERNEL_PHYI_ADDR	include/halinc/halplatform_t.h	19;"	d
 KERNEL_VIRT_ADDR	include/halinc/halplatform_t.h	18;"	d
 KERNL_BINF_FILE	include/script/buildfile.h	23;"	d
 KERNL_ELFF_FILE	include/script/buildfile.h	22;"	d
-KERNL_MK_BINF_FILE	build/krnlobjs.mk	/^KERNL_MK_BINF_FILE :=$/;"	m
 KERNL_MK_BINF_FILE	script/krnlobjs.S	/^KERNL_MK_BINF_FILE +=KERNL_BINF_FILE$/;"	l
 KERNL_MK_BINF_FILE	script/krnlobjs.S	/^KERNL_MK_BINF_FILE :=$/;"	d
-KERNL_MK_ELFF_FILE	build/krnlobjs.mk	/^KERNL_MK_ELFF_FILE :=$/;"	m
 KERNL_MK_ELFF_FILE	script/krnlobjs.S	/^KERNL_MK_ELFF_FILE +=KERNL_ELFF_FILE$/;"	l
 KERNL_MK_ELFF_FILE	script/krnlobjs.S	/^KERNL_MK_ELFF_FILE :=$/;"	d
 KEXTERN	include/bastypeinc/bastype_t.h	45;"	d
@@ -432,9 +399,7 @@ KUC_NEWFLG	include/halinc/kmsob_t.h	11;"	d
 K_CS_IDX	include/halinc/halgdtidt_t.h	16;"	d
 K_DS_IDX	include/halinc/halgdtidt_t.h	17;"	d
 K_TAR_IDX	include/halinc/halgdtidt_t.h	20;"	d
-LD	build/krnlbuidcmd.mk	/^LD = ld$/;"	m
 LD	script/krnlbuidcmd.S	/^LD		= ld$/;"	d
-LDFLAGS	build/krnlbuidcmd.mk	/^LDFLAGS = -s -static -T cosmoslink.lds -n -Map cosmos.map$/;"	m
 LDFLAGS	script/krnlbuidcmd.S	/^LDFLAGS		= -s -static -T cosmoslink.lds -n -Map cosmos.map$/;"	d
 LDRFILEADR	initldr/include/ldrtype.h	28;"	d
 LDRKRLENTRY_H	initldr/include/ldrkrlentry.h	2;"	d
@@ -476,12 +441,6 @@ MAKE	Makefile.x86	/^MAKE = make$/;"	d
 MAKE	initldr/Makefile	/^MAKE = make$/;"	m
 MAKEFLAGS	Makefile	/^MAKEFLAGS = -sR$/;"	m
 MAKEFLAGS	Makefile.x86	/^MAKEFLAGS = -sR$/;"	d
-MAKEFLAGS	build/drv.mk	/^MAKEFLAGS = -s$/;"	m
-MAKEFLAGS	build/hal.mk	/^MAKEFLAGS = -s$/;"	m
-MAKEFLAGS	build/krl.mk	/^MAKEFLAGS = -s$/;"	m
-MAKEFLAGS	build/lib.mk	/^MAKEFLAGS = -s$/;"	m
-MAKEFLAGS	build/link.mk	/^MAKEFLAGS =$/;"	m
-MAKEFLAGS	build/task.mk	/^MAKEFLAGS = -s$/;"	m
 MAKEFLAGS	initldr/Makefile	/^MAKEFLAGS = -sR$/;"	m
 MAKEFLAGS	initldr/build/initldr.mk	/^MAKEFLAGS = -s$/;"	m
 MAKEFLAGS	script/drv.S	/^MAKEFLAGS = -s$/;"	d
@@ -576,11 +535,8 @@ NumberOfImagePages	include/halinc/bdvideo_t.h	/^    u8_t  NumberOfImagePages;$/;
 NumberOfImagePages	initldr/include/ldrtype.h	/^    u8_t  NumberOfImagePages;$/;"	m	struct:s_VBEOMINFO
 NumberOfPlanes	include/halinc/bdvideo_t.h	/^    u8_t  NumberOfPlanes;$/;"	m	struct:s_VBEOMINFO
 NumberOfPlanes	initldr/include/ldrtype.h	/^    u8_t  NumberOfPlanes;$/;"	m	struct:s_VBEOMINFO
-OBJCOPY	build/krnlbuidcmd.mk	/^OBJCOPY = objcopy$/;"	m
 OBJCOPY	script/krnlbuidcmd.S	/^OBJCOPY = objcopy$/;"	d
-OJCYFLAGS	build/krnlbuidcmd.mk	/^OJCYFLAGS = -S -O binary$/;"	m
 OJCYFLAGS	script/krnlbuidcmd.S	/^OJCYFLAGS = -S -O binary$/;"	d
-OYFLAGS	build/krnlbuidcmd.mk	/^OYFLAGS = -O binary$/;"	m
 OYFLAGS	script/krnlbuidcmd.S	/^OYFLAGS		= -O binary$/;"	d
 P4K_ALIGN	initldr/include/type.h	59;"	d
 PAF_ALLOC	include/halinc/msadsc_t.h	41;"	d
@@ -639,7 +595,6 @@ PMR_T_OSAPUSERRAM	include/halinc/halmm_t.h	87;"	d
 PMR_T_RESERVRAM	include/halinc/halmm_t.h	88;"	d
 PNTPFUN	include/halinc/pages64_t.h	54;"	d
 PREMENTMFLGS	Makefile.x86	/^PREMENTMFLGS = -C $(BUILD_PATH) -f pretreatment.mkf$/;"	d
-PRINTCSTR	build/krnlbuidrule.mk	/^PRINTCSTR = @echo $(CCSTR)$/;"	m
 PRINTCSTR	script/krnlbuidrule.S	/^PRINTCSTR 	=	@echo $(CCSTR) $/;"	d
 PRIVILEGE_KRNL	include/halinc/halgdtidt_t.h	27;"	d
 PRIVILEGE_TASK	include/halinc/halgdtidt_t.h	28;"	d
@@ -698,7 +653,6 @@ RELEDSTPATH	Makefile	/^RELEDSTPATH = ..\/release$/;"	m
 RLINTNR	initldr/include/ldrtype.h	103;"	d
 RM	Makefile	/^RM = rm$/;"	m
 RM	Makefile.x86	/^RM = rm$/;"	d
-RM	build/krnlbuidcmd.mk	/^RM = rm$/;"	m
 RM	initldr/Makefile	/^RM = rm$/;"	m
 RM	script/krnlbuidcmd.S	/^RM		= rm$/;"	d
 RM16_EIP_OFF	include/halinc/halmm_t.h	67;"	d

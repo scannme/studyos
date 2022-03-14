@@ -1,0 +1,89 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000004000000                . = 0x4000000
+                0x0000000004000000                __start_ldr = .
+                0x0000000004000000                __begin_start_text = .
+
+.start.text
+ *(.start.text)
+                0x0000000004000000                __end_start_text = .
+                0x0000000004090000                //. = (0x90000 + .)
+                0x0000000004000000                __begin_text = .
+
+.text           0x0000000004000000      0x526
+ *(.text)
+ .text          0x0000000004000000       0xd8 imginithead.o
+                0x0000000004000000                _start
+ .text          0x00000000040000d8      0x1ed inithead.o
+                0x0000000004000124                error
+                0x000000000400013d                strcmpl
+                0x0000000004000162                find_file
+                0x0000000004000234                write_realintsvefile
+                0x000000000400026b                write_ldrkrlfile
+                0x00000000040002a2                inithead_entry
+ .text          0x00000000040002c5      0x261 vgastr.o
+                0x00000000040002c5                init_curs
+                0x00000000040002f8                numberk
+                0x0000000004000343                set_curs
+                0x0000000004000356                put_one_char
+                0x000000000400036d                close_curs
+                0x000000000400037b                clear_screen
+                0x00000000040003a7                GxH_strwrite
+                0x0000000004000458                strcopy
+                0x000000000400046d                vsprintfk
+                0x00000000040004e5                kprint
+                0x0000000004000526                __end_text = .
+                0x0000000004000526                __begin_data = .
+
+.data           0x0000000004000528       0x14
+ *(.data)
+ .data          0x0000000004000528        0x0 inithead.o
+ .data          0x0000000004000528       0x14 vgastr.o
+                0x0000000004000528                curs
+                0x000000000400053c                __end_data = .
+                0x000000000400053c                __begin_rodata = .
+
+.rodata         0x000000000400053c       0x6f
+ *(.rodata)
+ *(.rodata.*)
+ .rodata.str1.1
+                0x000000000400053c       0x5e inithead.o
+                                         0x7c (size before relaxing)
+ .rodata.str1.1
+                0x000000000400059a       0x11 vgastr.o
+                0x00000000040005ab                __end_rodata = .
+                0x00000000040005ab                __begin_kstrtab = .
+
+.eh_frame       0x00000000040005ac      0x248
+ .eh_frame      0x00000000040005ac      0x108 inithead.o
+ .eh_frame      0x00000000040006b4      0x140 vgastr.o
+                                        0x158 (size before relaxing)
+
+.kstrtab
+ *(.kstrtab)
+                0x00000000040007f4                __end_kstrtab = .
+                0x00000000040007f4                __begin_bss = .
+
+.bss            0x00000000040007f4        0x0
+ *(.bss)
+ .bss           0x00000000040007f4        0x0 inithead.o
+ .bss           0x00000000040007f4        0x0 vgastr.o
+                0x00000000040007f4                __end_bss = .
+                0x00000000040007f4                __end_ldr = .
+LOAD imginithead.o
+LOAD inithead.o
+LOAD vgastr.o
+OUTPUT(initldrimh.elf elf32-i386)
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 inithead.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 vgastr.o

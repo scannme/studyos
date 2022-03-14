@@ -6,7 +6,6 @@
 #ifndef _BDVIDEO_T_H
 #define _BDVIDEO_T_H
 
-#include "bastype.h"
 
 typedef struct s_VBEINFO
 {
@@ -192,24 +191,18 @@ typedef struct s_FNTDATA
 
 typedef struct s_DFTGHOPS
 {
-    //读写显存数据
     size_t (*dgo_read)(void* ghpdev,void* outp,size_t rdsz);
     size_t (*dgo_write)(void* ghpdev,void* inp,size_t wesz);
     sint_t (*dgo_ioctrl)(void* ghpdev,void* outp,uint_t iocode);
-    //刷新
     void   (*dgo_flush)(void* ghpdev);
     sint_t (*dgo_set_bank)(void* ghpdev, sint_t bnr);
-    //读写像素
     pixl_t (*dgo_readpix)(void* ghpdev,uint_t x,uint_t y);
     void   (*dgo_writepix)(void* ghpdev,pixl_t pix,uint_t x,uint_t y);
-    //直接读写像素
     pixl_t (*dgo_dxreadpix)(void* ghpdev,uint_t x,uint_t y);
     void   (*dgo_dxwritepix)(void* ghpdev,pixl_t pix,uint_t x,uint_t y);
-    //设置x,y左边和偏移
     sint_t (*dgo_set_xy)(void* ghpdev,uint_t x,uint_t y);
     sint_t (*dgo_set_vwh)(void* ghpdev,uint_t vwt,uint_t vhi);
     sint_t (*dgo_set_xyoffset)(void* ghpdev,uint_t xoff,uint_t yoff);
-    //获取x,y坐标和偏移
     sint_t (*dgo_get_xy)(void* ghpdev,uint_t* rx,uint_t* ry);
     sint_t (*dgo_get_vwh)(void* ghpdev,uint_t* rvwt,uint_t* rvhi);
     sint_t (*dgo_get_xyoffset)(void* ghpdev,uint_t* rxoff,uint_t* ryoff);

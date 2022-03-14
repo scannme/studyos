@@ -1,7 +1,7 @@
 /**********************************************************
         hal层中断处理头文件halintupt.h
 ***********************************************************
-                彭东
+                彭东 
 **********************************************************/
 #ifndef _HALINTUPT_H
 #define _HALINTUPT_H
@@ -17,6 +17,5 @@ drvstus_t hal_enable_intline(uint_t ifdnr);
 drvstus_t hal_disable_intline(uint_t ifdnr);
 drvstus_t hal_intflt_default(uint_t ift_nr,void* sframe);
 #endif
-
 
 #endif // HALINTUPT_H

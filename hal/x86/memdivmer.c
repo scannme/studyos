@@ -55,6 +55,20 @@ KLINE sint_t retn_divoder(uint_t pages)
 	return pbits;
 }
 
+u64_t onfrmsa_retn_fpagenr(msadsc_t* freemsa)
+{
+	if(NULL==freemsa||NULL==freemsa->md_odlink)
+	{
+		return 0;
+	}
+	msadsc_t* fmend=(msadsc_t*)freemsa->md_odlink;
+	if(fmend<freemsa)
+	{
+		return 0;
+	}
+	return ((u64_t)(fmend-freemsa)+1);
+}
+
 memarea_t *onfrmsa_retn_marea(memmgrob_t *mmobjp, msadsc_t *freemsa, uint_t freepgs)
 {
 
@@ -71,6 +85,13 @@ memarea_t *onfrmsa_retn_marea(memmgrob_t *mmobjp, msadsc_t *freemsa, uint_t free
 	{
 		return NULL;
 	}
+
+	/*uint_t phyadrs=freemsa->md_phyadrs.paf_padrs<<PSHRSIZE;
+	uint_t phyadre=((fmend->md_phyadrs.paf_padrs<<PSHRSIZE)+(1<<PSHRSIZE))-1;
+	if(phyadrs>=phyadre)
+	{
+		return NULL;
+	}*/
 
 	for (uint_t mi = 0; mi < mmobjp->mo_mareanr; mi++)
 	{
@@ -223,16 +244,17 @@ bool_t onmpgs_retn_bafhlst(memarea_t *malckp, uint_t pages, bafhlst_t **retrelba
 	{
 		return FALSE;
 	}
-	bafhlst_t *bafhstat = malckp->ma_mdmdata.dm_mdmlielst;
+	bafhlst_t *bafhstat = malckp->ma_mdmdata.dm_mdmlielst; //*relbfl=NULL,*divbfl=NULL;
 	sint_t dividx = retn_divoder(pages);
 	if (0 > dividx || MDIVMER_ARR_LMAX <= dividx)
 	{
+		//kprint("errrrrrr4\n");
 		*retrelbafh = NULL;
 		*retdivbafh = NULL;
 		return FALSE;
 	}
 	if (pages > bafhstat[dividx].af_oderpnr)
-	{ 
+	{ //kprint("errrrrrr5\n");
 		*retrelbafh = NULL;
 		*retdivbafh = NULL;
 		return FALSE;
@@ -246,7 +268,7 @@ bool_t onmpgs_retn_bafhlst(memarea_t *malckp, uint_t pages, bafhlst_t **retrelba
 			return TRUE;
 		}
 	}
-
+	//kprint("errrrrrr6\n");
 	*retrelbafh = NULL;
 	*retdivbafh = NULL;
 	return FALSE;
@@ -306,6 +328,7 @@ msadsc_t *mm_divipages_onbafhlst(bafhlst_t *bafhp)
 	tmp->md_phyadrs.paf_alloc = PAF_ALLOC;
 	bafhp->af_fobjnr--;
 	bafhp->af_mobjnr--;
+	//bafhp->af_aobjnr++;
 	bafhp->af_alcindx++;
 	return tmp;
 }
@@ -333,6 +356,7 @@ bool_t mm_retnmsaob_onbafhlst(bafhlst_t *bafhp, msadsc_t **retmstat, msadsc_t **
 	bafhp->af_mobjnr--;
 	bafhp->af_fobjnr--;
 	bafhp->af_freindx++;
+	//bafhp->af_aobjnr++;
 	*retmstat = tmp;
 	*retmend = (msadsc_t *)tmp->md_odlink;
 	if (MF_OLKTY_BAFH == tmp->md_indxflgs.mf_olkty)
@@ -363,7 +387,7 @@ msadsc_t *mm_maxdivpages_onmarea(memarea_t *malckp, uint_t *retrelpnr)
 		*retrelpnr = 0;
 		return NULL;
 	}
-	msadsc_t *retmsa = NULL;
+	msadsc_t *retmsa = NULL; //=mm_divipages_onbafhlst(bafhp);
 
 	msadsc_t *retmstat = NULL, *retmend = NULL;
 	bool_t rets = mm_retnmsaob_onbafhlst(bafhp, &retmstat, &retmend);
@@ -710,12 +734,93 @@ memarea_t *retn_procmarea(memmgrob_t *mmobjp)
 	}
 	return NULL;
 }
+/*
+bool_t remov_addpgs_onmarea(memarea_t* rmmar,msadsc_t* mstat,uint_t mnr)
+{
+	bool_t rets=FALSE;
+	if(NULL==rmmar||NULL==mstat||1>mnr)
+	{
+		return FALSE;
+	}
+	if(MA_TYPE_PROC!=rmmar->ma_type)
+	{
+		return FALSE;
+	}
+	bafhlst_t* bafh=NULL;
+	cpuflg_t cpuflg;
+	knl_spinlock_cli(&rmmar->ma_lock,&cpuflg);
+	bafh=&rmmar->ma_mdmdata.dm_onemsalst;
+	if(1!=bafh->af_oderpnr)
+	{
+		rets=FALSE;
+		goto ret_step;
+	}
+	for(uint_t tmr=0;tmr<mnr;tmr++)
+	{
+		if((~0UL)<=bafh->af_fobjnr||(~0UL)<=bafh->af_mobjnr)
+		{
+			system_error("remov_addpgs_onmarea (~0UL)<=bafh->af_fobjnr||(~0UL)<=bafh->af_mobjnr\n");
+		}
+		if((~0UL)<=rmmar->ma_freepages||(~0UL)<=rmmar->ma_maxpages||
+			(~0UL)<=rmmar->ma_allmsadscnr)
+		{
+			system_error("remov_addpgs_onmarea rmmar->ma_freepages\n");
+		}
+		mstat[tmr].md_indxflgs.mf_uindx=0;
+		mstat[tmr].md_indxflgs.mf_mocty=MF_MOCTY_FREE;
+		mstat[tmr].md_indxflgs.mf_marty=MF_MARTY_PRC;
+		mstat[tmr].md_indxflgs.mf_olkty=MF_OLKTY_BAFH;
+		mstat[tmr].md_odlink=bafh;
+		mstat[tmr].md_phyadrs.paf_alloc=PAF_NO_ALLOC;
+		list_add(&mstat[tmr].md_list,&bafh->af_frelst);
+		bafh->af_mobjnr++;
+		bafh->af_fobjnr++;
+		rmmar->ma_allmsadscnr++;
+		rmmar->ma_freepages++;
+		rmmar->ma_maxpages++;
+	}
+	rets=TRUE;
+ret_step:
+	knl_spinunlock_sti(&rmmar->ma_lock,&cpuflg);
+	return rets;
+}
+
+uint_t mm_pages_removal(memmgrob_t *mmobjp, uint_t rolpages,memarea_t* rmmar,uint_t mrty)
+{
+	if(NULL==mmobjp||2>rolpages||NULL==rmmar||0==mrty)
+	{
+		return 0;
+	}
+	if(MA_TYPE_PROC!=rmmar->ma_type||
+		MA_TYPE_PROC==mrty||MA_TYPE_SHAR==mrty||
+		MA_TYPE_INIT==mrty)
+	{
+		return 0;
+	}
+	msadsc_t* retmsa=NULL;
+	uint_t retpnr=0;
+	uint_t tmprolpnr=rolpages;
+	for(;tmprolpnr>0;tmprolpnr>>=1)
+	{
+		retmsa=mm_division_pages(mmobjp,tmprolpnr,&retpnr,MA_TYPE_KRNL,DMF_RELDIV);
+		if(NULL!=retmsa&&0!=retpnr)
+		{
+
+			if(remov_addpgs_onmarea(rmmar,retmsa,retpnr)==FALSE)
+			{
+				system_error("remov_addpgs_onmarea ret fail\n");
+			}
+			return retpnr;
+		}
+	}
+	return 0;
+}*/
 
 msadsc_t *divpages_procmarea_core(memmgrob_t *mmobjp, uint_t pages, uint_t *retrealpnr)
 {
 	cpuflg_t cpuflg;
-	uint_t retpnr = 0;						  
-	msadsc_t *retmsa = NULL, *retmsap = NULL; 
+	uint_t retpnr = 0;						  //,scani=0;
+	msadsc_t *retmsa = NULL, *retmsap = NULL; //,*tmpmsa=NULL;
 	if (NULL == mmobjp || 1 != pages || NULL == retrealpnr)
 	{
 		return NULL;
@@ -726,6 +831,25 @@ msadsc_t *divpages_procmarea_core(memmgrob_t *mmobjp, uint_t pages, uint_t *retr
 		*retrealpnr = 0;
 		return NULL;
 	}
+	/*
+res_scstep:
+
+	if(scan_mapgsalloc_ok(marp,pages)==FALSE)
+	{
+		scani++;
+		if(0x1000<scani)
+		{
+			*retrealpnr=0;
+			return NULL;
+		}
+		if(mm_pages_removal(mmobjp,1024,marp,MA_TYPE_KRNL)==0)
+		{
+			*retrealpnr=0;
+			return NULL;
+		}
+		goto res_scstep;
+	}*/
+
 	knl_spinlock_cli(&marp->ma_lock, &cpuflg);
 	if (scan_mapgsalloc_ok(marp, pages) == FALSE)
 	{
@@ -739,6 +863,8 @@ msadsc_t *divpages_procmarea_core(memmgrob_t *mmobjp, uint_t pages, uint_t *retr
 	{
 		mm_update_memarea(marp, retpnr, 0);
 		mm_update_memmgrob(retpnr, 0);
+
+		//*retrealpnr=retpnr;
 		retmsap = retmsa;
 		goto ret_step;
 	}
@@ -804,72 +930,82 @@ sint_t mm_cmsa1blk_isok(bafhlst_t *bafh, msadsc_t *_1ms, msadsc_t *_1me)
 {
 	if (NULL == bafh || NULL == _1ms || NULL == _1me)
 	{
+		//kprint("mm_cmsa1blk_isok err0\n");
 		return 0;
 	}
 	if (_1me < _1ms)
-	{
+	{ //kprint("mm_cmsa1blk_isok err1\n");
 		return 0;
 	}
 	if (_1ms == _1me)
 	{
 		if (MF_OLKTY_BAFH != _1me->md_indxflgs.mf_olkty)
-		{
+		{ //kprint("mm_cmsa1blk_isok err2\n");
 			return 0;
 		}
 		if (bafh != (bafhlst_t *)_1me->md_odlink)
-		{
+		{ //kprint("mm_cmsa1blk_isok err3\n");
 			return 0;
 		}
 		if (PAF_NO_ALLOC != _1me->md_phyadrs.paf_alloc)
-		{
+		{ //kprint("mm_cmsa1blk_isok err4\n");
 			return 0;
 		}
 		if (0 != _1me->md_indxflgs.mf_uindx)
 		{
+			//kprint("mm_cmsa1blk_isok err5\n");
 			return 0;
 		}
 		if ((_1me->md_phyadrs.paf_padrs - _1ms->md_phyadrs.paf_padrs) != (uint_t)(_1me - _1ms))
 		{
+			//kprint("mm_cmsa1blk_isok err6\n");
 			return 0;
 		}
 		return 2;
 	}
 
 	if (MF_OLKTY_ODER != _1ms->md_indxflgs.mf_olkty)
-	{
+	{ //kprint("mm_cmsa1blk_isok err7\n");
 		return 0;
 	}
 	if (_1me != (msadsc_t *)_1ms->md_odlink)
 	{
+		//kprint("mm_cmsa1blk_isok err8\n");
 		return 0;
 	}
 	if (PAF_NO_ALLOC != _1ms->md_phyadrs.paf_alloc)
 	{
+		//kprint("mm_cmsa1blk_isok err9\n");
 		return 0;
 	}
 	if (0 != _1ms->md_indxflgs.mf_uindx)
 	{
+		//kprint("mm_cmsa1blk_isok err10\n");
 		return 0;
 	}
 
 	if (MF_OLKTY_BAFH != _1me->md_indxflgs.mf_olkty)
 	{
+		//kprint("mm_cmsa1blk_isok err11\n");
 		return 0;
 	}
 	if (bafh != (bafhlst_t *)_1me->md_odlink)
 	{
+		//bafhlst_t* tmbp=(bafhlst_t*)_1me->md_odlink;
+		//kprint("mm_cmsa1blk_isok err12:%x,%x,%x\n",bafh->af_oderpnr,_1me-_1ms+1,tmbp->af_oderpnr);
 		return 0;
 	}
 	if (PAF_NO_ALLOC != _1me->md_phyadrs.paf_alloc)
-	{
+	{ //kprint("mm_cmsa1blk_isok err13\n");
 		return 0;
 	}
 	if (0 != _1me->md_indxflgs.mf_uindx)
 	{
+		//kprint("mm_cmsa1blk_isok err14\n");
 		return 0;
 	}
 	if ((_1me->md_phyadrs.paf_padrs - _1ms->md_phyadrs.paf_padrs) != (uint_t)(_1me - _1ms))
-	{
+	{ //kprint("mm_cmsa1blk_isok err15\n");
 		return 0;
 	}
 	return 2;
@@ -900,10 +1036,12 @@ sint_t mm_cmsa2blk_isok(bafhlst_t *bafh, msadsc_t *_1ms, msadsc_t *_1me, msadsc_
 		{
 			if ((_1me + 1) != _2ms)
 			{
+				//kprint("(_1me+1)!=_2ms:%x:%x\n",(_1me+1),_2ms);
 				return 1;
 			}
 			if ((_1me->md_phyadrs.paf_padrs + 1) != _2ms->md_phyadrs.paf_padrs)
-			{
+			{ //kprint("(_1me->md_phyadrs.paf_padrs+1)!=_2ms->md_phyadrs.paf_padrs:%x:%x\n",
+				//(_1me->md_phyadrs.paf_padrs+1),_2ms->md_phyadrs.paf_padrs);
 				return 1;
 			}
 			return 2;
@@ -911,11 +1049,12 @@ sint_t mm_cmsa2blk_isok(bafhlst_t *bafh, msadsc_t *_1ms, msadsc_t *_1me, msadsc_
 		if (_1ms > _2ms && _1me > _2me)
 		{
 			if ((_2me + 1) != _1ms)
-			{
+			{ //kprint("(_2me+1)!=_1ms:%x:%x\n",(_2me+1),_1ms);
 				return 1;
 			}
 			if ((_2me->md_phyadrs.paf_padrs + 1) != _1ms->md_phyadrs.paf_padrs)
-			{
+			{ //kprint("(_2me->md_phyadrs.paf_padrs+1)!=_1ms->md_phyadrs.paf_padrs:%x:%x\n",
+				//(_2me->md_phyadrs.paf_padrs+1),_1ms->md_phyadrs.paf_padrs);
 				return 1;
 			}
 			return 4;
@@ -1039,6 +1178,7 @@ step1:
 			*rfnme = blkme;
 			return 2;
 		}
+		//kprint("rets 0 1:%x\n",rets);
 		return 0;
 	}
 	if (4 == rets)
@@ -1053,9 +1193,10 @@ step1:
 			*rfnme = freemend;
 			return 2;
 		}
-
+		//kprint("rets 0 2:%x\n",rets);
 		return 0;
 	}
+	//kprint("rets 0 3:%x\n",rets);
 	return 0;
 }
 
@@ -1254,6 +1395,11 @@ void write_one_mchkstuc(msadsc_t *msa, uint_t pnr)
 	u64_t phyadr = msa->md_phyadrs.paf_padrs << PSHRSIZE;
 	uint_t viradr = (uint_t)phyadr_to_viradr((adr_t)phyadr);
 	uint_t sz = pnr << PSHRSIZE;
+	/*if(phyadr>=0x9f000)
+	{
+		kprint("phyadr:%x\n",phyadr);
+		//system_error("phyadr>=9f000\n");
+	}*/
 	mchkstuc_t *mchks = (mchkstuc_t *)((uint_t)viradr);
 	mchkstuc_t_init(mchks);
 	mchks->mc_phyadr = phyadr;
@@ -1262,7 +1408,13 @@ void write_one_mchkstuc(msadsc_t *msa, uint_t pnr)
 	mchks->mc_chkval = phyadr;
 	mchks->mc_msa = msa;
 	mchks->mc_chksadr = (u64_t *)(mchks + 1);
-	mchks->mc_chkeadr = (u64_t *)((uint_t)(viradr + sz - 1)); 
+	/*uint_t ci=0;
+	for(uint_t vadr=(uint_t)mchks->mc_chksadr;vadr<(viradr+sz-1);vadr+=sizeof(uint_t))
+	{
+		mchks->mc_chksadr[ci]=phyadr;
+		ci++;
+	}*/
+	mchks->mc_chkeadr = (u64_t *)((uint_t)(viradr + sz - 1)); //&mchks->mc_chksadr[ci-1];
 	list_add(&mchks->mc_list, &memmgrob.mo_list);
 	return;
 }
@@ -1285,6 +1437,13 @@ bool_t chek_one_mchks(mchkstuc_t *mchs)
 		kprint("chek_one_mchks 2\n");
 		return FALSE;
 	}
+	/*for(uint_t* ckp=mchs->mc_chksadr;ckp<=mchs->mc_chkeadr;ckp++)
+	{
+		if (*ckp!=mchs->mc_chkval)
+		{
+			return FALSE;
+		}
+	}*/
 	return TRUE;
 }
 
@@ -1302,6 +1461,15 @@ void cmp_mchkstuc(mchkstuc_t *smchs, mchkstuc_t *dmchs)
 	{
 		system_error("cmp_mchkstuc smchschkval==dmchschkval\n");
 	}
+	/*
+	uint_t* dckp=dmchs->mc_chksadr;
+	for(uint_t* sckp=smchs->mc_chksadr;sckp<=smchs->mc_chkeadr;sckp++,dckp++)
+	{
+		if(*dckp==*sckp)
+		{
+			system_error("cmp_mchkstuc *dckp==*sckp\n");
+		}
+	}*/
 	return;
 }
 
@@ -1486,6 +1654,19 @@ void test_maxdiv_all()
 	return;
 }
 
+/*adr_t krlnew_pages(uint_t pgs)
+{
+	msadsc_t* retmsa=NULL;
+	//u64_t stsc=0,etsc=0;
+	uint_t retpnr=0
+	retmsa=mm_division_pages(&memmgrob, pages,&retpnr, MA_TYPE_KRNL,DMF_RELDIV);
+	if(NULL==retmsa)
+	{
+		return NULL;
+	}
+
+}
+*/
 
 void test_divsion_pages()
 {

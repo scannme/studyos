@@ -1,4 +1,9 @@
-%include "../include/halinc/kernel.inc"
+;*****************************************************************************
+;*		底层核心文件Kernel.asm				    *
+;*				彭东 
+;*****************************************************************************
+
+%include "halinc/kernel.inc"
 [section .hwint.text]
 [BITS 64]
 
@@ -175,4 +180,5 @@ ALIGN	16
 asm_ret_from_user_mode:
 	RESTOREALL
 
-
+;stack:
+;	times 4096 dd 0

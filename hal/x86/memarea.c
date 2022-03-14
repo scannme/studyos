@@ -70,6 +70,7 @@ void memdivmer_t_init(memdivmer_t *initp)
 	for (uint_t li = 0; li < MDIVMER_ARR_LMAX; li++)
 	{
 		bafhlst_t_init(&initp->dm_mdmlielst[li], BAFH_STUS_DIVM, li, (1UL << li));
+
 	}
 	bafhlst_t_init(&initp->dm_onemsalst, BAFH_STUS_ONEM, 0, 1UL);
 	return;
@@ -82,6 +83,8 @@ void memarea_t_init(memarea_t *initp)
 	initp->ma_stus = 0;
 	initp->ma_flgs = 0;
 	initp->ma_type = MA_TYPE_INIT;
+	//knl_sem_init(&initp->ma_sem,SEM_MUTEX_ONE_LOCK,SEM_FLG_MUTEX);
+	//init_wait_l_head(&initp->ma_waitlst,general_wait_wake_up);
 	initp->ma_maxpages = 0;
 	initp->ma_allocpages = 0;
 	initp->ma_freepages = 0;
@@ -137,15 +140,20 @@ bool_t init_memarea_core(machbstart_t *mbsp)
 
 LKINIT void init_memarea()
 {
+	//kprint("memarea_t is sz[%x]\n",sizeof(memarea_t));
 	if (init_memarea_core(&kmachbsp) == FALSE)
 	{
 		system_error("init_memarea_core fail");
 	}
+	//kprint("memareaphy:%x,nr:%x,sz:%x,np:%x\n",kmachbsp.mb_memznpadr,kmachbsp.mb_memznnr,kmachbsp.mb_memznsz,kmachbsp.mb_nextwtpadr
+	//	);
+	//disp_memarea(&kmachbsp);
+	//die(0);
 	return;
 }
 
 bool_t find_inmarea_msadscsegmant(memarea_t *mareap, msadsc_t *fmstat, uint_t fmsanr, msadsc_t **retmsastatp,
-								  msadsc_t **retmsaendp, uint_t *retfmnr)
+										 msadsc_t **retmsaendp, uint_t *retfmnr)
 {
 	if (NULL == mareap || NULL == fmstat || 0 == fmsanr || NULL == retmsastatp ||
 		NULL == retmsaendp || NULL == retfmnr)
@@ -328,7 +336,7 @@ uint_t check_continumsadsc(memarea_t *mareap, msadsc_t *stat, msadsc_t *end, uin
 }
 
 bool_t merlove_scan_continumsadsc(memarea_t *mareap, msadsc_t *fmstat, uint_t *fntmsanr, uint_t fmsanr,
-								  msadsc_t **retmsastatp, msadsc_t **retmsaendp, uint_t *retfmnr)
+										 msadsc_t **retmsastatp, msadsc_t **retmsaendp, uint_t *retfmnr)
 {
 	if (NULL == mareap || NULL == fmstat || NULL == fntmsanr ||
 		0 == fmsanr || NULL == retmsastatp || NULL == retmsaendp || NULL == retfmnr)
@@ -514,11 +522,16 @@ uint_t test_setflgs(memarea_t *mareap, msadsc_t *mstat, uint_t msanr)
 	uint_t retnr = 0;
 	for (uint_t mix = 0; mix < msanr; mix++)
 	{
-		phyadr = mstat[mix].md_phyadrs.paf_padrs << PSHRSIZE;
-		if (phyadr >= mareap->ma_logicstart && ((phyadr + PAGESIZE) - 1) <= mareap->ma_logicend)
+		/*if(MF_MOCTY_FREE==mstat[mix].md_indxflgs.mf_mocty&&
+			PAF_NO_ALLOC==mstat[mix].md_phyadrs.paf_alloc&&
+			0==mstat[mix].md_indxflgs.mf_uindx)*/
 		{
-			if (mstat[mix].md_indxflgs.mf_marty == mdfp->mf_marty)
-				retnr++;
+			phyadr = mstat[mix].md_phyadrs.paf_padrs << PSHRSIZE;
+			if (phyadr >= mareap->ma_logicstart && ((phyadr + PAGESIZE) - 1) <= mareap->ma_logicend)
+			{
+				if (mstat[mix].md_indxflgs.mf_marty == mdfp->mf_marty)
+					retnr++;
+			}
 		}
 	}
 	return retnr;
@@ -710,6 +723,7 @@ bool_t merlove_mem_onmemarea(memarea_t *mareap, msadsc_t *mstat, uint_t msanr)
 	uint_t fntmnr = 0;
 	bool_t retscan = FALSE;
 
+
 	for (; fntmnr < msanr;)
 	{
 		retscan = merlove_scan_continumsadsc(mareap, fntmsap, &fntmnr, msanr, &retstatmsap, &retendmsap, &retfindmnr);
@@ -783,7 +797,7 @@ uint_t check_multi_msadsc(msadsc_t *mstat, bafhlst_t *bafhp, memarea_t *mareap)
 		return 0;
 	}
 
-	msadsc_t *mend = NULL;
+	msadsc_t *mend = NULL; //(msadsc_t*)mstat->md_odlink;
 	if (MF_OLKTY_ODER == mstat->md_indxflgs.mf_olkty)
 	{
 		mend = (msadsc_t *)mstat->md_odlink;
@@ -933,6 +947,10 @@ void init_merlove_mem()
 		system_error("merlove_mem_core fail\n");
 	}
 	mem_check_mareadata(&kmachbsp);
+	//kprint("init_merlove_mem OK\n");
+	//disp_memarea(&kmachbsp);
+	//disp_memarea(&kmachbsp);
+	//die(0);
 	return;
 }
 
@@ -953,7 +971,7 @@ void disp_memarea(machbstart_t *mbsp)
 	{
 		kprint("memarea.ma_type:%x,ma_maxpages:%x,ma_freepages:%x,ma_allmsadscnr:%x\n",
 			   marea[i].ma_type, marea[i].ma_maxpages, marea[i].ma_freepages, marea[i].ma_allmsadscnr);
-
+		
 		for (uint_t li = 0; li < MDIVMER_ARR_LMAX; li++)
 		{
 			disp_bafhlst(&marea[i].ma_mdmdata.dm_mdmlielst[li]);

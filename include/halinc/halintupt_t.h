@@ -7,7 +7,6 @@
 #define _HALINTUPT_T_H
 
 
-
 #ifdef CFG_X86_PLATFORM
 
 typedef struct s_ILNEDSC
@@ -18,6 +17,10 @@ typedef struct s_ILNEDSC
     u32_t ild_clxsubinr;
 }ilnedsc_t;
 
+
+
+
+
 typedef struct s_INTFLTDSC
 {
     spinlock_t  i_lock;
@@ -27,8 +30,8 @@ typedef struct s_INTFLTDSC
     uint_t      i_irqnr;        //中断号
     uint_t      i_deep;         //中断嵌套深度
     u64_t       i_indx;         //中断计数
-    list_h_t    i_serlist; //可以使用中断回调函数的方式
-    uint_t      i_sernr; // 中断回调函数个数
+    list_h_t    i_serlist;
+    uint_t      i_sernr;
     list_h_t    i_serthrdlst;   //中断线程链表头
     uint_t      i_serthrdnr;    //中断线程个数
     void*       i_onethread;    //只有一个中断线程时直接用指针
@@ -42,13 +45,13 @@ typedef struct s_INTFLTDSC
 
 typedef struct s_INTSERDSC
 {
-    list_h_t    s_list; //中断异常描述符表中链表
-    list_h_t    s_indevlst; //在设备描述描述符中德链表
+    list_h_t    s_list;
+    list_h_t    s_indevlst;
     u32_t       s_flg;
-    intfltdsc_t* s_intfltp; //指向中断异常描述符
-    void*       s_device; //指向设备描述符
+    intfltdsc_t* s_intfltp;
+    void*       s_device;
     uint_t      s_indx;
-    intflthandle_t s_handle; //中断处理的回调函数指针
+    intflthandle_t s_handle;
 }intserdsc_t;
 
 typedef struct s_KITHREAD
